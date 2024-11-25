@@ -6,7 +6,7 @@
     <title>EA FC 25</title>
 </head>
 <body class="absolute left-0 top-0 box-border">
-    <section class="Pagetot w-[100%] h-[100%]">
+    <section class="Pagetot w-[100%]">
         <header>
             <select name="formation" id="formation">
                 <option value="4-3-3">4-3-3</option>
@@ -20,6 +20,7 @@
                 <input name="modal" type="text" value="club">
                 <input name="modal" type="text" value="nationality">
                 <select name="modal" name="position" id="position">
+                    <option value="Tous">Tous</option>
                     <option value="GK">GK</option>
                     <option value="CB">CB</option>
                     <option value="LB">LB</option>
@@ -29,10 +30,12 @@
                     <option value="RW">RW</option>
                     <option value="ST">ST</option>
                 </select>
-                <div class="cardsform">
-
-                </div>
             </form>
+            <div id="cardsform">
+                <div class="cardplayer">
+                    
+                </div>
+            </div>
         </div>
 
         <div>
@@ -97,10 +100,6 @@
             </div>
             
         </div>
-        
-
-    
-
     </section>
 </body>
 </html>
