@@ -1,13 +1,11 @@
 {
-  "name": "ea-fc-25",
+  "name": "votre-projet",
   "version": "1.0.0",
-  "description": "",
+  "description": "Votre description de projet",
   "main": "index.js",
   "scripts": {
-    "app": "npx tailwindcss -i ./src/assets/css/input.css -o ./src/assets/css/output.css --watch"},
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+    "test": "npx tailwindcss -i ./src/assets/css/input.css -o ./src/assets/css/output.css --watch"
+  },
   "devDependencies": {
     "tailwindcss": "^3.4.15"
   }

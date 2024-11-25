@@ -4,22 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="stylesheet" href="./assets/css/input.css">
     <link rel="stylesheet" href="./assets/css/output.css">
     <title>EA FC 25</title>
 </head>
-<body class="absolute left-0 top-0 box-border">
-    <header class="bg-inherit h-[3vh] flex justify-between">
-        <a href="index.htm">
-            <img src="https://drop-assets.ea.com/images/7L56ne8TsLBD7f7Rt4wIMk/8c7869d7233a34407315ddeee8afdbda/G5_FC25_Horizontal_Rev.png?q=40&w=2560" class="w-[40%] h-[80%] " alt="logo de EA FC 25">
-        </a>
-        <select name="formation" id="formation" class="h-[80%]">
-            <option value="4-3-3">4-3-3</option>
-        </select>
-
-        <button class="bg-inherit border-2">Ajouter <span>+</span></button>
-    </header>
+<body class="absolute left-0 top-0">
     <section class="Pagetot w-[100%] gap-3">
+        <header class="bg-opacity-100 h-[3vh] grid grid-cols-3 justify-center gap-2">
+            <a href="index.htm" class="w-[80%] col-start-1 col-end-2">
+                <img src="./assets/images/logo.svg" class="md:hidden " alt="logo de EA FC 25">
+                <img src="./assets/images/logo-desktop.avif" class="hidden md:block" alt="logo de EA FC 25">
+            </a>
+            <select name="formation" id="formation" class="h-[50%] col-start-2 col-end-3">
+                <option value="4-3-3">4-3-3</option>
+            </select>
+    
+            <button class="bg-inherit border-2 border-solid  col-start-3 col-end-4 text-white">Ajouter <span class="h-[2rem]">+</span></button>
+        </header>
 
         <div>
             <form name="modalinf">
