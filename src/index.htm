@@ -7,19 +7,26 @@
     <link rel="stylesheet" href="./assets/css/output.css">
     <title>EA FC 25</title>
 </head>
-<body class="absolute left-0 top-0">
+<body class="relative left-0 top-0">
+    <header class="bg-black">
+        <a href="index.htm" class="w-[80%] col-start-1 col-end-2">
+            <img src="./assets/images/logo.svg" class="md:hidden " alt="logo de EA FC 25">
+            <img src="./assets/images/logo-desktop.avif" class="hidden md:block" alt="logo de EA FC 25">
+        </a>
+    </header>
     <section class="Pagetot w-[100%] gap-3">
-        <header class="bg-opacity-100 h-[3vh] grid grid-cols-3 justify-center gap-2">
-            <a href="index.htm" class="w-[80%] col-start-1 col-end-2">
-                <img src="./assets/images/logo.svg" class="md:hidden " alt="logo de EA FC 25">
-                <img src="./assets/images/logo-desktop.avif" class="hidden md:block" alt="logo de EA FC 25">
-            </a>
+        <div class="bg-opacity-30 h-[3vh] grid grid-cols-3 justify-center gap-2">
+            <div id="cardsform">
+                <div class="cardplayer">
+                    
+                </div>
+            </div>
             <select name="formation" id="formation" class="h-[50%] col-start-2 col-end-3">
                 <option value="4-3-3">4-3-3</option>
             </select>
     
             <button class="bg-inherit border-2 border-solid  col-start-3 col-end-4 text-white">Ajouter <span class="h-[2rem]">+</span></button>
-        </header>
+        </div>
 
         <div>
             <form name="modalinf">
