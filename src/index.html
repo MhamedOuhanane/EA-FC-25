@@ -8,21 +8,65 @@
     <link rel="stylesheet" href="./assets/css/input.css">
     <title>EA FC 25</title>
 </head>
-<body class="relative left-0 top-0">
-    <header class="bg-black h-[3rem] flex justify-center md:justify-start py-1">
-        <a href="index.html">
-            <img src="./assets/images/logo.svg" class="md:hidden h-[90%]" alt="logo de EA FC 25">
-            <img src="./assets/images/logo-desktop.avif" class="hidden md:block h-[90%]" alt="logo de EA FC 25">
+<body class="relative left-0 top-0 ">
+    <header class="bg-black h-[3rem] flex justify-between items-center px-3">
+
+        <a href="index.html" class="h-[80%]">
+            <img src="./assets/images/logo.svg" class="md:hidden h-full" alt="logo de EA FC 25">
+            <img src="./assets/images/logo-desktop.avif" class="hidden md:block h-full" alt="logo de EA FC 25">
         </a>
-    </header>
-    <section class="Pagetot w-[100%] gap-3">
-        <div class="bg-opacity-30 h-[3vh] grid grid-cols-3 justify-center gap-2">
-            <div id="cardsform">
-                <div class="cardplayer">
-                    
+
+        <button class="bg-inherit border-2 border-solid border-white rounded-lg text-white px-2">joueurs</button>
+        <div class="mudoljou fixed top-0 left-0 w-[100%] h-[100%]  py-[3vw] px-[5vw] flex flex-col ">
+            <button class="self-end w-3 text-white">X</button>
+            <div class="joueurs w-full max-h-96 overflow-y-auto text-[40%] md:text-[70%] flex justify-evenly flex-wrap  text-white ">
+                <div class="cardplayer relative w-[7rem] h-[10rem] md:w-[12rem] md:h-[17rem] hover:scale-95 flex flex-col  items-center py-4 md:py-7">
+                    <div class="flex justify-start  w-full h-[75%] p-[12%]">
+                        <div class="max-w-7 flex flex-col items-center">
+                            <span class="text-sm md:text-lg ">90</span><span>CF</span>
+                        </div>
+                    </div>
+                    <img src="https://cdn3.futbin.com/content/fifa25/img/players/p67266887.png?fm=png&ixlib=java-2.1.0&verzion=1&w=485&s=ac939a25dd889c2cf50ebc5548e60369" class="absolute  z-0 top-1 "  alt="image de joueur">
+                    <span class="md:text-xl z-10 ">Oblak</span>
+                    <div class="flex justify-evenly gap-[0.2rem] md:gap-1 ">
+                        <div class="flex flex-col items-center">
+                            <span>RAT</span>
+                            <span>90</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <span>RAT</span>
+                            <span>90</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <span>RAT</span>
+                            <span>90</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <span>RAT</span>
+                            <span>90</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <span>RAT</span>
+                            <span>90</span>
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <span>RAT</span>
+                            <span>90</span>
+                        </div>
+                    </div>
+                    <div class="flex justify-center gap-2 md:gap-4">
+                        <img src="https://cdn.sofifa.net/flags/si.png" class="w-[11%]" alt="flag">
+                        <img src="https://cdn.sofifa.net/meta/team/7980/120.png" class="w-[11%]" alt="logo">
+                    </div>
                 </div>
+                
             </div>
-            <select name="formation" id="formation" class="h-[50%] col-start-2 col-end-3">
+        </div>
+    </header>
+    <section class="Pagetot w-[100%] gap-3 hidden">
+        <div class="bg-opacity-30 h-[3vh] grid grid-cols-3 justify-center gap-2">
+            
+            <select name="formation" id="formation" class="col-start-2 col-end-3">
                 <option value="4-3-3">4-3-3</option>
             </select>
     
@@ -122,7 +166,7 @@
         </div>
     </section>
         
-    <footer>
+    <footer class="hidden">
         <div>
             <span>Contactez-nous sur les réseaux sociaux !</span>
             <div>
