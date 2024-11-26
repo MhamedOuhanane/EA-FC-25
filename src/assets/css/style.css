@@ -47,8 +47,12 @@ select{
     width: 10rem;
     overflow-x: auto;
     text-align: center;
-    color: white;
-    background-color: rgba(240, 248, 255, 0.429);
+    color: black;
+    background-color: rgb(159, 154, 154);
+}
+
+:placeholder{
+    color: rgb(39, 39, 39);
 }
 
 @media (min-width: 768px){
