@@ -17,7 +17,7 @@
         </a>
 
         <button id="munujoue" class="bg-inherit border-2 border-solid border-white rounded-lg text-white px-2 ">joueurs</button>
-        <div class="mudoljou fixed top-0 left-0 w-[100%] h-[100vw] pt-[2vw] mt-[3rem] px-[5vw] flex flex-col hidden">
+        <div class="mudoljou fixed top-0 left-0 w-full h-full pt-[2vw] mt-[3rem] px-[5vw] flex flex-col hidden">
             <button class="self-end w-3 text-white text-2xl">X</button>
             <div class="joueurs w-full max-h-96 overflow-y-auto flex justify-evenly flex-wrap  text-white">
                 <div class="cardplayer relative w-[7rem] h-[10rem] md:w-[12rem] md:h-[17rem] hover:scale-95 flex flex-col  items-center py-4 md:py-7">
@@ -63,14 +63,13 @@
             </div>
         </div>
     </header>
-    <section class="Pagetot w-[100%] gap-3 mt-[3rem]">
-        <div class="bg-opacity-30 h-[3vh] grid grid-cols-3 justify-center gap-2">
-
+    <section class="Pagetot w-full gap-3 mt-[3rem]">
+        <div class="bg-opacity-30 h-[4.5rem] grid grid-cols-3 items-center justify-items-center py-3">
             <!-- button pour ajout un bouveau joueur -->
-            <button id="Ajounouv" class=" bg-inherit border-2 border-solid border-white rounded-lg text-white px-2 ">Nouvelle joueur</button>
+            <button id="Ajounouv" class=" bg-inherit w-[70%] md:w-[60%] lg:w-[50%] h-full border-2 border-solid border-white rounded-lg text-white px-2 text-[0.8rem] md:text-[1rem] items-center">Nouvelle joueur</button>
 
             <!-- modul d'ajoute un nouveau joueur -->
-            <div class="bg-black bg-opacity-60 fixed top-0 left-0 w-[100%] h-[100vw] pt-[2vw] mt-[3rem] px-2 md:px-[10vw] lg:px-[20vw] hidden ">
+            <div class="bg-black bg-opacity-60 fixed top-0 left-0 w-full h-full pt-[2vw] mt-[3rem] px-2 md:px-[10vw] lg:px-[20vw] hidden ">
                 <form class="bg-white flex flex-col w-full h-auto  gap-[2vw] p-2 rounded-md">
                     <button id="cancelnouv" class="self-end w-3 text-2xl mr-3">X</button>
                     <h2 class="text-lg self-center">Entrer les informations du nouveau joueur</h2>
@@ -104,14 +103,14 @@
             </form>
             </div>
 
-            <select name="formation" id="formation" class="col-start-2 col-end-3">
-                <option value="4-3-3">4-3-3</option>
+            <select name="formation" id="formation" class="col-start-2 col-end-3 w-[70%] rounded-lg md:w-[60%] lg:w-[50%] h-[2rem] ">
+                <option value="4-3-3">4 - 3 - 3</option>
             </select>
     
-            <button class="bg-inherit border-2 border-solid  col-start-3 col-end-4 text-white">Ajouter <span class="h-[2rem]">+</span></button>
+            <button class="bg-inherit w-[70%] md:w-[60%] lg:w-[50%] h-full border-2 border-solid rounded-lg col-start-3 col-end-4 text-white text-[0.8rem] md:text-[1rem]">Ajouter au formation</button>
         </div>
 
-        <div class="bg-black bg-opacity-60 fixed top-0 left-0 w-[100%] h-[100vw] mt-[3rem] px-5 md:px-[12vw] hidden">
+        <div class="bg-black bg-opacity-60 fixed top-0 left-0 w-full h-full mt-[3rem] px-5 md:px-[12vw] hidden">
             <div class="bg-white rounded-md py-[2vw]">
                 <form class="flex flex-col w-full h-auto  gap-[2vw] p-2  mb-2">
                     <button id="cancelnouv" class="self-end w-3 text-2xl mr-3">X</button>
@@ -183,7 +182,7 @@
             
         </div>
 
-        <div>
+        <div >
             <div class="titularisés">
                 <div class="GK">
                     <span class="btnajout1">+</span>
