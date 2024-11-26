@@ -66,12 +66,16 @@
     <section class="Pagetot w-[100%] gap-3 mt-[3rem]">
         <div class="bg-opacity-30 h-[3vh] grid grid-cols-3 justify-center gap-2">
 
+            <!-- button pour ajout un bouveau joueur -->
             <button id="Ajounouv" class=" bg-inherit border-2 border-solid border-white rounded-lg text-white px-2 ">Nouvelle joueur</button>
-            <div class="bg-black bg-opacity-60 fixed top-0 left-0 w-[100%] h-[100vw] pt-[2vw] mt-[3rem] md:px-[10vw] lg:px-[20vw]  ">
-                <form class="bg-white flex flex-col w-full h-auto  gap-[2vw] p-2">
+
+            <!-- modul d'ajoute un nouveau joueur -->
+            <div class="bg-black bg-opacity-60 fixed top-0 left-0 w-[100%] h-[100vw] pt-[2vw] mt-[3rem] px-2 md:px-[10vw] lg:px-[20vw] hidden ">
+                <form class="bg-white flex flex-col w-full h-auto  gap-[2vw] p-2 rounded-md">
                     <button id="cancelnouv" class="self-end w-3 text-2xl mr-3">X</button>
                     <h2 class="text-lg self-center">Entrer les informations du nouveau joueur</h2>
-                    <div name="modalnouv" class="w-full h-auto flex flex-wrap justify-center gap-2" >
+                    <!-- les input pour entrer les information  -->
+                    <div name="modalnouv" class="w-full h-auto flex flex-wrap justify-center gap-2"  >
                         <input name="modalnouv" type="text" placeholder="Name" >
                         <input name="modalnouv" type="text" placeholder="url du photo">
                         <input name="modalnouv" type="text" placeholder="position">
@@ -82,19 +86,19 @@
                         <input name="modalnouv" type="number" placeholder="pace">
                         <input name="modalnouv" type="number" placeholder="shooting">
                         <input name="modalnouv" type="number" placeholder="passing">
-                    <input name="modalnouv" type="number" placeholder="dribbling">
-                    <input name="modalnouv" type="number" placeholder="defending">
-                    <input name="modalnouv" type="number" placeholder="physical">
-                    <select name="modalnouv" name="position" id="position">
-                        <option value="GK">GK</option>
-                        <option value="CB">CB</option>
-                        <option value="LB">LB</option>
-                        <option value="RB">RB</option>
-                        <option value="CM">CM</option>
-                        <option value="LW">LW</option>
-                        <option value="RW">RW</option>
-                        <option value="ST">ST</option>
-                    </select>
+                        <input name="modalnouv" type="number" placeholder="dribbling">
+                        <input name="modalnouv" type="number" placeholder="defending">
+                        <input name="modalnouv" type="number" placeholder="physical">
+                        <select name="modalnouv" name="position" id="position">
+                            <option value="GK">GK</option>
+                            <option value="CB">CB</option>
+                            <option value="LB">LB</option>
+                            <option value="RB">RB</option>
+                            <option value="CM">CM</option>
+                            <option value="LW">LW</option>
+                            <option value="RW">RW</option>
+                            <option value="ST">ST</option>
+                        </select>
                 </div>
                 <button id="CofermAjout" type="submit" class="bg-inherit border-2 border-solid border-black rounded-lg px-2 w-[20vw] md:w-[15vw] lg:w-[10vw] self-end">Ajouter</button>
             </form>
