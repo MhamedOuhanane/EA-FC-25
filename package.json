@@ -2,6 +2,7 @@
   "name": "ea-fc-25",
   "version": "1.0.0",
   "description": "",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "npx tailwindcss -i ./src/assets/css/input.css -o ./src/assets/css/output.css --watch"},
