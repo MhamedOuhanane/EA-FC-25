@@ -37,4 +37,22 @@
     .scorejou{
         font-size: 100%;
     }
+
+}
+
+.Pagetot input,
+select{
+    height: 3rem;
+    border-radius: 1rem;
+    width: 10rem;
+    overflow-x: auto;
+    text-align: center;
+    color: white;
+    background-color: rgba(240, 248, 255, 0.429);
+}
+
+@media (min-width: 768px){
+    input{
+        height: 2rem;
+    }
 }

@@ -9,14 +9,14 @@
     <title>EA FC 25</title>
 </head>
 <body class="relative left-0 top-0 ">
-    <header class="bg-black h-[3rem] flex justify-between items-center px-3">
+    <header class="bg-black fixed top-0 w-full h-[3rem] flex justify-between items-center px-3">
 
         <a href="index.html" class="h-[80%]">
             <img src="./assets/images/logo.svg" class="md:hidden h-full" alt="logo de EA FC 25">
             <img src="./assets/images/logo-desktop.avif" class="hidden md:block h-full" alt="logo de EA FC 25">
         </a>
 
-        <button class="bg-inherit border-2 border-solid border-white rounded-lg text-white px-2 ">joueurs</button>
+        <button id="munujoue" class="bg-inherit border-2 border-solid border-white rounded-lg text-white px-2 ">joueurs</button>
         <div class="mudoljou fixed top-0 left-0 w-[100%] h-[100vw] pt-[2vw] mt-[3rem] px-[5vw] flex flex-col hidden">
             <button class="self-end w-3 text-white text-2xl">X</button>
             <div class="joueurs w-full max-h-96 overflow-y-auto flex justify-evenly flex-wrap  text-white">
@@ -63,9 +63,40 @@
             </div>
         </div>
     </header>
-    <section class="Pagetot w-[100%] gap-3 hidden">
+    <section class="Pagetot w-[100%] gap-3 mt-[3rem]">
         <div class="bg-opacity-30 h-[3vh] grid grid-cols-3 justify-center gap-2">
-            
+
+            <button id="Ajounouv" class=" bg-inherit border-2 border-solid border-white rounded-lg text-white px-2 ">Nouvelle joueur</button>
+            <div class="bg-black bg-opacity-60 fixed top-0 left-0 w-[100%] h-[100vw] pt-[2vw] mt-[3rem] md:px-[10vw] lg:px-[20vw] flex flex-col gap-[2vw] ">
+                <button id="cancelnouv" class="self-end w-3 text-white text-2xl px-[5vw] md:px-0">X</button>
+                <form name="modalnouv" class="w-full h-auto flex flex-wrap justify-center gap-2" >
+                    <input name="modalnouv" type="text" placeholder="Name" >
+                    <input name="modalnouv" type="text" placeholder="url du photo">
+                    <input name="modalnouv" type="text" placeholder="position">
+                    <input name="modalnouv" type="text" placeholder="nationality">
+                    <input name="modalnouv" type="text" placeholder="flag">
+                    <input name="modalnouv" type="text" placeholder="club">
+                    <input name="modalnouv" type="number" placeholder="rating">
+                    <input name="modalnouv" type="number" placeholder="pace">
+                    <input name="modalnouv" type="number" placeholder="shooting">
+                    <input name="modalnouv" type="number" placeholder="passing">
+                    <input name="modalnouv" type="number" placeholder="dribbling">
+                    <input name="modalnouv" type="number" placeholder="defending">
+                    <input name="modalnouv" type="number" placeholder="physical">
+                    <select name="modalnouv" name="position" id="position">
+                        <option value="GK">GK</option>
+                        <option value="CB">CB</option>
+                        <option value="LB">LB</option>
+                        <option value="RB">RB</option>
+                        <option value="CM">CM</option>
+                        <option value="LW">LW</option>
+                        <option value="RW">RW</option>
+                        <option value="ST">ST</option>
+                    </select>
+                </form>
+                <button id="CofermAjout" type="submit" class="bg-inherit border-2 border-solid border-white rounded-lg text-white px-2 w-[20vw] md:w-[15vw] lg:w-[10vw] mx-[5vw] self-end">Ajouter</button>
+            </div>
+
             <select name="formation" id="formation" class="col-start-2 col-end-3">
                 <option value="4-3-3">4-3-3</option>
             </select>
@@ -75,9 +106,7 @@
 
         <div>
             <form name="modalinf">
-                <input name="modalinf" type="text" value="Name">
-                <input name="modalinf" type="text" value="club">
-                <input name="modalinf" type="text" value="nationality">
+                <input name="modalinf" type="text" placeholder="Name">
                 <select name="modalinf" id="">
                     <option value="Effectif">Effectif</option>
                     <option value="titularisés">titularisés</option>
@@ -94,6 +123,7 @@
                     <option value="RW">RW</option>
                     <option value="ST">ST</option>
                 </select>
+                <button id="Ajout" class="bg-inherit border-2 border-solid border-white rounded-lg text-white px-2 w-[20vw]">Ajouter</button>
             </form>
             <div id="cardsform">
                 <div class="cardplayer">
