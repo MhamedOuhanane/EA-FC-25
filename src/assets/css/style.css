@@ -19,3 +19,22 @@
     background-position: center;
     
 }
+
+.typescore{
+    font-size: 30%;
+    line-height: 0;
+}
+
+.scorejou{
+    font-size: 60%;
+}
+
+@media (min-width: 768px) {
+    .typescore{
+        font-size: 50%;
+    }
+    
+    .scorejou{
+        font-size: 100%;
+    }
+}
