@@ -111,32 +111,77 @@
             <button class="bg-inherit border-2 border-solid  col-start-3 col-end-4 text-white">Ajouter <span class="h-[2rem]">+</span></button>
         </div>
 
-        <div>
-            <form name="modalinf">
-                <input name="modalinf" type="text" placeholder="Name">
-                <select name="modalinf" id="">
-                    <option value="Effectif">Effectif</option>
-                    <option value="titularisés">titularisés</option>
-                    <option value="remplaçants">remplaçants</option>
-                </select>
-                <select name="modalinf" name="position" id="position">
-                    <option value="Tous">Tous</option>
-                    <option value="GK">GK</option>
-                    <option value="CB">CB</option>
-                    <option value="LB">LB</option>
-                    <option value="RB">RB</option>
-                    <option value="CM">CM</option>
-                    <option value="LW">LW</option>
-                    <option value="RW">RW</option>
-                    <option value="ST">ST</option>
-                </select>
-                <button id="Ajout" class="bg-inherit border-2 border-solid border-white rounded-lg text-white px-2 w-[20vw]">Ajouter</button>
-            </form>
-            <div id="cardsform">
-                <div class="cardplayer">
-                    
+        <div class="bg-black bg-opacity-60 fixed top-0 left-0 w-[100%] h-[100vw] mt-[3rem] px-2 md:px-[10vw] lg:px-[20vw]">
+            <div class="bg-white rounded-md py-[2vw]">
+                <form class="flex flex-col w-full h-auto  gap-[2vw] p-2  mb-2">
+                    <button id="cancelnouv" class="self-end w-3 text-2xl mr-3">X</button>
+                    <h2 class="text-lg self-center">Entrer les informations du nouveau joueur</h2>
+                    <!-- les input pour entrer les information  -->
+                    <div name="modalnouv" class="w-full h-auto flex flex-wrap justify-center gap-2"  >
+                        <input name="modalnouv" type="text" placeholder="Name" >
+                        <select name="modalnouv" name="position" id="position">
+                            <option value="GK">GK</option>
+                            <option value="CB">CB</option>
+                            <option value="LB">LB</option>
+                            <option value="RB">RB</option>
+                            <option value="CM">CM</option>
+                            <option value="LW">LW</option>
+                            <option value="RW">RW</option>
+                            <option value="ST">ST</option>
+                        </select>
+                        <select name="modalinf" id="">
+                            <option value="Effectif">Effectif</option>
+                            <option value="titularisés">titularisés</option>
+                            <option value="remplaçants">remplaçants</option>
+                        </select>
+                    </div>
+                </form>
+            
+                <div id="cardsform" class="flex flex-wrap justify-center gap-2 max-h-[18rem] overflow-y-auto">
+                    <div class="cardajout relative w-[5rem]  rounded-md h-[7rem] grid grid-rows-5 justify-center ">
+                        <img class="absolute  z-0 mt-1 " src="https://cdn3.futbin.com/content/fifa23/img/players/p50532037.png?fm=png&ixlib=java-2.1.0&w=344&s=ac19c47d8793ea16df5051f3bcb49580"  alt="image de joueur">
+                        <span class="row-start-4 row-end-5 z-10 text-white">Oblak</span>
+                    </div>
+                    <div class="cardajout relative w-[5rem]  rounded-md h-[7rem] grid grid-rows-5 justify-center ">
+                        <img class="absolute  z-0 mt-1 " src="https://cdn3.futbin.com/content/fifa23/img/players/p50532037.png?fm=png&ixlib=java-2.1.0&w=344&s=ac19c47d8793ea16df5051f3bcb49580"  alt="image de joueur">
+                        <span class="row-start-4 row-end-5 z-10 text-white">Oblak</span>
+                    </div>
+                    <div class="cardajout relative w-[5rem]  rounded-md h-[7rem] grid grid-rows-5 justify-center ">
+                        <img class="absolute  z-0 mt-1 " src="https://cdn3.futbin.com/content/fifa23/img/players/p50532037.png?fm=png&ixlib=java-2.1.0&w=344&s=ac19c47d8793ea16df5051f3bcb49580"  alt="image de joueur">
+                        <span class="row-start-4 row-end-5 z-10 text-white">Oblak</span>
+                    </div>
+                    <div class="cardajout relative w-[5rem]  rounded-md h-[7rem] grid grid-rows-5 justify-center ">
+                        <img class="absolute  z-0 mt-1 " src="https://cdn3.futbin.com/content/fifa23/img/players/p50532037.png?fm=png&ixlib=java-2.1.0&w=344&s=ac19c47d8793ea16df5051f3bcb49580"  alt="image de joueur">
+                        <span class="row-start-4 row-end-5 z-10 text-white">Oblak</span>
+                    </div>
+                    <div class="cardajout relative w-[5rem]  rounded-md h-[7rem] grid grid-rows-5 justify-center ">
+                        <img class="absolute  z-0 mt-1 " src="https://cdn3.futbin.com/content/fifa23/img/players/p50532037.png?fm=png&ixlib=java-2.1.0&w=344&s=ac19c47d8793ea16df5051f3bcb49580"  alt="image de joueur">
+                        <span class="row-start-4 row-end-5 z-10 text-white">Oblak</span>
+                    </div>
+                    <div class="cardajout relative w-[5rem]  rounded-md h-[7rem] grid grid-rows-5 justify-center ">
+                        <img class="absolute  z-0 mt-1 " src="https://cdn3.futbin.com/content/fifa23/img/players/p50532037.png?fm=png&ixlib=java-2.1.0&w=344&s=ac19c47d8793ea16df5051f3bcb49580"  alt="image de joueur">
+                        <span class="row-start-4 row-end-5 z-10 text-white">Oblak</span>
+                    </div>
+                    <div class="cardajout relative w-[5rem]  rounded-md h-[7rem] grid grid-rows-5 justify-center ">
+                        <img class="absolute  z-0 mt-1 " src="https://cdn3.futbin.com/content/fifa23/img/players/p50532037.png?fm=png&ixlib=java-2.1.0&w=344&s=ac19c47d8793ea16df5051f3bcb49580"  alt="image de joueur">
+                        <span class="row-start-4 row-end-5 z-10 text-white">Oblak</span>
+                    </div>
+                    <div class="cardajout relative w-[5rem]  rounded-md h-[7rem] grid grid-rows-5 justify-center ">
+                        <img class="absolute  z-0 mt-1 " src="https://cdn3.futbin.com/content/fifa23/img/players/p50532037.png?fm=png&ixlib=java-2.1.0&w=344&s=ac19c47d8793ea16df5051f3bcb49580"  alt="image de joueur">
+                        <span class="row-start-4 row-end-5 z-10 text-white">Oblak</span>
+                    </div>
+                    <div class="cardajout relative w-[5rem]  rounded-md h-[7rem] grid grid-rows-5 justify-center ">
+                        <img class="absolute  z-0 mt-1 " src="https://cdn3.futbin.com/content/fifa23/img/players/p50532037.png?fm=png&ixlib=java-2.1.0&w=344&s=ac19c47d8793ea16df5051f3bcb49580"  alt="image de joueur">
+                        <span class="row-start-4 row-end-5 z-10 text-white">Oblak</span>
+                    </div>
+                    <div class="cardajout relative w-[5rem]  rounded-md h-[7rem] grid grid-rows-5 justify-center ">
+                        <img class="absolute  z-0 mt-1 " src="https://cdn3.futbin.com/content/fifa23/img/players/p50532037.png?fm=png&ixlib=java-2.1.0&w=344&s=ac19c47d8793ea16df5051f3bcb49580"  alt="image de joueur">
+                        <span class="row-start-4 row-end-5 z-10 text-white">Oblak</span>
+                    </div>
                 </div>
+
             </div>
+            
         </div>
 
         <div>

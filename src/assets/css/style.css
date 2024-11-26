@@ -5,7 +5,7 @@
 
 }
 
-.cardplayer{
+.cardplayer,.cardajout{
     background-image: url("../images/LB-card.webp");
     background-size: 112%;
     background-position: center;
