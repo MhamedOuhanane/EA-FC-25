@@ -12,21 +12,21 @@
 
 }
 
-.mudaljou{
-    background-image: url("../images/background-page.jpg");
-    position: absolute;
+.mudoljou{
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.726), rgba(0, 0, 0, 0.908)) , url("../images/background-players.jpg");
     background-size: cover;
     background-position: center;
-    
 }
 
 .typescore{
     font-size: 30%;
     line-height: 0;
+    z-index: 3;
 }
 
 .scorejou{
     font-size: 60%;
+    z-index: 3;
 }
 
 @media (min-width: 768px) {
