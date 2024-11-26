@@ -646,6 +646,14 @@ video {
   height: 4.5rem;
 }
 
+.h-\[5rem\] {
+  height: 5rem;
+}
+
+.h-\[6rem\] {
+  height: 6rem;
+}
+
 .h-\[75\%\] {
   height: 75%;
 }
@@ -662,6 +670,10 @@ video {
   height: 100%;
 }
 
+.h-\[4rem\] {
+  height: 4rem;
+}
+
 .max-h-96 {
   max-height: 24rem;
 }
@@ -672,6 +684,10 @@ video {
 
 .w-3 {
   width: 0.75rem;
+}
+
+.w-36 {
+  width: 9rem;
 }
 
 .w-\[11\%\] {
@@ -866,6 +882,10 @@ video {
   line-height: 2rem;
 }
 
+.text-\[0\.8rem\] {
+  font-size: 0.8rem;
+}
+
 .text-\[110\%\] {
   font-size: 110%;
 }
@@ -875,39 +895,14 @@ video {
   line-height: 1.75rem;
 }
 
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
-}
-
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
 
-.text-\[0\] {
-  font-size: 0;
-}
-
-.text-\[0\.8rem\] {
-  font-size: 0.8rem;
-}
-
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
-.text-\[\] {
-  color: ;
-}
-
-.text-\[0\.\] {
-  color: 0.;
-}
-
-.text-\[0\.8\] {
-  color: 0.8;
 }
 
 body {
@@ -937,6 +932,10 @@ body {
     height: 17rem;
   }
 
+  .md\:h-\[3rem\] {
+    height: 3rem;
+  }
+
   .md\:w-\[12rem\] {
     width: 12rem;
   }
@@ -945,8 +944,20 @@ body {
     width: 15vw;
   }
 
+  .md\:w-\[18vw\] {
+    width: 18vw;
+  }
+
   .md\:w-\[60\%\] {
     width: 60%;
+  }
+
+  .md\:flex-row {
+    flex-direction: row;
+  }
+
+  .md\:justify-between {
+    justify-content: space-between;
   }
 
   .md\:gap-1 {
@@ -976,9 +987,8 @@ body {
     font-size: 120%;
   }
 
-  .md\:text-xl {
-    font-size: 1.25rem;
-    line-height: 1.75rem;
+  .md\:text-\[1rem\] {
+    font-size: 1rem;
   }
 
   .md\:text-lg {
@@ -986,32 +996,9 @@ body {
     line-height: 1.75rem;
   }
 
-  .md\:text-\[1rem\] {
-    font-size: 1rem;
-  }
-
-  .md\:text-\[0\] {
-    font-size: 0;
-  }
-
-  .md\:text-\[0\.9rem\] {
-    font-size: 0.9rem;
-  }
-
-  .md\:text-\[\] {
-    color: ;
-  }
-
-  .md\:text-\[1\] {
-    color: 1;
-  }
-
-  .md\:text-\[md\] {
-    color: md;
-  }
-
-  .md\:text-\[0\.\] {
-    color: 0.;
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
 
