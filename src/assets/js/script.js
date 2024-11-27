@@ -1,6 +1,6 @@
 // ajouter class hidden au munu des joueus
 document.querySelector(".mudoljou").classList.add("hidden");
- // document.querySelector(".mudoljou").
+//  document.querySelector(".mudoljou").
 
 
 
