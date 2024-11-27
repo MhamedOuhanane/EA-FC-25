@@ -58,7 +58,7 @@ select{
 }
 
 .titularisés{
-    background-image: url("../images/background-terrain.png");
+    background-image: url("../images/background-terrain1.png");
     background-size: cover;
     background-position: center;
 }
@@ -121,6 +121,17 @@ select{
     grid-column: 3 / 4;
     grid-row: 1 / 2;
     align-self: flex-end;
+}
+
+.badgeplus{
+    background-image: url("../images/badge-plus.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.badgeplus:hover{
+    scale: 1.1;
+    transition: all 500ms ;
 }
 
 
