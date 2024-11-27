@@ -806,6 +806,10 @@ video {
   gap: 2vw;
 }
 
+.gap-4 {
+  gap: 1rem;
+}
+
 .gap-y-2 {
   row-gap: 0.5rem;
 }
@@ -878,6 +882,11 @@ video {
   padding: 12%;
 }
 
+.px-1 {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -916,11 +925,6 @@ video {
 .py-\[2vw\] {
   padding-top: 2vw;
   padding-bottom: 2vw;
-}
-
-.px-1 {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
 }
 
 .pb-\[3rem\] {
@@ -990,6 +994,10 @@ body {
     display: none;
   }
 
+  .md\:h-\[10rem\] {
+    height: 10rem;
+  }
+
   .md\:h-\[17rem\] {
     height: 17rem;
   }
@@ -998,64 +1006,16 @@ body {
     height: 3rem;
   }
 
+  .md\:h-\[55vw\] {
+    height: 55vw;
+  }
+
   .md\:h-\[60vw\] {
     height: 60vw;
   }
 
   .md\:h-\[89\%\] {
     height: 89%;
-  }
-
-  .md\:h-\[\] {
-    height: ;
-  }
-
-  .md\:h-\[70\] {
-    height: 70;
-  }
-
-  .md\:h-\[70vw\] {
-    height: 70vw;
-  }
-
-  .md\:h-\[0vw\] {
-    height: 0vw;
-  }
-
-  .md\:h-\[80vw\] {
-    height: 80vw;
-  }
-
-  .md\:h-\[50vw\] {
-    height: 50vw;
-  }
-
-  .md\:h-\[vw\] {
-    height: vw;
-  }
-
-  .md\:h-\[40vw\] {
-    height: 40vw;
-  }
-
-  .md\:h-\[4vw\] {
-    height: 4vw;
-  }
-
-  .md\:h-\[46vw\] {
-    height: 46vw;
-  }
-
-  .md\:h-\[48vw\] {
-    height: 48vw;
-  }
-
-  .md\:h-\[53vw\] {
-    height: 53vw;
-  }
-
-  .md\:h-\[55vw\] {
-    height: 55vw;
   }
 
   .md\:w-\[12rem\] {
@@ -1082,24 +1042,8 @@ body {
     width: 72%;
   }
 
-  .md\:w-\[92\%\] {
-    width: 92%;
-  }
-
-  .md\:w-\[\] {
-    width: ;
-  }
-
-  .md\:w-\[28\] {
-    width: 28;
-  }
-
-  .md\:w-\[70\%\] {
-    width: 70%;
-  }
-
-  .md\:w-\[93\%\] {
-    width: 93%;
+  .md\:w-\[7rem\] {
+    width: 7rem;
   }
 
   .md\:w-\[95\%\] {
@@ -1122,16 +1066,17 @@ body {
     justify-content: space-between;
   }
 
-  .md\:justify-items-center {
-    justify-items: center;
-  }
-
   .md\:gap-1 {
     gap: 0.25rem;
   }
 
   .md\:gap-4 {
     gap: 1rem;
+  }
+
+  .md\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
   }
 
   .md\:px-14 {
