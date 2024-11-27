@@ -38,6 +38,7 @@
 
 }
 
+
 .Pagetot input,
 select{
     height: 3rem;
@@ -167,4 +168,8 @@ select{
     background-position: center;
 }
 
-
+#mudalnouv form{
+    background-image: url("../images/bg-modul.jpg");
+    background-size: cover;
+    background-position: center;
+}

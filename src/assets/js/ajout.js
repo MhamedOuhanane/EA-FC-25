@@ -36,7 +36,7 @@ Ajounouv.addEventListener("click" , ()=>{
     });
 
     let nouvjoue = {};
-    CofermAjout.onclick= () =>{
+    Create.onclick= () =>{
         validation = false;
         let infjoueur = document.querySelectorAll("#mudalnouv input");
         infjoueur.forEach(Element =>{
@@ -51,3 +51,13 @@ Ajounouv.addEventListener("click" , ()=>{
         });
     }
 });
+
+
+//ajouter un joueur au terrain
+
+conferjoue.onclick= () =>{
+    mudalajout.classList.toggle("hidden");
+    joueurs.players.forEach(Element => {
+        cardsform.innerHTML +=``
+    });
+};
