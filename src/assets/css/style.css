@@ -56,3 +56,9 @@ select{
         height: 2rem;
     }
 }
+
+.titularisés{
+    background-image: url("../images/background-terrain.png");
+    background-size: cover;
+    background-position: center;
+}
