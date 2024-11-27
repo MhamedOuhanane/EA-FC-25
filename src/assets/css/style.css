@@ -129,7 +129,13 @@ select{
     background-position: center;
 }
 
-.badgeplus:hover{
+.badgeremp{
+    background-image: url("../images/badge-remp.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.badgeplus:hover,.badgeremp:hover{
     scale: 1.1;
     transition: all 500ms ;
 }
