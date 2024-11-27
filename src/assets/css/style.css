@@ -21,12 +21,10 @@
 .typescore{
     font-size: 30%;
     line-height: 0;
-    z-index: 3;
 }
 
 .scorejou{
     font-size: 60%;
-    z-index: 3;
 }
 
 @media (min-width: 768px) {

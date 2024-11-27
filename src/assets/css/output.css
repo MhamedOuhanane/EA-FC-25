@@ -698,6 +698,14 @@ video {
   max-height: 18rem;
 }
 
+.max-h-\[\] {
+  max-height: ;
+}
+
+.max-h-\[30rem\] {
+  max-height: 30rem;
+}
+
 .w-3 {
   width: 0.75rem;
 }
@@ -836,6 +844,10 @@ video {
 
 .border-2 {
   border-width: 2px;
+}
+
+.border {
+  border-width: 1px;
 }
 
 .border-solid {
