@@ -15,7 +15,7 @@ munujoue.addEventListener('click' , ()=>{
     };
 
     Joueurs.players.forEach(Element =>{
-        joueurs.innerHTML +=`<div class="cardplayer relative w-[7rem] h-[10rem] md:w-[12rem] md:h-[17rem] hover:scale-95 flex flex-col  items-center py-4 md:py-7">
+        joueurs.innerHTML +=`<div class="cardplayer ${"bg" + Element.position} relative w-[7rem] h-[10rem] md:w-[12rem] md:h-[17rem] hover:scale-95 flex flex-col  items-center py-4 md:py-7">
                             <div class="flex justify-start  w-full h-[75%] p-[12%]">
                                 <div class="max-w-7 flex flex-col items-center pt-3 z-10">
                                     <span  class="scorejou text-[110%] md:text-[120%]">${Element.rating}</span><span class="typescore">${Element.position}</span>

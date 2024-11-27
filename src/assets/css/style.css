@@ -5,12 +5,12 @@
 
 }
 
-.cardplayer,.cardajout{
+/* .cardplayer,.cardajout{
     background-image: url("../images/LB-card.webp");
     background-size: 112%;
     background-position: center;
 
-}
+} */
 
 .mudoljou{
     background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.434), rgba(0, 0, 0, 0.908)) , url("../images/background-players.jpg");
@@ -138,5 +138,33 @@ select{
     transition: all 500ms ;
 }
 
+.bgGK{
+    background-image: url("../images/GK-bade.webp");
+    background-size: 112%;
+    background-position: center;
+}
+
+.bgLB,.bgRB,.bgCB{
+    background-image: url("../images/B-card.webp");
+    background-size: 112%;
+    background-position: center;
+}
+
+.bgCM,.bgCDM{
+    background-image: url("../images/M-badge.png");
+    background-size: 112%;
+    background-position: center;
+}
+
+.bgLW,.bgRW{
+    background-image: url("../images/W-badge.png");
+    background-size: 112%;
+    background-position: center;
+}
+.bgST{
+    background-image: url("../images/ST-badge.png");
+    background-size: 112%;
+    background-position: center;
+}
 
 
