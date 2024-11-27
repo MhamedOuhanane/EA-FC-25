@@ -34,4 +34,20 @@ Ajounouv.addEventListener("click" , ()=>{
     positionnouv.addEventListener("change", ()=>{
         POSITIONSELECT();
     });
+
+    let nouvjoue = {};
+    CofermAjout.onclick= () =>{
+        validation = false;
+        let infjoueur = document.querySelectorAll("#mudalnouv input");
+        infjoueur.forEach(Element =>{
+            if (Element.value == "") {
+                Element.ariaPlaceholder = "Veuillez entrer une valeur!";
+                Element.style.border = "2px solid red";
+                validation = false;
+            }
+            else{
+                
+            }
+        });
+    }
 });
