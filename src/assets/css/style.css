@@ -62,3 +62,66 @@ select{
     background-size: cover;
     background-position: center;
 }
+
+.GK{
+    grid-column: 3 / 4;
+    grid-row: 4 / 5;
+    align-self: flex-end;
+}
+
+.CB1{
+    grid-column: 4 / 5;
+    grid-row: 3 / 4;
+    align-self: flex-end;
+}
+
+.CB2{
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    align-self: flex-end;
+}
+
+.LB{
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+
+.RB{
+    grid-column: 5 / 6;
+    grid-row: 3 / 4;
+}
+
+.CM1{
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    align-self: flex-end;
+}
+
+.CM2{
+    grid-column: 4 / 5;
+    grid-row: 2 / 3;
+}
+
+.CM3{
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.LW{
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.RW{
+    grid-column: 4 / 5;
+    grid-row: 1 / 2;
+}
+
+.ST{
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    align-self: flex-end;
+}
+
+
+
