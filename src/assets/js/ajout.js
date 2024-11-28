@@ -260,12 +260,13 @@ function AffichAjou(POSITION){
 }
 
 document.querySelectorAll(".badgeplus").forEach((Element , index) =>{
-    Element.onclick= () => {
+    Element.addEventListener("click" , () => {
 
         MudalBadge.classList.toggle("hidden");
         // document.querySelector("body").addEventListener("click" , () =>{
         //     MudalBadge.classList.add("hidden");
         // });
+        let BadgeAjout2 = document.querySelectorAll(".BadgeAjout2");
 
         //Mise à jour de containers des bage ajouter
         function MISEAJOURAFFBAD() {
@@ -274,35 +275,54 @@ document.querySelectorAll(".badgeplus").forEach((Element , index) =>{
                 document.querySelectorAll(".BadgeAjout1").forEach((elem) =>{ 
                     if (ele.children[2].textContent == elem.children[2].textContent) {
                         ele.classList.toggle("hidden");
+                        ele.classList.replace("BadgeAjout2" , "BadgeAjout1");
                     }
                 });
+                console.log(ele.classList.children[0]);
+                
             });
-        }
+
+            BadgeAjout2 = [...AjoutparBadge].filter(element => element.classList == "BadgeAjout2");
+        };
+
         MISEAJOURAFFBAD();
-        let BadgeAjout2 = document.querySelectorAll(".BadgeAjout2");
+        
         BadgeAjout2.forEach(element => {
-            element.onclick= () =>{
+            console.log(BadgeAjout2);
+            element.addEventListener("click", () =>{
+                
+                
                 if (element.parentNode == AjoutparBadge) {
+                    console.log(Element.parentNode.children.length);
+                    
                     if (Element.parentNode.children.length == 1) {
                         Element.parentNode.appendChild(element);
                         element.classList.replace("BadgeAjout2" , "BadgeAjout1")
                         Element.classList.toggle("hidden");
                         MudalBadge.classList.toggle("hidden");
-                    } else {
-                        Element.parentNode.lastChild.remove();
+                    } else if (Element.parentNode.children.length == 2) {
+                        Element.parentNode.lastChild.replace("BadgeAjout1" , "BadgeAjout2");
+                        console.log(Element.parentNode.lastChild);
+                        console.log("false1");
+                        Element.parentNode.children[1].remove();
+                        
                         Element.parentNode.appendChild(element);
                         Element.classList.toggle("hidden");
                         MudalBadge.classList.toggle("hidden");
                     }
+                    
+                    
                     AjoutparBadge.innerHTML = ``;
                 } else if(element.parentNode == Element.parentNode) {
+                    console.log(AjoutparBadge);
                     MudalBadge.classList.toggle("hidden");
-                    MISEAJOURAFFBAD()                   
-                    
+                    MISEAJOURAFFBAD();
                 }
-                
-            };
+
+            });
         });
 
-    };
+        
+
+    });
 });
