@@ -187,14 +187,14 @@ conferjoue.onclick= () =>{
 
 //Ajouter a partire du botton de badge
 joueurs.players.forEach((Element) => {
-    cardsform.innerHTML +=`<div class="BadgeAjout2 ${"bg" + Element.position} relative w-[7rem] h-[10rem] hover:scale-95 flex flex-col  items-center py-4 text-white">
+    AjoutparBadge.innerHTML +=`<div class="BadgeAjout2 ${"bg" + Element.position} relative w-[7rem] h-[10rem] hover:scale-95 flex flex-col  items-center py-4 text-white">
                             <div class="flex justify-start  w-full h-[75%] p-[12%]">
                                 <div class="max-w-7 flex flex-col items-center pt-3 z-1">
                                     <span  class="scorejou1 text-[110%]">${Element.rating}</span><span class="typescore1">${Element.position}</span>
                                 </div>
                             </div>
                             <img class="absolute  z-0 mb-1" src=${Element.photo}>
-                            <span class="z-10 mb-1 ">${Element.name}</span>
+                            <span class="z-1 mb-1 ">${Element.name}</span>
                             <div class="flex justify-evenly gap-[0.2rem] md:gap-1 z-10 ${Element.position == "GK" ? "hidden" : ""}">
                                 <div class="flex flex-col items-center">
                                     <span class="typescore1">PAC</span>
@@ -255,9 +255,27 @@ joueurs.players.forEach((Element) => {
 });
 
 let BadgeAjout2 = document.querySelectorAll(".BadgeAjout2");
+console.log(BadgeAjout2);
 document.querySelectorAll(".badgeplus").forEach((Element , index) =>{
     Element.onclick= () => {
-        AjoutparBadge.classList.toggle("hidden");
+        MudalBadge.classList.toggle("hidden");
+        BadgeAjout2.forEach(element => {
+            element.onclick= () =>{
+                console.log(Element.parentNode);
+                console.log(Element.parentNode.children.length);
+                                
+                if (Element.parentNode.children.length == 1) {
+                    Element.parentNode.appendChild(element);
+                    Element.classList.toggle("hidden");
+                    MudalBadge.classList.toggle("hidden");
+                } else if (Element.parentNode.children.length == 2) {
+                    Element.parentNode.lastChild.remove();
+                    Element.parentNode.appendChild(element);
+                    MudalBadge.classList.toggle("hidden");
+                }
+                
+            };
+        });
         
-    }
+    };
 });

@@ -586,6 +586,10 @@ video {
   z-index: 50;
 }
 
+.z-\[\] {
+  z-index: ;
+}
+
 .col-start-2 {
   grid-column-start: 2;
 }
@@ -692,6 +696,18 @@ video {
 
 .h-full {
   height: 100%;
+}
+
+.h-\[vh\] {
+  height: vh;
+}
+
+.h-\[50vh\] {
+  height: 50vh;
+}
+
+.h-\[70vh\] {
+  height: 70vh;
 }
 
 .max-h-\[18rem\] {
@@ -854,6 +870,10 @@ video {
   align-self: center;
 }
 
+.overflow-auto {
+  overflow: auto;
+}
+
 .overflow-y-auto {
   overflow-y: auto;
 }
@@ -990,6 +1010,26 @@ video {
 .py-\[2vw\] {
   padding-top: 2vw;
   padding-bottom: 2vw;
+}
+
+.py-\[\] {
+  padding-top: ;
+  padding-bottom: ;
+}
+
+.py-\[10\] {
+  padding-top: 10;
+  padding-bottom: 10;
+}
+
+.py-\[10\%\] {
+  padding-top: 10%;
+  padding-bottom: 10%;
+}
+
+.px-\[15\%\] {
+  padding-left: 15%;
+  padding-right: 15%;
 }
 
 .pb-\[3rem\] {
