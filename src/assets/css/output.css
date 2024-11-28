@@ -770,6 +770,10 @@ video {
   width: 100%;
 }
 
+.w-auto {
+  width: auto;
+}
+
 .max-w-7 {
   max-width: 1.75rem;
 }

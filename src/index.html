@@ -151,57 +151,79 @@
         </div>
         <div class="w-full h-[10vw]"></div>
         <div class="w-full flex flex-wrap justify-center">
-            <div  class="bg-black w-full h-full  fixed top-0 bg-opacity-50 z-10 p-[15%]">
+            <div MudalBadge  class="bg-black w-full h-full  fixed top-0 bg-opacity-50 z-10 p-[15%] hidden">
                 <div id="AjoutparBadge" class="w-full flex justify-center flex-wrap gap-2 ">
                 </div>
             </div>
             <div class="titularisés w-[100%] md:w-[72%] h-[84vw] md:h-[60vw] grid grid-cols-5 grid-rows-4 gap-y-2 px-[1.5rem] md:px-14 justify-items-center text-white">
 
-                <button id="posGK" class="GK badgeplus  flex flex-col justify-evenly items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
-                    <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
-                    <span>GK</span>
-                </button>
+                <div class="GK w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
+                    <button id="posGK" class="badgeplus  flex flex-col justify-evenly items-center w-full h-full">
+                        <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
+                        <span>GK</span>
+                    </button>
+                </div>
+                <div class="CB1 w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
                 
-                <button id="posCB1" class="CB1 badgeplus flex flex-col justify-evenly items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
-                    <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
-                    <span>CB</span>
-                </button>
-                <button id="posCB2" class="CB2 badgeplus flex flex-col justify-evenly items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
-                    <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
-                    <span>CB</span>
-                </button>
-                <button id="posLB" class="LB badgeplus flex flex-col justify-evenly items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
-                    <img class=" w-[60%]" src="./assets/images/plus.webp" alt="">
-                    <span>LB</span>
-                </button>
-                <button id="posRB" class="RB badgeplus flex flex-col justify-evenly items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
-                    <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
-                    <span>RB</span>
-                </button>
-                <button id="posCM1" class="CM1 badgeplus flex flex-col justify-evenly items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
-                    <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
-                    <span>CM</span>
-                </button>
-                <button id="posCM2" class="CM2 badgeplus flex flex-col justify-evenly items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
-                    <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
-                    <span>CM</span>
-                </button>
-                <button id="posCM3" class="CM3 badgeplus flex flex-col justify-evenly items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
-                    <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
-                    <span>CM</span>
-                </button>
-                <button id="posLW" class="LW badgeplus flex flex-col justify-evenly items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
-                    <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
-                    <span>LW</span>
-                </button>
-                <button id="posCMRW" class="RW badgeplus flex flex-col justify-evenly items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
-                    <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
-                    <span>RW</span>
-                </button>
-                <button id="posST" class="ST badgeplus flex flex-col justify-evenly items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
-                    <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
-                    <span>ST</span>
-                </button>
+                    <button id="posCB1" class=" badgeplus flex flex-col justify-evenly items-center w-full h-full">
+                        <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
+                        <span>CB</span>
+                    </button>
+                </div>
+                <div class="CB2 w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
+                    <button id="posCB2" class=" badgeplus flex flex-col justify-evenly items-center w-full h-full">
+                        <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
+                        <span>CB</span>
+                    </button>
+                </div>
+                <div class="LB w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
+                    <button id="posLB" class=" badgeplus flex flex-col justify-evenly items-center w-full h-full">
+                        <img class=" w-[60%]" src="./assets/images/plus.webp" alt="">
+                        <span>LB</span>
+                    </button>
+                </div>
+                <div class="RB w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
+                    <button id="posRB" class=" badgeplus flex flex-col justify-evenly items-center w-full h-full">
+                        <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
+                        <span>RB</span>
+                    </button>
+                </div>
+                <div class="CM1 w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
+                    <button id="posCM1" class=" badgeplus flex flex-col justify-evenly items-center w-full h-full">
+                        <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
+                        <span>CM</span>
+                    </button>
+                </div>
+                <div class="CM2 w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
+                    <button id="posCM2" class=" badgeplus flex flex-col justify-evenly items-center w-full h-full">
+                        <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
+                        <span>CM</span>
+                    </button>
+                </div>
+                <div class="CM3 w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
+                    <button id="posCM3" class=" badgeplus flex flex-col justify-evenly items-center w-full h-full">
+                        <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
+                        <span>CM</span>
+                    </button>
+                </div>
+                <div class="LW w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
+                    <button id="posLW" class=" badgeplus flex flex-col justify-evenly items-center w-full h-full">
+                        <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
+                        <span>LW</span>
+                    </button>
+                </div>
+                <div class="RW w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
+                    <button id="posRW" class=" badgeplus flex flex-col justify-evenly items-center w-full h-full">
+                        <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
+                        <span>RW</span>
+                    </button>
+                </div>
+                <div class="ST w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
+                    <button id="posST" class="badgeplus flex flex-col justify-evenly items-center w-full h-full">
+                        <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
+                        <span>ST</span>
+                    </button>
+                </div>
             </div>
             <div class="remplaçants bg-black  bg-opacity-30  w-full  md:w-[28%] flex flex-col items-center gap-3">
                 
