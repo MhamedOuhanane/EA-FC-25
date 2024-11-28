@@ -259,6 +259,8 @@ function AffichAjou(POSITION){
     });
 }
 
+    //Ajouter au bloc de terrain
+
 document.querySelectorAll(".badgeplus").forEach((Element , index) =>{
     Element.addEventListener("click" , () => {
 
@@ -326,3 +328,5 @@ document.querySelectorAll(".badgeplus").forEach((Element , index) =>{
 
     });
 });
+
+    //Ajouter au bloc de remplaçants
