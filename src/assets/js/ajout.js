@@ -261,19 +261,46 @@ function AffichAjou(POSITION){
 
 document.querySelectorAll(".badgeplus").forEach((Element , index) =>{
     Element.onclick= () => {
+
         MudalBadge.classList.toggle("hidden");
-        AffichAjou(Element.children[1].textContent);
+        // document.querySelector("body").addEventListener("click" , () =>{
+        //     MudalBadge.classList.add("hidden");
+        // });
+
+        //Mise à jour de containers des bage ajouter
+        function MISEAJOURAFFBAD() {
+            AffichAjou(Element.children[1].textContent);
+            document.querySelectorAll(".BadgeAjout2").forEach((ele) =>{
+                document.querySelectorAll(".BadgeAjout1").forEach((elem) =>{ 
+                    if (ele.children[2].textContent == elem.children[2].textContent) {
+                        ele.classList.toggle("hidden");
+                    }
+                });
+            });
+        }
+        MISEAJOURAFFBAD();
         let BadgeAjout2 = document.querySelectorAll(".BadgeAjout2");
         BadgeAjout2.forEach(element => {
             element.onclick= () =>{
                 if (element.parentNode == AjoutparBadge) {
                     if (Element.parentNode.children.length == 1) {
                         Element.parentNode.appendChild(element);
+                        element.classList.replace("BadgeAjout2" , "BadgeAjout1")
                         Element.classList.toggle("hidden");
                         MudalBadge.classList.toggle("hidden");
-                    } 
+                    } else {
+                        Element.parentNode.lastChild.remove();
+                        Element.parentNode.appendChild(element);
+                        Element.classList.toggle("hidden");
+                        MudalBadge.classList.toggle("hidden");
+                    }
+                    AjoutparBadge.innerHTML = ``;
+                } else if(element.parentNode == Element.parentNode) {
+                    MudalBadge.classList.toggle("hidden");
+                    MISEAJOURAFFBAD()                   
+                    
                 }
-                AjoutparBadge.innerHTML = ``;
+                
             };
         });
 

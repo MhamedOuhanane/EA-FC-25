@@ -68,7 +68,7 @@ select{
     }
 }
 
-.titularisés{
+#titularisés{
     background-image: url("../images/background-terrain1.png");
     background-size: cover;
     background-position: center;
