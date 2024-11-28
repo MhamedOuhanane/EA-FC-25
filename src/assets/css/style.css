@@ -23,6 +23,8 @@
     line-height: 0;
 }
 
+
+
 .scorejou{
     font-size: 60%;
 }
@@ -35,8 +37,18 @@
     .scorejou{
         font-size: 100%;
     }
-
+    
 }
+
+.typescore1{
+    font-size: 30%;
+    line-height: 0;
+}
+
+.scorejou1{
+    font-size: 60%;
+}
+
 
 
 .Pagetot input,

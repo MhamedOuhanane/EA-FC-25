@@ -10,7 +10,7 @@
     <title>EA FC 25</title>
 </head>
 <body class="relative left-0 top-0 ">
-    <header class="bg-black fixed top-0 w-full h-[3rem] flex justify-between items-center px-3">
+    <header class="bg-black fixed top-0 z-50 w-full h-[3rem] flex justify-between items-center px-3">
 
         <a href="index.html" class="h-[80%]">
             <img src="./assets/images/logo.svg" class="md:hidden h-full" alt="logo de EA FC 25">
@@ -117,7 +117,7 @@
         </div>
 
         <div id="mudalajout" class="bg-black bg-opacity-60 fixed top-0 left-0 w-full h-full mt-[3rem] px-5 md:px-[12vw] hidden">
-            <div class="bg-white rounded-md py-[2vw]">
+            <div class="bg-white rounded-md">
                 <form name="modalnouv" class="flex flex-col w-full h-auto  gap-[2vw] p-2  mb-2">
                     <button id="cancelaffich" class="self-end w-3 text-2xl mr-3">X</button>
                     <h2 class="text-lg self-center">Entrer les informations du joueur</h2>
@@ -125,6 +125,7 @@
                     <div class="w-full h-auto flex flex-wrap justify-center gap-2"  >
                         <input name="modalnouv" type="text" placeholder="Name" >
                         <select name="modalnouv" id="position">
+                            <option value="GK">Tous</option>
                             <option value="GK">GK</option>
                             <option value="CB">CB</option>
                             <option value="LB">LB</option>
@@ -143,45 +144,6 @@
                 </form>
             
                 <div id="cardsform" class="flex flex-wrap justify-center gap-2 max-h-[18rem] overflow-y-auto text-white ">
-                    <div class="cardplayer relative w-[7rem] h-[10rem] md:w-[12rem] md:h-[17rem] hover:scale-95 flex flex-col  items-center py-4 md:py-7">
-                        <div class="flex justify-start  w-full h-[75%] p-[12%]">
-                            <div class="max-w-7 flex flex-col items-center pt-3">
-                                <span  class="scorejou text-[110%] md:text-[120%]">90</span><span class="typescore">CF</span>
-                            </div>
-                        </div>
-                        <img src="https://cdn3.futbin.com/content/fifa23/img/players/p50532037.png?fm=png&ixlib=java-2.1.0&w=344&s=ac19c47d8793ea16df5051f3bcb49580" class="absolute  z-0 mt-1 "  alt="image de joueur">
-                        <span class="md:text-xl z-10 mb-1">Oblak</span>
-                        <div class="flex justify-evenly gap-[0.2rem] md:gap-1 ">
-                            <div class="flex flex-col items-center">
-                                <span class="typescore">RAT</span>
-                                <span class="scorejou">90</span>
-                            </div>
-                            <div class="flex flex-col items-center">
-                                <span class="typescore">RAT</span>
-                                <span class="scorejou">90</span>
-                            </div>
-                            <div class="flex flex-col items-center">
-                                <span class="typescore">RAT</span>
-                                <span class="scorejou">90</span>
-                            </div>
-                            <div class="flex flex-col items-center">
-                                <span class="typescore">RAT</span>
-                                <span class="scorejou">90</span>
-                            </div>
-                            <div class="flex flex-col items-center">
-                                <span class="typescore">RAT</span>
-                                <span class="scorejou">90</span>
-                            </div>
-                            <div class="flex flex-col items-center">
-                                <span class="typescore">RAT</span>
-                                <span class="scorejou">90</span>
-                            </div>
-                        </div>
-                        <div class="flex justify-center gap-2 md:gap-4">
-                            <img src="https://cdn.sofifa.net/flags/si.png" class="w-[11%] z-10" alt="flag">
-                            <img src="https://cdn.sofifa.net/meta/team/7980/120.png" class="w-[11%]  z-10" alt="logo">
-                        </div>
-                    </div>
                 </div>
 
             </div>
@@ -189,40 +151,52 @@
         </div>
         <div class="w-full h-[10vw]"></div>
         <div class="w-full flex flex-wrap justify-center">
-            <div class="titularisés w-[100%] md:w-[72%] h-[84vw] md:h-[60vw] grid grid-cols-5 grid-rows-4 gap-y-2 px-[1.5rem] md:px-14 justify-items-center">
+            <div class="titularisés w-[100%] md:w-[72%] h-[84vw] md:h-[60vw] grid grid-cols-5 grid-rows-4 gap-y-2 px-[1.5rem] md:px-14 justify-items-center text-white">
 
-                <button class="GK badgeplus  flex justify-center items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
+                <button id="posGK" class="GK badgeplus  flex flex-col justify-evenly items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
                     <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
+                    <span>GK</span>
                 </button>
-                <button class="CB1 badgeplus flex justify-center items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
+                
+                <button id="posCB1" class="CB1 badgeplus flex flex-col justify-evenly items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
                     <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
+                    <span>CB</span>
                 </button>
-                <button class="CB2 badgeplus flex justify-center items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
+                <button id="posCB2" class="CB2 badgeplus flex flex-col justify-evenly items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
                     <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
+                    <span>CB</span>
                 </button>
-                <button class="LB badgeplus flex justify-center items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
+                <button id="posLB" class="LB badgeplus flex flex-col justify-evenly items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
                     <img class=" w-[60%]" src="./assets/images/plus.webp" alt="">
+                    <span>LB</span>
                 </button>
-                <button class="RB badgeplus flex justify-center items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
+                <button id="posRB" class="RB badgeplus flex flex-col justify-evenly items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
                     <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
+                    <span>RB</span>
                 </button>
-                <button class="CM1 badgeplus flex justify-center items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
+                <button id="posCM1" class="CM1 badgeplus flex flex-col justify-evenly items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
                     <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
+                    <span>CM</span>
                 </button>
-                <button class="CM2 badgeplus flex justify-center items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
+                <button id="posCM2" class="CM2 badgeplus flex flex-col justify-evenly items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
                     <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
+                    <span>CM</span>
                 </button>
-                <button class="CM3 badgeplus flex justify-center items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
+                <button id="posCM3" class="CM3 badgeplus flex flex-col justify-evenly items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
                     <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
+                    <span>CM</span>
                 </button>
-                <button class="LW badgeplus flex justify-center items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
+                <button id="posLW" class="LW badgeplus flex flex-col justify-evenly items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
                     <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
+                    <span>LW</span>
                 </button>
-                <button class="RW badgeplus flex justify-center items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
+                <button id="posCMRW" class="RW badgeplus flex flex-col justify-evenly items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
                     <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
+                    <span>RW</span>
                 </button>
-                <button class="ST badgeplus flex justify-center items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
+                <button id="posST" class="ST badgeplus flex flex-col justify-evenly items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">
                     <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
+                    <span>ST</span>
                 </button>
             </div>
             <div class="remplaçants bg-black  bg-opacity-30  w-full  md:w-[28%] flex flex-col items-center gap-3">
@@ -230,34 +204,34 @@
                 <span class="md:text-lg text-white">Blanc des remplaçants</span>
                 
                 <div class="w-full md:h-[55vw] flex justify-center flex-wrap gap-2 md:grid md:grid-cols-3 md:grid-rows-4 justify-items-center px-1 md:px-0">
-                    <button class="remplGK badgeremp  flex justify-center items-center w-[4rem] h-[5.8rem] md:w-[95%] md:h-[92%]">
+                    <button id="remposGK" class="remplGK badgeremp  flex justify-center items-center w-[4rem] h-[5.8rem] md:w-[95%] md:h-[92%]">
                         <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
                     </button>
-                    <button class="remplCB badgeremp flex justify-center items-center w-[4rem] h-[5.8rem] md:w-[95%] md:h-[92%]">
+                    <button id="remposCB" class="remplCB badgeremp flex justify-center items-center w-[4rem] h-[5.8rem] md:w-[95%] md:h-[92%]">
                         <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
                     </button>
-                    <button class="remplCB badgeremp flex justify-center items-center w-[4rem] h-[5.8rem] md:w-[95%] md:h-[92%]">
+                    <button id="remposCB" class="remplCB badgeremp flex justify-center items-center w-[4rem] h-[5.8rem] md:w-[95%] md:h-[92%]">
                         <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
                     </button>
-                    <button class="remplLB badgeremp flex justify-center items-center w-[4rem] h-[5.8rem] md:w-[95%] md:h-[92%]">
+                    <button id="remposLB" class="remplLB badgeremp flex justify-center items-center w-[4rem] h-[5.8rem] md:w-[95%] md:h-[92%]">
                         <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
                     </button>
-                    <button class="remplRB badgeremp flex justify-center items-center w-[4rem] h-[5.8rem] md:w-[95%] md:h-[92%]">
+                    <button id="remposRB" class="remplRB badgeremp flex justify-center items-center w-[4rem] h-[5.8rem] md:w-[95%] md:h-[92%]">
                         <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
                     </button>
-                    <button class="remplCM badgeremp flex justify-center items-center w-[4rem] h-[5.8rem] md:w-[95%] md:h-[92%]">
+                    <button id="remposCM" class="remplCM badgeremp flex justify-center items-center w-[4rem] h-[5.8rem] md:w-[95%] md:h-[92%]">
                         <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
                     </button>
-                    <button class="remplCM badgeremp flex justify-center items-center w-[4rem] h-[5.8rem] md:w-[95%] md:h-[92%]">
+                    <button id="remposCM" class="remplCM badgeremp flex justify-center items-center w-[4rem] h-[5.8rem] md:w-[95%] md:h-[92%]">
                         <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
                     </button>
-                    <button class="remplLW badgeremp flex justify-center items-center w-[4rem] h-[5.8rem] md:w-[95%] md:h-[92%]">
+                    <button id="remposLW" class="remplLW badgeremp flex justify-center items-center w-[4rem] h-[5.8rem] md:w-[95%] md:h-[92%]">
                         <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
                     </button>
-                    <button class="remplRW badgeremp flex justify-center items-center w-[4rem] h-[5.8rem] md:w-[95%] md:h-[92%]">
+                    <button id="remposLW" class="remplRW badgeremp flex justify-center items-center w-[4rem] h-[5.8rem] md:w-[95%] md:h-[92%]">
                         <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
                     </button>
-                    <button class="remplST badgeremp flex justify-center items-center w-[4rem] h-[5.8rem] md:w-[95%] md:h-[92%]">
+                    <button id="remposST" class="remplST badgeremp flex justify-center items-center w-[4rem] h-[5.8rem] md:w-[95%] md:h-[92%]">
                         <img class="w-[60%]" src="./assets/images/plus.webp" alt="">
                     </button>
                 </div>

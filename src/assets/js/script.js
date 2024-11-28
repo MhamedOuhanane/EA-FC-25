@@ -21,7 +21,7 @@ munujoue.addEventListener('click' , ()=>{
                                     <span  class="scorejou text-[110%] md:text-[120%]">${Element.rating}</span><span class="typescore">${Element.position}</span>
                                 </div>
                             </div>
-                            <img class="absolute  z-0 mt-1 " src=${Element.photo} alt="image de joueur">
+                            <img class="absolute  z-0 mb-1 " src=${Element.photo} alt="image de joueur">
                             <span class="md:text-xl z-10 mb-1">${Element.name}</span>
                             <div class="flex justify-evenly gap-[0.2rem] md:gap-1 z-10 ${Element.position == "GK" ? "hidden" : ""}">
                                 <div class="flex flex-col items-center">
