@@ -128,9 +128,10 @@ conferjoue.onclick= () =>{
     let inputname = document.querySelector("#mudalajout input");
     let BadgeAjout = document.querySelectorAll(".BadgeAjout");
 
-    //Filtrage des joueur par name ou position 
-    inputname.addEventListener("input" , ()=>{
+    //Filtrage des joueur par name
+    inputname.oninput= ()=>{
         joueurs.players.forEach((Element , index) =>{
+            BadgeAjout[index].classList.remove("hidden");
             if (inputname.value == "") {
                 BadgeAjout[index].classList.remove("hidden");
             } else if (inputname.value == Element.name) {
@@ -142,12 +143,50 @@ conferjoue.onclick= () =>{
 
             }
         });
+    };
+        //Filtrage des joueur par position
+    position.oninput= ()=>{
+        joueurs.players.forEach((Element , index) =>{
+            BadgeAjout[index].classList.remove("hidden");
+            if (position.value == Element.position) {
+                if (position.value != Element.position) {
+                    BadgeAjout[index].classList.add("hidden");
+                }
+            }
+            
+        });
+    };
+
+    BadgeAjout.forEach((Element , index) =>{
+        Element.onclick= () =>{
+            if (effectif.value == "Effectif") {
+                effectif.classList.add("border-3px border-red")
+            } else if (effectif.value == "Titularisés") {
+                
+
+
+
+
+                mudalajout.classList.toggle("hidden");
+            } else {
+                
+
+
+
+
+
+
+
+                mudalajout.classList.toggle("hidden");
+            }
+        }
     });
-    
-    // position.addEventListener("input" , ()=>{
-        
-    // });
-    
-    
 
 };
+
+
+//Ajouter a partire du botton de badge
+
+document.querySelectorAll(".badgeplus").forEach((Element , index) =>{
+    Element
+});

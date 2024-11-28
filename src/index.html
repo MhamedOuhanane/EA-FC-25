@@ -95,7 +95,7 @@
                         <input class="inputGK" name="modalnouv" type="number" placeholder="speed">
                         <input class="inputGK" name="modalnouv" type="number" placeholder="positioning">
                         <select name="modalnouv" id="positionnouv">
-                            <option value="GK">GK</option>
+                            <option value="GK" selected>GK</option>
                             <option value="CB">CB</option>
                             <option value="LB">LB</option>
                             <option value="RB">RB</option>
@@ -125,7 +125,7 @@
                     <div class="w-full h-auto flex flex-wrap justify-center gap-2"  >
                         <input class="formajoutname" name="formajout" type="text" placeholder="Name" >
                         <select name="formajout" id="position">
-                            <option value="GK">Tous</option>
+                            <option value="GK" selected>Tous</option>
                             <option value="GK">GK</option>
                             <option value="CB">CB</option>
                             <option value="LB">LB</option>
@@ -136,14 +136,14 @@
                             <option value="ST">ST</option>
                         </select>
                         <select name="formajout" id="effectif">
-                            <option value="Effectif">Effectif</option>
-                            <option value="titularisés">titularisés</option>
-                            <option value="remplaçants">remplaçants</option>
+                            <option value="Effectif" selected>Effectif</option>
+                            <option value="titularisés">Titularisés</option>
+                            <option value="remplaçants">Remplaçants</option>
                         </select>
                     </div>
                 </form>
             
-                <div id="cardsform" class="flex flex-wrap min-h-[20%] justify-center gap-2 max-h-[18rem] overflow-y-auto text-white ">
+                <div id="cardsform" class="flex flex-wrap min-h-[10vw] justify-center gap-2 max-h-[18rem] overflow-y-auto text-white ">
                 </div>
 
             </div>
@@ -151,6 +151,10 @@
         </div>
         <div class="w-full h-[10vw]"></div>
         <div class="w-full flex flex-wrap justify-center">
+            <div  class="bg-black w-full h-full  fixed top-0 bg-opacity-50 z-10 p-[15%]">
+                <div id="AjoutparBadge" class="w-full flex justify-center flex-wrap gap-2 ">
+                </div>
+            </div>
             <div class="titularisés w-[100%] md:w-[72%] h-[84vw] md:h-[60vw] grid grid-cols-5 grid-rows-4 gap-y-2 px-[1.5rem] md:px-14 justify-items-center text-white">
 
                 <button id="posGK" class="GK badgeplus  flex flex-col justify-evenly items-center w-[65%] h-[86%] md:w-[72%] lg:w-[70%] md:h-[89%]">

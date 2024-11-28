@@ -714,6 +714,18 @@ video {
   min-height: 20%;
 }
 
+.min-h-\[20\] {
+  min-height: 20;
+}
+
+.min-h-\[20vw\] {
+  min-height: 20vw;
+}
+
+.min-h-\[10vw\] {
+  min-height: 10vw;
+}
+
 .w-3 {
   width: 0.75rem;
 }
@@ -899,12 +911,36 @@ video {
   --tw-bg-opacity: 0.6;
 }
 
+.bg-opacity-50 {
+  --tw-bg-opacity: 0.5;
+}
+
 .p-2 {
   padding: 0.5rem;
 }
 
 .p-\[12\%\] {
   padding: 12%;
+}
+
+.p-\[\] {
+  padding: ;
+}
+
+.p-\[1\] {
+  padding: 1;
+}
+
+.p-\[10\%\] {
+  padding: 10%;
+}
+
+.p-\[15\%\] {
+  padding: 15%;
+}
+
+.p-\[1\%\] {
+  padding: 1%;
 }
 
 .px-1 {
