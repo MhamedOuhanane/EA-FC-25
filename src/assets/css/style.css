@@ -134,19 +134,19 @@ select{
     align-self: flex-end;
 }
 
-.badgeplus{
+#titularisés .badgebouton{
     background-image: url("../images/badge-plus.png");
     background-size: cover;
     background-position: center;
 }
 
-.badgeremp{
+#remplaçants .badgebouton{
     background-image: url("../images/badge-remp.png");
     background-size: cover;
     background-position: center;
 }
 
-.badgeplus:hover,.badgeremp:hover{
+.badgebouton:hover,.badgeremp:hover{
     scale: 1.1;
     transition: all 500ms ;
 }

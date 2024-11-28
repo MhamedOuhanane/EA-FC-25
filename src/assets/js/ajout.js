@@ -261,7 +261,7 @@ function AffichAjou(POSITION){
 
     //Ajouter au bloc de terrain
 
-document.querySelectorAll(".badgeplus").forEach((Element , index) =>{
+document.querySelectorAll(".badgebouton").forEach((Element , index) =>{
     Element.addEventListener("click" , () => {
 
         MudalBadge.classList.toggle("hidden");
@@ -280,11 +280,11 @@ document.querySelectorAll(".badgeplus").forEach((Element , index) =>{
                         ele.classList.replace("BadgeAjout2" , "BadgeAjout1");
                     }
                 });
-                console.log(ele.classList.children[0]);
+                // console.log(ele.classList.children[0]);
                 
             });
 
-            BadgeAjout2 = [...AjoutparBadge].filter(element => element.classList == "BadgeAjout2");
+            BadgeAjout2 = document.querySelectorAll(".BadgeAjout2");
         };
 
         MISEAJOURAFFBAD();
