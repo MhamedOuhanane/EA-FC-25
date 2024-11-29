@@ -127,15 +127,17 @@ conferjoue.onclick= () =>{
 
     let inputname = document.querySelector("#mudalajout input");
     let BadgeAjout1 = document.querySelectorAll(".BadgeAjout1");
-
     //Filtrage des joueur par name
     inputname.oninput= ()=>{
         joueurs.players.forEach((Element , index) =>{
             BadgeAjout1[index].classList.remove("hidden");
             if (inputname.value == "") {
                 BadgeAjout1[index].classList.remove("hidden");
+                position.value = "Tous";
             } else if (inputname.value == Element.name) {
+                position.value = Element.position;
                 if (inputname.value != Element.name) {
+                    
                     BadgeAjout1[index].classList.add("hidden");
                 }
             } else{
@@ -146,12 +148,13 @@ conferjoue.onclick= () =>{
     };
         //Filtrage des joueur par position
     position.oninput= ()=>{
+        inputname.value = "";
         joueurs.players.forEach((Element , index) =>{
             BadgeAjout1[index].classList.remove("hidden");
-            if (position.value == Element.position) {
-                if (position.value != Element.position) {
-                    BadgeAjout1[index].classList.add("hidden");
-                }
+            if (position.value == "Tous") {                
+                BadgeAjout1[index].classList.remove("hidden");
+            } else if (position.value != Element.position) {
+                BadgeAjout1[index].classList.add("hidden");
             }
             
         });
@@ -160,13 +163,13 @@ conferjoue.onclick= () =>{
     BadgeAjout1.forEach((Element , index) =>{
         Element.onclick= () =>{
             if (effectif.value == "Effectif") {
-                effectif.classList.add("border-3px border-red")
+                effectif.style.border = "2px solid red "
             } else if (effectif.value == "Titularisés") {
                 
 
 
 
-
+                                
                 mudalajout.classList.toggle("hidden");
             } else {
                 
@@ -303,9 +306,9 @@ document.querySelectorAll(".badgebouton").forEach((Element , index) =>{
                         Element.classList.toggle("hidden");
                         MudalBadge.classList.toggle("hidden");
                     } else if (Element.parentNode.children.length == 2) {
-                        Element.parentNode.lastChild.replace("BadgeAjout1" , "BadgeAjout2");
+                        Element.parentNode.children[1].replace("BadgeAjout1" , "BadgeAjout2");
                         console.log(Element.parentNode.lastChild);
-                        console.log("false1");
+                        console.log(true);
                         Element.parentNode.children[1].remove();
                         
                         Element.parentNode.appendChild(element);
@@ -323,7 +326,7 @@ document.querySelectorAll(".badgebouton").forEach((Element , index) =>{
 
             });
         });
-
+        BadgeAjout2 = document.querySelectorAll(".BadgeAjout2");
         
 
     });
