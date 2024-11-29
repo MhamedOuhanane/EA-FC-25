@@ -49,7 +49,7 @@ Ajounouv.addEventListener("click" , ()=>{
     //validation des input de type text (Regex)
     inputtext.forEach(Element =>{
         Element.addEventListener("input" , () => {
-            if ( /^[a-zéèêàâùûîïöäüÿç\-\s]{5,20}$/i.test(Element.value) ) {              
+            if ( /^[a-zéèêàâùûîïöäüÿç\-\s]{5,20}$/i.test(Element.value) ) {   
                 Element.style.backgroundColor = "rgb(187 247 208)";
                 Validation = true;
             } else {
@@ -73,16 +73,32 @@ Ajounouv.addEventListener("click" , ()=>{
     inputnumber.forEach(Element =>{
         Element.oninput = () => {
             if ( /^[0-9]{2}$/i.test(Element.value) ) {
-                Element.classList.remove();
                 Element.style.backgroundColor = "rgb(187 247 208)";
                 Validation = true;
             } else {
-                Element.classList.remove();
                 Element.style.backgroundColor = "rgb(254 202 202)";
                 Validation = false;
             };
         };
     });
+    // serch contry par value d'input nationality
+    // function contryJou(){
+    //     joueurs.contrys.forEach(Element =>{
+    //         const regex = new RegExp(`^${Element.name}$`, 'i');  // 'i' for case-insensitive matching
+    //         if (regex.test(contry.value)) {
+    //             contry.style.backgroundColor = "rgb(187 247 208)";
+    //             Validation = true;
+    //             return contry.value
+    //         } else {
+    //             contry.style.backgroundColor = "rgb(187 247 208)";
+    //             Validation = false;
+    //             return 0;
+    //         } 
+    //     });
+    // };
+    console.log(contryJou());
+    
+
       //L'ajout des information au fichier js
     console.log(document.querySelectorAll('#containerINPUT input'));
     Create.onclick= () =>{
@@ -96,7 +112,7 @@ Ajounouv.addEventListener("click" , ()=>{
                     name: infor[0].value,
                     photo: "https://cdn3.futbin.com/content/fifa25/img/players/p50522519.png?fm=png&ixlib=java-2.1.0&verzion=1&w=485&s=f9ffb97b6af353daad5d7cb1ba1f6390",
                     position: positionnouv.value,
-                    nationality: infor[2].value,
+                    nationality: contryJou(),
                     flag: "https://cdn.sofifa.net/flags/br.png",
                     club: infor[2].value,
                     logo: "https://cdn.sofifa.net/meta/team/7011/120.png",
@@ -116,7 +132,7 @@ Ajounouv.addEventListener("click" , ()=>{
                         position: "GK",
                         nationality: infor[2].value,
                         flag: "https://cdn.sofifa.net/flags/br.png",
-                        club: infor[3].value,
+                        club: contryJou(),
                         logo: "https://cdn.sofifa.net/meta/team/7011/120.png",
                         rating: infor[4].value,
                         diving: infor[11].value,

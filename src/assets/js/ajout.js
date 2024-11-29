@@ -265,8 +265,6 @@ document.querySelectorAll(".badgebouton").forEach((Element , index) =>{
                         Element.classList.toggle("hidden");
                         MudalBadge.classList.toggle("hidden");
                     }
-                    
-                    
                     AjoutparBadge.innerHTML = ``;
                 } else if(element.parentNode == Element.parentNode) {
                     console.log(AjoutparBadge);
@@ -281,5 +279,10 @@ document.querySelectorAll(".badgebouton").forEach((Element , index) =>{
 
     });
 });
+
+cancelaffich3.onclick= () =>{
+    AjoutparBadge.innerHTML = ``;
+    MudalBadge.classList.toggle("hidden");
+};
 
     //Ajouter au bloc de remplaçants
