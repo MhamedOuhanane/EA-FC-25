@@ -47,11 +47,11 @@ Ajounouv.addEventListener("click" , ()=>{
         Element.oninput = () => {
             if ( /^[a-zéèêàâùûîïöäüÿç ]{5,20}$/i.test(Element.value) ) {
                 Element.classList.remove();
-                Element.style.border = "3px solid green";
+                Element.className = "bg-green-200";
                 Validation = true;
             } else {
                 Element.classList.remove();
-                Element.style.border = "3px solid red";
+                Element.className = "bg-red-300";
                 Validation = false;
             };
         };
@@ -65,7 +65,21 @@ Ajounouv.addEventListener("click" , ()=>{
     //         inputurl.style.color = "red";
     //         Validation = false;
     //     };
-    // };    
+    // }; 
+           //validation des input de type number (Regex)
+    inputnumber.forEach(Element =>{
+        Element.oninput = () => {
+            if ( /^[0-9][1-9]$/i.test(Element.value) ) {
+                Element.classList.remove();
+                Element.className = "bg-green-200";
+                Validation = true;
+            } else {
+                Element.classList.remove();
+                Element.className = "bg-red-300";
+                Validation = false;
+            };
+        };
+    });
     // Create.onclick= () =>{
     //     //Validation des information des nouveau joueur ajouter
     //     let inputtext = document.querySelectorAll('#mudalnouv input[type="Text"]');
