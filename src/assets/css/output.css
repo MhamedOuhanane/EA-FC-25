@@ -586,6 +586,10 @@ video {
   z-index: 50;
 }
 
+.-z-0 {
+  z-index: 0;
+}
+
 .col-start-2 {
   grid-column-start: 2;
 }
@@ -902,6 +906,10 @@ video {
 
 .bg-opacity-60 {
   --tw-bg-opacity: 0.6;
+}
+
+.bg-opacity-45 {
+  --tw-bg-opacity: 0.45;
 }
 
 .p-2 {

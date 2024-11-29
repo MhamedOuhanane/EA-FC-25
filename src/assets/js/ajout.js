@@ -13,7 +13,7 @@ conferjoue.onclick= () =>{
                                         <span  class="scorejou1 text-[110%]">${Element.rating}</span><span class="typescore1">${Element.position}</span>
                                     </div>
                                 </div>
-                                <img class="absolute  z-0 mb-1" src=${Element.photo}>
+                                <img class="absolute  -z-1 mb-1" src=${Element.photo}>
                                 <span class="z-10 mb-1 ">${Element.name}</span>
                                 <div class="flex justify-evenly gap-[0.2rem] md:gap-1 z-10 ${Element.position == "GK" ? "hidden" : ""}">
                                     <div class="flex flex-col items-center">
@@ -149,7 +149,7 @@ function AffichAjou(POSITION){
                                     </div>
                                 </div>
                                 <img class="absolute  z-0 mb-1" src=${Element.photo}>
-                                <span class="z-1 mb-1 ">${Element.name}</span>
+                                <span class="z-10 mb-1 ">${Element.name}</span>
                                 <div class="flex justify-evenly gap-[0.2rem] md:gap-1 z-10 ${Element.position == "GK" ? "hidden" : ""}">
                                     <div class="flex flex-col items-center">
                                         <span class="typescore1">PAC</span>

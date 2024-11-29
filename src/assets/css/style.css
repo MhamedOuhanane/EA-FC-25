@@ -24,6 +24,10 @@
     color: rgb(95, 236, 95);
 }
 
+.titrebadge{
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.632), rgba(255, 255, 255, 0.189), rgba(255, 255, 255, 0.628));
+}
+
 
 
 .scorejou{
