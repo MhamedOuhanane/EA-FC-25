@@ -37,13 +37,13 @@ Ajounouv.addEventListener("click" , ()=>{
 
     let nouvjoue = {};
     Create.onclick= () =>{
-        validation = false;
-        let infjoueur = document.querySelectorAll("#mudalnouv input");
+        //Validation 
+        let inputtext = document.querySelectorAll('#mudalnouv input[type="Text"]');
+        let inputurl = document.querySelector('#mudalnouv input[type="url"]');
+        let inputnumber = document.querySelectorAll('#mudalnouv input[type="number"]');
+
         infjoueur.forEach(Element =>{
             if (Element.value == "") {
-                Element.ariaPlaceholder = "Veuillez entrer une valeur!";
-                Element.style.border = "2px solid red";
-                validation = false;
             }
             else{
                 

@@ -65,6 +65,7 @@ select{
 @media (min-width: 768px){
     input{
         height: 2rem;
+        width: 30%;
     }
 }
 
