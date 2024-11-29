@@ -554,40 +554,6 @@ video {
   display: none;
 }
 
-.container {
-  width: 100%;
-}
-
-@media (min-width: 640px) {
-  .container {
-    max-width: 640px;
-  }
-}
-
-@media (min-width: 768px) {
-  .container {
-    max-width: 768px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .container {
-    max-width: 1024px;
-  }
-}
-
-@media (min-width: 1280px) {
-  .container {
-    max-width: 1280px;
-  }
-}
-
-@media (min-width: 1536px) {
-  .container {
-    max-width: 1536px;
-  }
-}
-
 .fixed {
   position: fixed;
 }
@@ -907,43 +873,23 @@ video {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity, 1));
 }
 
-.bg-inherit {
-  background-color: inherit;
-}
-
-.bg-white {
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
-}
-
-.bg-green-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(21 128 61 / var(--tw-bg-opacity, 1));
-}
-
-.bg-green-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(134 239 172 / var(--tw-bg-opacity, 1));
-}
-
 .bg-green-200 {
   --tw-bg-opacity: 1;
   background-color: rgb(187 247 208 / var(--tw-bg-opacity, 1));
 }
 
-.bg-red-200 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(254 202 202 / var(--tw-bg-opacity, 1));
-}
-
-.bg-red-400 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(248 113 113 / var(--tw-bg-opacity, 1));
+.bg-inherit {
+  background-color: inherit;
 }
 
 .bg-red-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(252 165 165 / var(--tw-bg-opacity, 1));
+}
+
+.bg-white {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
 .bg-opacity-30 {
@@ -1056,73 +1002,23 @@ video {
   line-height: 1.25rem;
 }
 
+.text-red-400 {
+  --tw-text-opacity: 1;
+  color: rgb(248 113 113 / var(--tw-text-opacity, 1));
+}
+
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
-.\[https\:\\\/\\\/\] {
-  https: \/\/;
-}
-
-.\[https\:\\\/\\\/a-\] {
-  https: \/\/a-;
-}
-
-.\[https\:\\\/\\\/a-z0-9\&\+\] {
-  https: \/\/a-z0-9&+;
-}
-
-.\[https\:\\\/\\\/a-z0-9\&\=\] {
-  https: \/\/a-z0-9&=;
-}
-
-.\[https\:\\\/\\\/a-z0-9\&\] {
-  https: \/\/a-z0-9&;
-}
-
-.\[https\:\\\/\\\/a-z0-9\] {
-  https: \/\/a-z0-9;
-}
-
-.\[https\:\\\/\\\/a-z0-\] {
-  https: \/\/a-z0-;
-}
-
-.\[https\:\\\/\\\/a-z0\] {
-  https: \/\/a-z0;
-}
-
-.\[https\:\\\/\\\/a-z\] {
-  https: \/\/a-z;
-}
-
-.\[https\:\\\/\\\/a-z\B0\] {
-  https: \/\/a-z°;
-}
-
-.\[https\:\\\/\\\/a\] {
-  https: \/\/a;
-}
-
-.\[https\:\\\/\\\/cdn3\.futbin\.com\] {
-  https: \/\/cdn3.futbin.com;
-}
-
-.\[https\:\\\/\\\/cdn3\\\.futbin\\\.com\\\/content\\\/fifa25\\\/img\/players\\\/p50522519\\\.png\?fm\=png\&ixlib\=java-2\\\.1\\\.0\&verzion\] {
-  https: \/\/cdn3\.futbin\.com\/content\/fifa25\/img/players\/p50522519\.png?fm=png&ixlib=java-2\.1\.0&verzion;
-}
-
-.\[https\:\\\/\\\/cdn3\\\.futbin\\\.com\\\/content\\\/fifa25\\\/img\\\/players\\\/p50522519\\\.png\?fm\=png\&ixlib\=java-2\\\.1\\\.0\&verzion\] {
-  https: \/\/cdn3\.futbin\.com\/content\/fifa25\/img\/players\/p50522519\.png?fm=png&ixlib=java-2\.1\.0&verzion;
+.text-red-700 {
+  --tw-text-opacity: 1;
+  color: rgb(185 28 28 / var(--tw-text-opacity, 1));
 }
 
 .\[https\:\\\/\\\/cdn3\\\.futbin\\\.com\\\/content\\\/fifa25\\\/img\\\/players\\\/p50522519\\\.png\\\?fm\=png\&ixlib\=java-2\\\.1\\\.0\&verzion\] {
   https: \/\/cdn3\.futbin\.com\/content\/fifa25\/img\/players\/p50522519\.png\?fm=png&ixlib=java-2\.1\.0&verzion;
-}
-
-.\[https\:\\\/\] {
-  https: \/;
 }
 
 body {
