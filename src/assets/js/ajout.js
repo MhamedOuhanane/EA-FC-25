@@ -144,7 +144,7 @@ function AffichAjou(POSITION){
         if (Element.position == POSITION) {
             AjoutparBadge.innerHTML +=`<div class="BadgeAjout2 ${"bg" + Element.position} relative w-[7rem] h-[10rem] hover:scale-95 flex flex-col  items-center py-4 text-white">
                                 <div class="flex justify-start  w-full h-[75%] p-[12%]">
-                                    <div class="max-w-7 flex flex-col items-center pt-3 z-1">
+                                    <div class="max-w-7 flex flex-col items-center pt-3 z-10">
                                         <span  class="scorejou1 text-[110%]">${Element.rating}</span><span class="typescore1">${Element.position}</span>
                                     </div>
                                 </div>
@@ -248,8 +248,6 @@ document.querySelectorAll(".badgebouton").forEach((Element , index) =>{
                 
                 
                 if (element.parentNode == AjoutparBadge) {
-                    console.log(Element.parentNode.children.length);
-                    
                     if (Element.parentNode.children.length == 1) {
                         Element.parentNode.appendChild(element);
                         element.classList.replace("BadgeAjout2" , "BadgeAjout1")
@@ -270,7 +268,7 @@ document.querySelectorAll(".badgebouton").forEach((Element , index) =>{
                     console.log(AjoutparBadge);
                     MudalBadge.classList.toggle("hidden");
                     MISEAJOURAFFBAD();
-                }
+                };
 
             });
         });
@@ -280,9 +278,12 @@ document.querySelectorAll(".badgebouton").forEach((Element , index) =>{
     });
 });
 
+//annulation de l'affichage des badge dans le cas d'ajout
 cancelaffich3.onclick= () =>{
     AjoutparBadge.innerHTML = ``;
     MudalBadge.classList.toggle("hidden");
 };
 
-    //Ajouter au bloc de remplaçants
+//suppression des badges des joueurs
+// document.querySelectorAll(".deletbadge").forEach(element =>{
+// });

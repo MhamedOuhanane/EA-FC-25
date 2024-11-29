@@ -574,6 +574,18 @@ video {
   top: 0px;
 }
 
+.right-0 {
+  right: 0px;
+}
+
+.top-2 {
+  top: 0.5rem;
+}
+
+.top-4 {
+  top: 1rem;
+}
+
 .z-0 {
   z-index: 0;
 }
@@ -1016,6 +1028,11 @@ video {
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
+}
+
+.text-xl {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 .text-red-400 {
