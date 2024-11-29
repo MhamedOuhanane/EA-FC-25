@@ -838,10 +838,6 @@ video {
   overflow-y: auto;
 }
 
-.text-clip {
-  text-overflow: clip;
-}
-
 .rounded-lg {
   border-radius: 0.5rem;
 }
@@ -858,14 +854,6 @@ video {
   border-width: 2px;
 }
 
-.border-\[3px\] {
-  border-width: 3px;
-}
-
-.border-r {
-  border-right-width: 1px;
-}
-
 .border-solid {
   border-style: solid;
 }
@@ -878,11 +866,6 @@ video {
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
-}
-
-.border-red-800 {
-  --tw-border-opacity: 1;
-  border-color: rgb(153 27 27 / var(--tw-border-opacity, 1));
 }
 
 .bg-black {
@@ -1014,9 +997,68 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
 }
 
-.text-red-900 {
-  --tw-text-opacity: 1;
-  color: rgb(127 29 29 / var(--tw-text-opacity, 1));
+.\[https\:\\\/\\\/\] {
+  https: \/\/;
+}
+
+.\[https\:\\\/\\\/a-\] {
+  https: \/\/a-;
+}
+
+.\[https\:\\\/\\\/a-z0-9\&\+\] {
+  https: \/\/a-z0-9&+;
+}
+
+.\[https\:\\\/\\\/a-z0-9\&\=\] {
+  https: \/\/a-z0-9&=;
+}
+
+.\[https\:\\\/\\\/a-z0-9\&\] {
+  https: \/\/a-z0-9&;
+}
+
+.\[https\:\\\/\\\/a-z0-9\] {
+  https: \/\/a-z0-9;
+}
+
+.\[https\:\\\/\\\/a-z0-\] {
+  https: \/\/a-z0-;
+}
+
+.\[https\:\\\/\\\/a-z0\] {
+  https: \/\/a-z0;
+}
+
+.\[https\:\\\/\\\/a-z\] {
+  https: \/\/a-z;
+}
+
+.\[https\:\\\/\\\/a-z\B0\] {
+  https: \/\/a-z°;
+}
+
+.\[https\:\\\/\\\/a\] {
+  https: \/\/a;
+}
+
+.\[https\:\\\/\\\/cdn3\.futbin\.com\] {
+  https: \/\/cdn3.futbin.com;
+}
+
+.\[https\:\\\/\\\/cdn3\\\.futbin\\\.com\\\/content\\\/fifa25\\\/img\/players\\\/p50522519\\\.png\?fm\=png\&ixlib\=java-2\\\.1\\\.0\&verzion\] {
+  https: \/\/cdn3\.futbin\.com\/content\/fifa25\/img/players\/p50522519\.png?fm=png&ixlib=java-2\.1\.0&verzion;
+}
+
+.\[https\:\\\/\\\/cdn3\\\.futbin\\\.com\\\/content\\\/fifa25\\\/img\\\/players\\\/p50522519\\\.png\?fm\=png\&ixlib\=java-2\\\.1\\\.0\&verzion\] {
+  https: \/\/cdn3\.futbin\.com\/content\/fifa25\/img\/players\/p50522519\.png?fm=png&ixlib=java-2\.1\.0&verzion;
+}
+
+.\[https\:\\\/\\\/cdn3\\\.futbin\\\.com\\\/content\\\/fifa25\\\/img\\\/players\\\/p50522519\\\.png\\\?fm\=png\&ixlib\=java-2\\\.1\\\.0\&verzion\] {
+  https: \/\/cdn3\.futbin\.com\/content\/fifa25\/img\/players\/p50522519\.png\?fm=png&ixlib=java-2\.1\.0&verzion;
+}
+
+.\[https\:\\\/\] {
+  https: \/;
 }
 
 body {

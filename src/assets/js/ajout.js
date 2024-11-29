@@ -85,13 +85,11 @@ conferjoue.onclick= () =>{
                 position.value = "Tous";
             } else if (inputname.value == Element.name) {
                 position.value = Element.position;
-                inputname.style.color = "green";
                 if (inputname.value != Element.name) {
                     BadgeAjout1[index].classList.add("hidden");
                 }
             } else{
                 BadgeAjout1[index].classList.add("hidden");
-                inputname.style.color = "red";
 
             }
         });
