@@ -104,7 +104,18 @@ Ajounouv.addEventListener("click" , ()=>{
       //L'ajout des information au fichier js
     let infor = document.querySelectorAll('#containerINPUT input');
     Create.onclick= () =>{    
-                  
+        infor.forEach((Element , index) =>{
+            if (Element.value == "") {
+                Element.style.backgroundColor = "rgb(254 202 202)";
+                Validation == false
+            } else if (inputname.value == joueurs.players[index].name){
+                Erreurexist.classList.toggle("hidden");
+                OK.onclick= () =>{
+                    Erreurexist.classList.toggle("hidden");
+                };
+                Validation == false;
+            };
+        });          
         if ((Validation == true)){
             if (positionnouv.value != "GK") {
                 nouvjoue = {
