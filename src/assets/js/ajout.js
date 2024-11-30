@@ -343,7 +343,8 @@ conferjoue.onclick= () =>{
 
 document.querySelectorAll(".badgebouton").forEach((Element) =>{
     Element.addEventListener("click" , () => {
-
+        let parentbag = Element.parentNode;
+        
         MudalBadge.classList.toggle("hidden");
         let BadgeAjout2 = document.querySelectorAll(".BadgeAjout2");
 
@@ -365,30 +366,31 @@ document.querySelectorAll(".badgebouton").forEach((Element) =>{
         MISEAJOURAFFBAD();
         
         BadgeAjout2.forEach(element => {
-            console.log(AjoutparBadge);
-            
-            console.log(BadgeAjout2);
             element.onclick=  () =>{
+                
                 if (element.parentNode == AjoutparBadge) {
-                    if (Element.parentNode.children.length == 1) {
-                        Element.parentNode.appendChild(element);
-                        element.classList.replace("BadgeAjout2" , "BadgeAjout1");
+                        console.log("true1");
+                    if ((parentbag.children.length == 1)) {
+                        console.log("true2");
+                        
+                        parentbag.appendChild(element);
                         Element.classList.toggle("hidden");
                         MudalBadge.classList.toggle("hidden");
                     } else {
-                        element.parentNode.appendChild(element);
-                        AjoutparBadge.appendChild(Element.parentNode.children[1])
+                        console.log("true3");
+                        AjoutparBadge.appendChild(parentbag.children[1]);
+                        parentbag.appendChild(element);
                         MudalBadge.classList.toggle("hidden");
                     };
-                } else if(element.parentNode == Element.parentNode) {
+                } else {
+                    console.log("true4");
+                    parentbag = element.parentNode;
                     MudalBadge.classList.toggle("hidden");
                     MISEAJOURAFFBAD();
                 };
 
             };
             MudalBadge.onclick= ()=>{
-                console.log("pox");
-                
                 if (!MudalBadge.contains(element)) {
                     MudalBadge.classList.add("hidden");
                 };
