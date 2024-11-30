@@ -63,13 +63,13 @@ Ajounouv.addEventListener("click" , ()=>{
             Validation = false;
         };
         if (inputname.value == "") {
-            inputname.style.backgroundColor = "";
+            inputurl.style.backgroundColor = "";
         };
     }; 
         //    validation des input de type number (Regex)
     inputnumber.forEach(Element =>{
         Element.oninput = () => {
-            if ( /^[0-9]{2}$/i.test(Element.value) ) {
+            if ( (/^[0-9]{2}$/.test(Element.value)) && (Element.value != "00") ) {
                 Element.style.backgroundColor = "rgb(187 247 208)";
                 Validation = true;
             } else {
@@ -77,37 +77,38 @@ Ajounouv.addEventListener("click" , ()=>{
                 Validation = false;
             };
             if (Element.value == "") {
-                inputname.style.backgroundColor = "";
+                Element.style.backgroundColor = "";
             }
         };
     });
     // serch contry par value d'input nationality
+    let urlcontry = "";
     contry.addEventListener("input" , ()=>{
+        contry.style.backgroundColor = "rgb(254 202 202)";
+        Validation = false;
         joueurs.contrys.forEach(Element =>{
-            const regex = new RegExp(`^${Element.name}$`, 'i');
-            if (regex.test(contry.value)) {
+            if (new RegExp(`^${Element.name}$`, 'i').test(contry.value)) {
+                urlcontry = Element.file_url;
                 contry.style.backgroundColor = "rgb(187 247 208)";
-                Validation = true;
-                let urlcontry = Element.file_url;
                 console.log(urlcontry);
-            } else {
-                contry.style.backgroundColor = "rgb(254 202 202)";
+                Validation = true;
+            } else if (contry.value == "") {
+                contry.style.backgroundColor = "";
                 Validation = false;
-            } 
+            };
         });
-        if (contry.value == "") {
-            contry.style.backgroundColor = "";
-        };
+        console.log(Validation);
     });
-    
 
       //L'ajout des information au fichier js
     let infor = document.querySelectorAll('#containerINPUT input');
+    Erreurexist.classList.add("hidden"); //ajouter "hidden" au class container d'erreur pour l'existanse de joueur
     Create.onclick= () =>{    
         infor.forEach((Element , index) =>{
             if (Element.value == "") {
                 Element.style.backgroundColor = "rgb(254 202 202)";
                 Validation == false
+                Erreur.classList.remove("hidden");
             } else if (inputname.value == joueurs.players[index].name){
                 Erreurexist.classList.toggle("hidden");
                 OK.onclick= () =>{
@@ -122,7 +123,7 @@ Ajounouv.addEventListener("click" , ()=>{
                     name: infor[0].value,
                     photo: "https://cdn3.futbin.com/content/fifa25/img/players/p50522519.png?fm=png&ixlib=java-2.1.0&verzion=1&w=485&s=f9ffb97b6af353daad5d7cb1ba1f6390",
                     position: positionnouv.value,
-                    nationality: contryJou(),
+                    nationality: urlcontry,
                     flag: "https://cdn.sofifa.net/flags/br.png",
                     club: infor[2].value,
                     logo: "https://cdn.sofifa.net/meta/team/7011/120.png",

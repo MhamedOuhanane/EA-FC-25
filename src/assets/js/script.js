@@ -75,7 +75,7 @@ munujoue.addEventListener('click' , ()=>{
                                     <span class="scorejou">${Element.positioning}</span>
                                 </div>
                             </div>
-                            <div class="flex justify-center gap-2 md:gap-4  z-1">
+                            <div class="flex justify-center gap-2 md:gap-4  z-10">
                                 <img class="w-[11%]" src=${Element.flag} alt="flag">
                                 <img class="w-[11%]" src=${Element.logo}  alt="logo">
                             </div>

@@ -201,8 +201,8 @@ function AffichAjou(POSITION){
                                         <span class="typescore1">POS</span>
                                         <span class="scorejou1">${Element.positioning}</span>
                                     </div>
-                                </div
-                                <div class="flex justify-center gap-2  z-1">
+                                </div>
+                                <div class="flex justify-center gap-2  z-10">
                                     <img src=${Element.flag} class="w-[11%]" alt="flag">
                                     <img src=${Element.logo} class="w-[11%]" alt="logo">
                                 </div>
