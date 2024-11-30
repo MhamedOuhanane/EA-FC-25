@@ -353,7 +353,7 @@ document.querySelectorAll(".badgebouton").forEach((Element) =>{
             BadgeAjout2 = document.querySelectorAll(".BadgeAjout2");
             BadgeAjout2.forEach((element , index) =>{
                 if (element.parentNode == AjoutparBadge) {
-                    if (Element.children[1].textContent == document.querySelectorAll(".joueurpos")[index].textContent) {
+                    if (parentbag.children[0].children[1].textContent == document.querySelectorAll(".joueurpos")[index].textContent) {
                         element.classList.remove("hidden");
                     } else {
                         element.classList.add("hidden");
@@ -367,6 +367,7 @@ document.querySelectorAll(".badgebouton").forEach((Element) =>{
         
         BadgeAjout2.forEach(element => {
             element.onclick=  () =>{
+                console.log(true);
                 
                 if (element.parentNode == AjoutparBadge) {
                         console.log("true1");
