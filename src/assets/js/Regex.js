@@ -38,7 +38,7 @@ Ajounouv.addEventListener("click" , ()=>{
     let inputurl = document.querySelector('#mudalnouv input[type="url"]');
     let inputnumber = document.querySelectorAll('#mudalnouv input[type="number"]');
     console.log(inputnumber);
-    //validation des input de type text (Regex)
+        //validation des input de type text (Regex)
     inputname.addEventListener("input" , () => {
         if ( /^[a-zéèêàâùûîïöäüÿç\-\s]{5,20}$/i.test(inputname.value) ) {   
             inputname.style.backgroundColor = "rgb(187 247 208)";
@@ -81,26 +81,29 @@ Ajounouv.addEventListener("click" , ()=>{
             }
         };
     });
-    // serch contry par value d'input nationality
+        // serch contry par value d'input nationality
     let urlcontry = "";
-    contry.addEventListener("input" , ()=>{
-        contry.style.backgroundColor = "rgb(254 202 202)";
+    inputcontry.addEventListener("input" , ()=>{
+        inputcontry.style.backgroundColor = "rgb(254 202 202)";
         Validation = false;
         joueurs.contrys.forEach(Element =>{
-            if (new RegExp(`^${Element.name}$`, 'i').test(contry.value)) {
+            if (new RegExp(`^${Element.name}$`, 'i').test(inputcontry.value)) {
                 urlcontry = Element.file_url;
-                contry.style.backgroundColor = "rgb(187 247 208)";
-                console.log(urlcontry);
+                inputcontry.style.backgroundColor = "rgb(187 247 208)";
                 Validation = true;
-            } else if (contry.value == "") {
-                contry.style.backgroundColor = "";
+            } else if (inputcontry.value == "") {
+                inputcontry.style.backgroundColor = "";
                 Validation = false;
             };
         });
-        console.log(Validation);
     });
 
-      //L'ajout des information au fichier js
+        // serch de club dans mon fichier json par value d'input nationality
+    inputclub.addEventListener("input" , ()=>{
+
+    });
+
+    //L'ajout des information au fichier json
     let infor = document.querySelectorAll('#containerINPUT input');
     Erreurexist.classList.add("hidden"); //ajouter "hidden" au class container d'erreur pour l'existanse de joueur
     Create.onclick= () =>{    
