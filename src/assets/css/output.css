@@ -574,18 +574,6 @@ video {
   top: 0px;
 }
 
-.right-0 {
-  right: 0px;
-}
-
-.top-2 {
-  top: 0.5rem;
-}
-
-.top-4 {
-  top: 1rem;
-}
-
 .z-0 {
   z-index: 0;
 }
@@ -596,10 +584,6 @@ video {
 
 .z-50 {
   z-index: 50;
-}
-
-.-z-0 {
-  z-index: 0;
 }
 
 .col-start-2 {
@@ -714,6 +698,34 @@ video {
   height: 100%;
 }
 
+.h-\[60\%\] {
+  height: 60%;
+}
+
+.h-\[\%\] {
+  height: %;
+}
+
+.h-\[4\%\] {
+  height: 4%;
+}
+
+.h-\[6\%\] {
+  height: 6%;
+}
+
+.h-\[50\%\] {
+  height: 50%;
+}
+
+.h-\[0\%\] {
+  height: 0%;
+}
+
+.h-\[40\%\] {
+  height: 40%;
+}
+
 .max-h-\[18rem\] {
   max-height: 18rem;
 }
@@ -770,6 +782,30 @@ video {
   width: 100%;
 }
 
+.w-\[\] {
+  width: ;
+}
+
+.w-\[80\] {
+  width: 80;
+}
+
+.w-\[80\%\] {
+  width: 80%;
+}
+
+.w-\[60\] {
+  width: 60;
+}
+
+.w-\[0\%\] {
+  width: 0%;
+}
+
+.w-\[50\%\] {
+  width: 50%;
+}
+
 .max-w-7 {
   max-width: 1.75rem;
 }
@@ -796,10 +832,6 @@ video {
 
 .items-center {
   align-items: center;
-}
-
-.justify-normal {
-  justify-content: normal;
 }
 
 .justify-start {
@@ -844,6 +876,10 @@ video {
 
 .gap-\[2vw\] {
   gap: 2vw;
+}
+
+.gap-4 {
+  gap: 1rem;
 }
 
 .gap-y-2 {
@@ -906,14 +942,14 @@ video {
   background-color: inherit;
 }
 
-.bg-red-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(252 165 165 / var(--tw-bg-opacity, 1));
-}
-
 .bg-white {
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
+}
+
+.bg-blue-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(29 78 216 / var(--tw-bg-opacity, 1));
 }
 
 .bg-opacity-30 {
@@ -928,8 +964,8 @@ video {
   --tw-bg-opacity: 0.6;
 }
 
-.bg-opacity-45 {
-  --tw-bg-opacity: 0.45;
+.bg-opacity-20 {
+  --tw-bg-opacity: 0.2;
 }
 
 .p-2 {
@@ -1007,6 +1043,10 @@ video {
   padding-top: 2vw;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
@@ -1014,6 +1054,10 @@ video {
 
 .text-\[0\.8rem\] {
   font-size: 0.8rem;
+}
+
+.text-\[10vw\] {
+  font-size: 10vw;
 }
 
 .text-\[110\%\] {
@@ -1030,19 +1074,12 @@ video {
   line-height: 1.25rem;
 }
 
-.text-xl {
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+.text-\[1vw\] {
+  font-size: 1vw;
 }
 
-.text-red-400 {
-  --tw-text-opacity: 1;
-  color: rgb(248 113 113 / var(--tw-text-opacity, 1));
-}
-
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+.text-\[2vw\] {
+  font-size: 2vw;
 }
 
 .text-red-700 {
@@ -1050,8 +1087,13 @@ video {
   color: rgb(185 28 28 / var(--tw-text-opacity, 1));
 }
 
-.\[https\:\\\/\\\/cdn3\\\.futbin\\\.com\\\/content\\\/fifa25\\\/img\\\/players\\\/p50522519\\\.png\\\?fm\=png\&ixlib\=java-2\\\.1\\\.0\&verzion\] {
-  https: \/\/cdn3\.futbin\.com\/content\/fifa25\/img\/players\/p50522519\.png\?fm=png&ixlib=java-2\.1\.0&verzion;
+.text-white {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.text-\[vw\] {
+  color: vw;
 }
 
 body {

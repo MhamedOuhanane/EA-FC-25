@@ -4,29 +4,25 @@ import joueurs from "../data/players.json" with{type: "json"}
 //Ajouter un nouveau joueur
 Ajounouv.addEventListener("click" , ()=>{
     mudalnouv.classList.remove("hidden");
-    cancelnouv.onclick= ()=>{
-        mudalnouv.classList.add("hidden");
-    };
     let inputNGK = document.querySelectorAll(".inputNGK");
     inputNGK.forEach(Element=>{
         Element.classList.add("hidden");
     });
 
     function POSITIONSELECT() {
-        console.log(document.querySelectorAll(".inputNGK"));
         if (positionnouv.value == "GK") {
             document.querySelectorAll(".inputGK").forEach(Element=>{
-                Element.classList.remove("hidden");
+                Element.classList.toggle("hidden");
             });
             inputNGK.forEach(Element=>{
-                Element.classList.add("hidden");
+                Element.classList.toggle("hidden");
             });
         } else {
             inputNGK.forEach(Element=>{  
-                Element.classList.remove("hidden");
+                Element.classList.toggle("hidden");
             });
             document.querySelectorAll(".inputGK").forEach(Element=>{  
-                Element.classList.add("hidden");
+                Element.classList.toggle("hidden");
             });
             
         };
@@ -38,26 +34,24 @@ Ajounouv.addEventListener("click" , ()=>{
     let nouvjoue = {};
 
     //Validation des information des nouveau joueur ajouter
-    let Validation = false;
-    let inputtext = document.querySelectorAll('#mudalnouv input[type="Text"]');
-    console.log(inputtext);
-    
+    let Validation = false;    
     let inputurl = document.querySelector('#mudalnouv input[type="url"]');
-    console.log(inputurl);
     let inputnumber = document.querySelectorAll('#mudalnouv input[type="number"]');
     console.log(inputnumber);
     //validation des input de type text (Regex)
-    inputtext.forEach(Element =>{
-        Element.addEventListener("input" , () => {
-            if ( /^[a-zéèêàâùûîïöäüÿç\-\s]{5,20}$/i.test(Element.value) ) {   
-                Element.style.backgroundColor = "rgb(187 247 208)";
-                Validation = true;
-            } else {
-                Element.style.backgroundColor = "rgb(254 202 202)";
-                Validation = false;
-            };
-        });
+    inputname.addEventListener("input" , () => {
+        if ( /^[a-zéèêàâùûîïöäüÿç\-\s]{5,20}$/i.test(inputname.value) ) {   
+            inputname.style.backgroundColor = "rgb(187 247 208)";
+            Validation = true;
+        } else {
+            inputname.style.backgroundColor = "rgb(254 202 202)";
+            Validation = false;
+        };
+        if (inputname.value == "") {
+            inputname.style.backgroundColor = "";
+        };
     });
+    
         //validation input de type url pour le photo
     inputurl.oninput = () => {
         if ( /^https:\/\/cdn(?:3\.futbin\.com\/content\/fifa25\/img\/players\/p\d+\.png\?fm=png&ixlib=java-\d+\.\d+\.\d+&verzion=\d+&w=\d+&s=[a-f0-9]+|\.sofifa\.net\/players\/\d+\/\d+\/\d+_\d+\.png)$/
@@ -67,6 +61,9 @@ Ajounouv.addEventListener("click" , ()=>{
         } else {
             inputurl.style.backgroundColor = "rgb(254 202 202)";
             Validation = false;
+        };
+        if (inputname.value == "") {
+            inputname.style.backgroundColor = "";
         };
     }; 
         //    validation des input de type number (Regex)
@@ -79,34 +76,36 @@ Ajounouv.addEventListener("click" , ()=>{
                 Element.style.backgroundColor = "rgb(254 202 202)";
                 Validation = false;
             };
+            if (Element.value == "") {
+                inputname.style.backgroundColor = "";
+            }
         };
     });
     // serch contry par value d'input nationality
-    // function contryJou(){
-    //     joueurs.contrys.forEach(Element =>{
-    //         const regex = new RegExp(`^${Element.name}$`, 'i');  // 'i' for case-insensitive matching
-    //         if (regex.test(contry.value)) {
-    //             contry.style.backgroundColor = "rgb(187 247 208)";
-    //             Validation = true;
-    //             return contry.value
-    //         } else {
-    //             contry.style.backgroundColor = "rgb(187 247 208)";
-    //             Validation = false;
-    //             return 0;
-    //         } 
-    //     });
-    // };
-    console.log(contryJou());
+    contry.addEventListener("input" , ()=>{
+        joueurs.contrys.forEach(Element =>{
+            const regex = new RegExp(`^${Element.name}$`, 'i');
+            if (regex.test(contry.value)) {
+                contry.style.backgroundColor = "rgb(187 247 208)";
+                Validation = true;
+                let urlcontry = Element.file_url;
+                console.log(urlcontry);
+            } else {
+                contry.style.backgroundColor = "rgb(254 202 202)";
+                Validation = false;
+            } 
+        });
+        if (contry.value == "") {
+            contry.style.backgroundColor = "";
+        };
+    });
     
 
       //L'ajout des information au fichier js
-    console.log(document.querySelectorAll('#containerINPUT input'));
-    Create.onclick= () =>{
-
-    
-        if (Validation == true) {
-            let infor = document.querySelectorAll('#containerINPUT input');
-            
+    let infor = document.querySelectorAll('#containerINPUT input');
+    Create.onclick= () =>{    
+                  
+        if ((Validation == true)){
             if (positionnouv.value != "GK") {
                 nouvjoue = {
                     name: infor[0].value,
@@ -148,11 +147,18 @@ Ajounouv.addEventListener("click" , ()=>{
             
             Erreur.classList.add("hidden");
             joueurs.players.push(nouvjoue);
-            console.log(joueurs);
             
         } else {
             Erreur.classList.remove("hidden");
         }
         
+    };
+    
+    cancelnouv.onclick= ()=>{
+        mudalnouv.classList.add("hidden");
+        infor.forEach(Element =>{
+            Element.value = "";
+            Element.style.backgroundColor = "";
+        });
     };
 });
