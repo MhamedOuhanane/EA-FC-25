@@ -103,11 +103,11 @@
                             <option value="RW">RW</option>
                             <option value="ST">ST</option>
                         </select>
-                        <div id="Erreurexist" class="bg-black bg-opacity-30 absolute top-0 w-full h-full flex justify-center items-centery">
+                        <div id="Erreurexist" class="bg-black bg-opacity-30 absolute top-0 w-full h-full flex justify-center items-center">
                             <div class="bg-white w-[50%] h-[40%] gap-4 flex flex-col justify-center items-center rounded-lg ">
                                 <span class="text-sm md:text-lg w-[80%] text-center text-red-700">Ce joueur a déjà été inclus dans la liste des joueurs.</span>
 
-                                <button id="OK" type="button" class="bg-blue-700 rounded-lg px-2 text-white">OK</button>
+                                <button id="OK1" type="button" class="bg-blue-700 rounded-lg px-2 text-white">OK</button>
                             </div>
                         </div>
                 </div>
@@ -126,7 +126,7 @@
         </div>
 
         <div id="mudalajout" class="bg-black bg-opacity-60 fixed top-0 left-0 z-50 w-full h-full mt-[3rem] px-5 md:px-[12vw] hidden">
-            <div class="bg-white rounded-md">
+            <div class="bg-white rounded-md relative">
                 <form name="formajout" class="flex flex-col w-full h-auto  gap-[2vw] p-2  mb-2">
                     <button id="cancelformajout" class="self-end w-3 text-2xl mr-3" type="button">X</button>
                     <h2 class="text-lg self-center">Entrer les informations du joueur</h2>
@@ -155,6 +155,14 @@
                 <div id="cardsform" class="flex flex-wrap min-h-[10vw] justify-center gap-2 max-h-[18rem] overflow-y-auto text-white ">
                 </div>
 
+                <div id="ErreurAjoute" class="bg-black bg-opacity-30 absolute top-0 w-full h-full flex justify-center items-center z-10">
+                    <div class="bg-white w-[50%] h-[40%] gap-4 flex flex-col justify-center items-center rounded-lg">
+                        <span id="joueurexist" class="text-sm md:text-lg w-[80%] text-center text-red-700">Ce joueur a déjà existe dans la formulation.</span>
+                        <span id="positionpleine" class="text-sm md:text-lg w-[80%] text-center text-red-700 hidden">Impossible d'ajouter à cette position, elle est déjà pleine. Veuillez choisir une autre position.</span>
+
+                        <button id="OK2" type="button" class="bg-blue-700 rounded-lg px-2 text-white">OK</button>
+                    </div>
+                </div>
             </div>
             
         </div>

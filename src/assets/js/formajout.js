@@ -7,11 +7,11 @@ import joueurs from "../data/players.json" with{type: "json"}
 joueurs.players.forEach((Element) => {
     cardsform.innerHTML +=`<div class="BadgeAjout1 ${"bg" + Element.position} relative w-[7rem] h-[10rem] hover:scale-95 flex flex-col  items-center py-4 text-white">
                             <div class="flex justify-start  w-full h-[75%] p-[12%]">
-                                <div class="max-w-7 flex flex-col items-center pt-3 z-1">
+                                <div class="max-w-7 flex flex-col items-center pt-3 z-10">
                                     <span  class="scorejou1 text-[110%]">${Element.rating}</span><span class="typescore1 joueurposition">${Element.position}</span>
                                 </div>
                             </div>
-                            <img class="absolute  -z-1 mb-1" src=${Element.photo}>
+                            <img class="absolute  z-0 mb-1" src=${Element.photo}>
                             <span class="z-10 mb-1 ">${Element.name}</span>
                             <div class="flex justify-evenly gap-[0.2rem] md:gap-1 z-10 ${Element.position == "GK" ? "hidden" : ""}">
                                 <div class="flex flex-col items-center">
@@ -73,6 +73,10 @@ joueurs.players.forEach((Element) => {
 });
 conferjoue.onclick= () =>{
     mudalajout.classList.toggle("hidden");
+    ErreurAjoute.classList.add("hidden");
+    OK2.onclick = () =>{
+        ErreurAjoute.classList.toggle("hidden");
+    }
 
     let inputname = document.querySelector("#mudalajout input");
     let BadgeAjout1 = document.querySelectorAll(".BadgeAjout1");
@@ -142,13 +146,16 @@ conferjoue.onclick= () =>{
                                 condiajout = true;
                             };
                         });
+                    }else if ((Element.children[0].children[0].children[1].textContent == Ajoutterrain[i].textContent) && ((Element.children[2].textContent == Ajoutterrain[i].parentNode.parentNode.children[1].children[2].textContent))) {
+                        ErreurAjoute.classList.remove("hidden");
+                        joueurexist.classList.remove("hidden");
+                        break;
                     };
                     if (condiajout == true) {
                         Ajoutterrain[i].parentNode.classList.add("hidden");
                         cancelform();
-
                         break;
-                    }
+                    };
                 };
                 
             } else {
@@ -167,17 +174,17 @@ conferjoue.onclick= () =>{
 
     //Anulation de la form d'ajout des joueurs
     function cancelform() {
-        cancelformajout.onclick = () =>{
-            inputname.value = "";
-            position.value = "Tous";
-            effectif.value = "Effectif";
-            effectif.style.border = "";
-            joueurs.players.forEach((Element , index) =>{
-                BadgeAjout1[index].classList.remove("hidden");
-            });
-            mudalajout.classList.toggle("hidden");
-        };
+        inputname.value = "";
+        position.value = "Tous";
+        effectif.value = "Effectif";
+        effectif.style.border = "";
+        joueurs.players.forEach((Element , index) =>{
+            BadgeAjout1[index].classList.remove("hidden");
+        });
+        mudalajout.classList.toggle("hidden");
     };
-    cancelform();
+    cancelformajout.onclick = () =>{
+        cancelform();
+    };
 };
 

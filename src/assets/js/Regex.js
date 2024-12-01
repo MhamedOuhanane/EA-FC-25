@@ -115,7 +115,7 @@ Ajounouv.addEventListener("click" , ()=>{
                 Erreur.classList.remove("hidden");
             } else if (inputname.value == joueurs.players[index].name){
                 Erreurexist.classList.toggle("hidden");
-                OK.onclick= () =>{
+                OK1.onclick= () =>{
                     Erreurexist.classList.toggle("hidden");
                 };
                 Validation == false;
