@@ -74,11 +74,14 @@ joueurs.players.forEach((Element) => {
     //Ajouter au bloc de terrain
 document.querySelectorAll(".badgebouton").forEach((Element) =>{
     let parentbag = Element.parentNode;
-    console.log(parentbag.children.length);
     
     Element.addEventListener("click" , () => {
         
-                MudalBadge.classList.toggle("hidden");
+        MudalBadge.classList.toggle("hidden");
+        //annulation de l'affichage des badge dans le cas d'ajout
+        cancelaffich3.onclick= () =>{
+            MudalBadge.classList.toggle("hidden");
+        };
         let BadgeAjout2 = document.querySelectorAll(".BadgeAjout2");
 
         //Mise à jour de containers des bage ajouter
@@ -133,11 +136,11 @@ document.querySelectorAll(".badgebouton").forEach((Element) =>{
     });
 });
 
+function SAVE(){
+    
+}
 
-//annulation de l'affichage des badge dans le cas d'ajout
-cancelaffich3.onclick= () =>{
-    MudalBadge.classList.toggle("hidden");
-};
+
 
 //suppression des badges des joueurs
 // document.querySelectorAll(".deletbadge").forEach(element =>{

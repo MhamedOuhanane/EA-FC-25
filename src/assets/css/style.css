@@ -151,6 +151,12 @@ select{
     background-position: center;
 }
 
+#delete{
+    background-image: url("../images/deletebadge.png");
+    background-size: cover;
+    background-position: center;
+}
+
 .badgebouton:hover,.badgeremp:hover{
     scale: 1.1;
     transition: all 500ms ;
