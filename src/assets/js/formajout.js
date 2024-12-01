@@ -124,7 +124,7 @@ conferjoue.onclick= () =>{
 
     let BadgeAjout2 = document.querySelectorAll(".BadgeAjout2");
     let Ajoutterrain = document.querySelectorAll("#titularisés .badgebouton span");
-    let Ajoutrempla = document.querySelectorAll("#titularisés .badgebouton span");
+    let Ajoutrempla = document.querySelectorAll("#remplaçants .badgebouton span");
 
     
     BadgeAjout1.forEach(Element =>{
@@ -133,16 +133,11 @@ conferjoue.onclick= () =>{
             if (effectif.value == "Effectif") {
                 effectif.style.border = "2px solid red";
             } else if (effectif.value == "Titularisés") {
-                console.log("true10");
-                
                 for (let i = 0; i < Ajoutterrain.length; i++) {
                     if ((Element.children[0].children[0].children[1].textContent == Ajoutterrain[i].textContent) && (Ajoutterrain[i].parentNode.parentNode.children.length == 1)) {
                         BadgeAjout2.forEach(Ele =>{                            
                             if ((Element.children[2].textContent == Ele.children[2].textContent)) {
-                                console.log(Ele.children[2].textContent);
-                                console.log(Element.children[2].textContent);
                                 Ajoutterrain[i].parentNode.parentNode.appendChild(Ele);
-                                console.log(Ajoutterrain[i].parentNode.parentNode);
                                 condiajout = true;
                             };
                         });
@@ -162,18 +157,33 @@ conferjoue.onclick= () =>{
                         break;
                     };
                 };
-                
             } else {
-                console.log(false);
-
-
-
-
-
-
-
+                for (let i = 0; i < Ajoutrempla.length; i++) {
+                    if ((Element.children[0].children[0].children[1].textContent == Ajoutrempla[i].textContent) && (Ajoutrempla[i].parentNode.parentNode.children.length == 1)) {
+                        BadgeAjout2.forEach(Ele =>{                            
+                            if ((Element.children[2].textContent == Ele.children[2].textContent)) {
+                                Ajoutrempla[i].parentNode.parentNode.appendChild(Ele);
+                                condiajout = true;
+                            };
+                        });
+                    }else if ((Element.children[0].children[0].children[1].textContent == Ajoutrempla[i].textContent) && ((Element.children[2].textContent == Ajoutrempla[i].parentNode.parentNode.children[1].children[2].textContent))) {
+                        ErreurAjoute.classList.remove("hidden");
+                        joueurexist.classList.remove("hidden");
+                        positionpleine.classList.add("hidden");
+                        break;
+                    };
+                    if (condiajout == false) {
+                        ErreurAjoute.classList.toggle("hidden");
+                        joueurexist.classList.add("hidden");
+                        positionpleine.classList.remove("hidden");
+                    } else {
+                        Ajoutrempla[i].parentNode.classList.add("hidden");
+                        cancelform();
+                        break;
+                    };
+                };
                 mudalajout.classList.toggle("hidden");
-            }
+            };
         }
     });
 
