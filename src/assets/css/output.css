@@ -628,12 +628,20 @@ video {
   grid-column-start: 3;
 }
 
+.col-start-4 {
+  grid-column-start: 4;
+}
+
 .col-end-3 {
   grid-column-end: 3;
 }
 
 .col-end-4 {
   grid-column-end: 4;
+}
+
+.col-end-5 {
+  grid-column-end: 5;
 }
 
 .mb-1 {
@@ -834,6 +842,10 @@ video {
 
 .grid-cols-5 {
   grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .grid-rows-4 {

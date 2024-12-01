@@ -71,7 +71,7 @@ joueurs.players.forEach((Element) => {
                             </div>
                         </div>`;
 });
-conferjoue.onclick= () =>{
+Ajoutform.onclick= () =>{
     mudalajout.classList.toggle("hidden");
     ErreurAjoute.classList.add("hidden");
     OK2.onclick = () =>{

@@ -65,7 +65,7 @@
         </div>
     </header>
     <section class="Pagetot w-full gap-3 mt-[3rem] pb-[3rem]">
-        <div class="bg-opacity-30 h-[4.5rem] grid grid-cols-3 items-center justify-items-center py-3">
+        <div class="bg-opacity-30 h-[4.5rem] grid grid-cols-4 items-center justify-items-center py-3">
             <!-- button pour ajout un bouveau joueur -->
             <button id="Ajounouv" class=" bg-inherit w-[70%] md:w-[60%] lg:w-[50%] h-full border-2 border-solid border-white rounded-lg text-white px-2 text-[0.8rem] md:text-[1rem] items-center">Nouvelle joueur</button>
 
@@ -118,11 +118,17 @@
             </form>
             </div>
 
+            <!-- select de la formation utilisé -->
             <select name="formation" id="formation" class="col-start-2 col-end-3 w-[70%] rounded-lg md:w-[60%] lg:w-[50%] h-[2rem] ">
                 <option value="4-3-3">4 - 3 - 3</option>
             </select>
-    
-            <button id="conferjoue" class="bg-inherit w-[70%] md:w-[60%] lg:w-[50%] h-full border-2 border-solid rounded-lg col-start-3 col-end-4 text-white text-[0.8rem] md:text-[1rem]">Ajouter au formation</button>
+            
+            <!-- confermation de la formul -->
+            <button id="SAVE" class="bg-inherit w-[70%] md:w-[60%] lg:w-[50%] h-full border-2 border-solid rounded-lg col-start-3 col-end-4 text-white text-[0.8rem] md:text-[1rem]">Save</button>
+
+
+            <!-- ajouter un joueur au formation à partir d'un form -->
+            <button id="Ajoutform" class="bg-inherit w-[70%] md:w-[60%] lg:w-[50%] h-full border-2 border-solid rounded-lg col-start-4 col-end-5 text-white text-[0.8rem] md:text-[1rem]">Ajouter au formation</button>
         </div>
 
         <div id="mudalajout" class="bg-black bg-opacity-60 fixed top-0 left-0 z-50 w-full h-full mt-[3rem] px-5 md:px-[12vw] hidden">
