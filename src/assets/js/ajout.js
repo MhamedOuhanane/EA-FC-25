@@ -128,16 +128,15 @@ document.querySelectorAll(".badgebouton").forEach((Element) =>{
                     MudalBadge.classList.toggle("hidden");
                     MISEAJOURAFFBAD();
                     Delete.onclick = () =>{
-
-                        if (parentbag.length != 1) {
-                            if (parentbag.children.length != 1) {
-                                MudalBadge.classList.toggle("hidden");
-                                parentbag.children[0].classList.remove("hidden");
-                                AjoutparBadge.appendChild(parentbag.children[1]);
-                            } else if (Element.parentNode.children.length == 1) {
-                                MudalBadge.classList.toggle("hidden");
-                            }
-                        }
+                        if (parentbag.children.length != 1) {
+                            MudalBadge.classList.toggle("hidden");
+                            parentbag.children[0].classList.remove("hidden");
+                            AjoutparBadge.appendChild(parentbag.children[1]);
+                            console.log(parentbag);
+                        } else if (Element.parentNode.children.length == 1) {
+                            console.log(parentbag);
+                            MudalBadge.classList.toggle("hidden");
+                        };
                     };
                 };
             };

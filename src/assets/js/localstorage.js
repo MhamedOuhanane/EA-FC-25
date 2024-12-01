@@ -9,14 +9,18 @@ if (Joueur != []) {
     Joueur.forEach(Element => {
         document.querySelectorAll("#AjoutparBadge .BadgeAjout2").forEach( element => {
             let namejoueur = element.children[2].textContent;
-            if ((Element.name == namejoueur) && (Element.effectif == "titularisés")) {
-                let container1 = document.querySelectorAll("#titularisés .badgebouton span");
+            if ((Element.name == namejoueur)) {
+                let container1 = document.querySelectorAll(`#${Element.effectif} .badgebouton span`);
+                console.log(container1);
+                
                 for (let index = 0; index < container1.length; index++) {
                     const ele = container1[index];
-                    if (ele.textContent == Element.position) {
+                    const containerbadge = document.querySelectorAll(`#${Element.effectif} > div`)[index];
+                    if ((ele.textContent == Element.position) && (containerbadge.children.length == 1)) {
                         ele.parentNode.classList.toggle("hidden");
                         element.classList.remove("hidden");
-                        document.querySelectorAll("#titularisés > div")[index].appendChild(element);
+                        containerbadge.appendChild(element);
+                        console.log(containerbadge);
                         break;
                     };
                 }
