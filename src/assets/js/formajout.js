@@ -131,72 +131,10 @@ conferjoue.onclick= () =>{
                 for(let i = 0 ; i < Ajoutterrain.length ; i++){
                     if ((Element.children[0].children[0].children[1].textContent == Ajoutterrain[i].textContent) && (Ajoutterrain[i].parentNode.parentNode.childNodes != 1)) {
                         Ajoutterrain[i].parentNode.classList.add("hidden");
-                        Ajoutterrain[i].innerHTML += `<div class="BadgeAjout2 ${"bg" + joueurs.players[i].position} relative w-[7rem] h-[10rem] hover:scale-95 flex flex-col  items-center py-4 text-white">
-                                                            <div class="flex justify-start  w-full h-[75%] p-[12%]">
-                                                                <div class="max-w-7 flex flex-col items-center pt-3 z-10">
-                                                                    <span  class="scorejou1 text-[110%]">${joueurs.players[i].rating}</span><span class="joueurpos typescore1">${joueurs.players[i].position}</span>
-                                                                </div>
-                                                            </div>
-                                                            <img class="absolute  z-0 mb-1" src=${joueurs.players[i].photo}>
-                                                            <span class="z-10 mb-1 ">${joueurs.players[i].name}</span>
-                                                            <div class="flex justify-evenly gap-[0.2rem] md:gap-1 z-10 ${joueurs.players[i].position == "GK" ? "hidden" : ""}">
-                                                                <div class="flex flex-col items-center">
-                                                                    <span class="typescore1">PAC</span>
-                                                                    <span class="scorejou1">${joueurs.players[i].pace}</span>
-                                                                </div>
-                                                                <div class="flex flex-col items-center">
-                                                                    <span class="typescore1">SHO</span>
-                                                                    <span class="scorejou1">${joueurs.players[i].shooting}</span>
-                                                                </div>
-                                                                <div class="flex flex-col items-center">
-                                                                    <span class="typescore1">PAS</span>
-                                                                    <span class="scorejou1">${joueurs.players[i].passing}</span>
-                                                                </div>
-                                                                <div class="flex flex-col items-center">
-                                                                    <span class="typescore1">DRI</span>
-                                                                    <span class="scorejou1">${joueurs.players[i].dribbling}</span>
-                                                                </div>
-                                                                <div class="flex flex-col items-center">
-                                                                    <span class="typescore1">DEF</span>
-                                                                    <span class="scorejou1">${joueurs.players[i].defending}</span>
-                                                                </div>
-                                                                <div class="flex flex-col items-center">
-                                                                    <span class="typescore1">PHY</span>
-                                                                    <span class="scorejou1">${joueurs.players[i].physical}</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="flex justify-evenly gap-[0.2rem] md:gap-1 z-10 ${joueurs.players[i].position != "GK" ? "hidden" : ""}">
-                                                                <div class="flex flex-col items-center">
-                                                                    <span class="typescore1">DIV</span>
-                                                                    <span class="scorejou1">${joueurs.players[i].diving}</span>
-                                                                </div>
-                                                                <div class="flex flex-col items-center">
-                                                                    <span class="typescore1">HAN</span>
-                                                                    <span class="scorejou1">${joueurs.players[i].handling}</span>
-                                                                </div>
-                                                                <div class="flex flex-col items-center">
-                                                                    <span class="typescore1">KIC</span>
-                                                                    <span class="scorejou1">${joueurs.players[i].kicking}</span>
-                                                                </div>
-                                                                <div class="flex flex-col items-center">
-                                                                    <span class="typescore1">REF</span>
-                                                                    <span class="scorejou1">${joueurs.players[i].reflexes}</span>
-                                                                </div>
-                                                                <div class="flex flex-col items-center">
-                                                                    <span class="typescore1">SPE</span>
-                                                                    <span class="scorejou1">${joueurs.players[i].speed}</span>
-                                                                </div>
-                                                                <div class="flex flex-col items-center">
-                                                                    <span class="typescore1">POS</span>
-                                                                    <span class="scorejou1">${joueurs.players[i].positioning}</span>
-                                                                </div>
-                                                            </div>
-                                                            <div class="flex justify-center gap-2  z-10">
-                                                                <img src=${joueurs.players[i].flag} class="w-[11%]" alt="flag">
-                                                                <img src=${joueurs.players[i].logo} class="w-[11%]" alt="logo">
-                                                            </div>
-                                                        </div>`;
-                        Ajoutterrain[i].classList.toggle("hidden");
+                        let badgeajout =  Element.cloneNode(true);
+                        badgeajout.classList.replace("BadgeAjout1" , "BadgeAjout2")
+                        Ajoutterrain[i].parentNode.parentNode.appendChild(badgeajout);
+                        mudalajout.classList.toggle("hidden");
                         break;
                     };
                 };
