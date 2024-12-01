@@ -74,7 +74,10 @@ joueurs.players.forEach((Element) => {
     //Ajouter au bloc de terrain
 document.querySelectorAll(".badgebouton").forEach((Element) =>{
     let parentbag = Element.parentNode;
-    
+    Delete.onclick = () =>{
+        MudalBadge.classList.toggle("hidden");
+    };
+
     Element.addEventListener("click" , () => {
         
         MudalBadge.classList.toggle("hidden");
@@ -124,8 +127,19 @@ document.querySelectorAll(".badgebouton").forEach((Element) =>{
                     parentbag = element.parentNode;
                     MudalBadge.classList.toggle("hidden");
                     MISEAJOURAFFBAD();
-                };
+                    Delete.onclick = () =>{
 
+                        if (parentbag.length != 1) {
+                            if (parentbag.children.length != 1) {
+                                MudalBadge.classList.toggle("hidden");
+                                parentbag.children[0].classList.remove("hidden");
+                                AjoutparBadge.appendChild(parentbag.children[1]);
+                            } else if (Element.parentNode.children.length == 1) {
+                                MudalBadge.classList.toggle("hidden");
+                            }
+                        }
+                    };
+                };
             };
             // MudalBadge.onclick= ()=>{
             //     if (!MudalBadge.contains(element)) {
@@ -133,11 +147,12 @@ document.querySelectorAll(".badgebouton").forEach((Element) =>{
             //     };
             // };
         });
+
     });
 });
 
 function SAVE(){
-    
+
 }
 
 
