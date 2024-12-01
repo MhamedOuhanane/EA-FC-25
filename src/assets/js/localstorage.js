@@ -1,12 +1,13 @@
 //importer les données json des annonces à partir de son chemin
 import joueurs from "../data/players.json" with{type: "json"}
+let Joueur = JSON.parse(localStorage.getItem("Joueur")) || [];
 
 //save les joueurs qui appartient au terrain et au remplaçant
 // let formation = [];
 let container = document.querySelectorAll(".badgebouton");
 
 souvgarder.onclick = () =>{
-    let formation = [];
+    Joueur = [];
     container.forEach(Element => {
         let parentbag = Element.parentNode;
         if (parentbag.children.length == 2) {
@@ -23,9 +24,10 @@ souvgarder.onclick = () =>{
                 position: positionjoue,
                 effectif: Effectif
             };
-            formation.push(info);
+            Joueur.push(info);
         };
     });
-    console.log(formation);
+    console.log(Joueur);
     
+    localStorage.setItem("Joueur" , JSON.stringify(Joueur));
 };
