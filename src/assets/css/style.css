@@ -45,12 +45,12 @@
 }
 
 .typescore1{
-    font-size: 30%;
+    font-size: 0.56vw;
     line-height: 0;
 }
 
 .scorejou1{
-    font-size: 60%;
+    font-size: 0.8vw;
 }
 
 
@@ -82,7 +82,6 @@ select{
 .GK{
     grid-column: 3 / 4;
     grid-row: 4 / 5;
-    align-self: flex-end;
 }
 
 .CB1{
@@ -150,6 +149,9 @@ select{
     background-size: cover;
     background-position: center;
 }
+
+/* #remplaçants .badgebouton */
+
 
 #Delete{
     background-image: url("../images/deletebadge.png");

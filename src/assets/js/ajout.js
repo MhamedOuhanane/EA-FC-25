@@ -4,14 +4,14 @@ import joueurs from "../data/players.json" with{type: "json"}
 
 
 joueurs.players.forEach((Element) => {
-    AjoutparBadge.innerHTML +=`<div class="BadgeAjout2 ${"bg" + Element.position} relative w-[7rem] h-[10rem] hover:scale-95 flex flex-col  items-center py-4 text-white">
-                        <div class="flex justify-start  w-full h-[75%] p-[12%]">
-                            <div class="max-w-7 flex flex-col items-center pt-3 z-10">
-                                <span  class="scorejou1 text-[110%]">${Element.rating}</span><span class="joueurpos typescore1">${Element.position}</span>
+    AjoutparBadge.innerHTML +=`<div class="BadgeAjout2 ${"bg" + Element.position} relative w-[14vw] h-[20vw] md:w-[10vw] md:h-[14vw] hover:scale-95 flex flex-col justify-evenly  items-center py-4 text-white">
+                        <div class="flex justify-start  w-full h-[70%] p-[4%] md:h-[50%] px-[12%] md:py-[6%] lg:py-[10%]">
+                            <div class="max-w-7 flex flex-col items-center z-10">
+                                <span  class="scorejou1 text-[1.8vw]">${Element.rating}</span><span class="joueurpos typescore1 text-[0.75vw]">${Element.position}</span>
                             </div>
                         </div>
                         <img class="absolute  z-0 mb-1" src=${Element.photo}>
-                        <span class="z-10 mb-1 ">${Element.name}</span>
+                        <span class="z-10 mb-1 text-[1.6vw]">${Element.name}</span>
                         <div class="flex justify-evenly gap-[0.2rem] md:gap-1 z-10 ${Element.position == "GK" ? "hidden" : ""}">
                             <div class="flex flex-col items-center">
                                 <span class="typescore1">PAC</span>
