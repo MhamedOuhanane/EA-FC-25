@@ -123,61 +123,136 @@ conferjoue.onclick= () =>{
     };
 
     let BadgeAjout2 = document.querySelectorAll(".BadgeAjout2");
-    let Ajoutterrain = document.querySelectorAll("#titularisés .badgebouton span");
-    let Ajoutrempla = document.querySelectorAll("#remplaçants .badgebouton span");
+    let Ajoutterrain = document.querySelectorAll("#titularisés .badgebouton");
+    let Ajoutrempla = document.querySelectorAll("#remplaçants .badgebouton");
 
     
+    // BadgeAjout1.forEach(Element =>{
+    //     Element.onclick= () =>{
+    //         let condiajout = false;
+    //         if (effectif.value == "Effectif") {
+    //             effectif.style.border = "2px solid red";
+    //         } else if (effectif.value == "Titularisés") {
+    //             for (let i = 0; i < Ajoutterrain.length; i++) {
+    //                 if ((Element.children[0].children[0].children[1].textContent == Ajoutterrain[i].textContent) && (Ajoutterrain[i].parentNode.parentNode.children.length == 1)) {
+    //                     BadgeAjout2.forEach(Ele =>{                            
+    //                         if ((Element.children[2].textContent == Ele.children[2].textContent)) {
+    //                             Ajoutterrain[i].parentNode.parentNode.appendChild(Ele);
+    //                             Ele.classList.remove("hidden");
+    //                             condiajout = true;
+    //                         };
+    //                     });
+    //                 }else if (Element.children[0].children[0].children[1].textContent == Ajoutterrain[i].textContent) {
+    //                     if (Element.children[2].textContent == Ajoutterrain[i].parentNode.parentNode.children[1].children[2].textContent) {
+    //                         ErreurAjoute.classList.remove("hidden");
+    //                         joueurexist.classList.remove("hidden");
+    //                         positionpleine.classList.add("hidden");
+    //                         break;
+    //                     }
+    //                 };
+    //                 if (condiajout == false) {
+    //                     ErreurAjoute.classList.toggle("hidden");
+    //                     joueurexist.classList.add("hidden");
+    //                     positionpleine.classList.remove("hidden");
+    //                 } else {
+    //                     Ajoutterrain[i].parentNode.classList.add("hidden");
+    //                     cancelform();
+    //                     break;
+    //                 };
+    //             };
+    //         } else {
+    //             for (let i = 0; i < Ajoutrempla.length; i++) {
+    //                 if ((Element.children[0].children[0].children[1].textContent == Ajoutrempla[i].textContent) && (Ajoutrempla[i].parentNode.parentNode.children.length == 1)) {
+    //                     BadgeAjout2.forEach(Ele =>{                            
+    //                         if ((Element.children[2].textContent == Ele.children[2].textContent)) {
+    //                             Ajoutrempla[i].parentNode.parentNode.appendChild(Ele);
+    //                             condiajout = true;
+    //                         };
+    //                     });
+                        
+    //                 }else if ((Element.children[0].children[0].children[1].textContent == Ajoutrempla[i].textContent) && ((Element.children[2].textContent == Ajoutrempla[i].parentNode.parentNode.children[1].children[2].textContent))) {
+    //                     ErreurAjoute.classList.remove("hidden");
+    //                     joueurexist.classList.remove("hidden");
+    //                     positionpleine.classList.add("hidden");
+    //                     break;
+    //                 };
+    //                 if (condiajout == false) {
+    //                     console.log(Ajoutrempla[i].parentNode.parentNode.children[1].children[2].textContent);
+    //                     ErreurAjoute.classList.toggle("hidden");
+    //                     joueurexist.classList.add("hidden");
+    //                     positionpleine.classList.remove("hidden");
+    //                 } else {
+    //                     Ajoutrempla[i].parentNode.classList.add("hidden");
+    //                     cancelform();
+    //                     break;
+    //                 };
+    //             };
+    //             mudalajout.classList.toggle("hidden");
+    //         };
+    //     }
+    // });
+
     BadgeAjout1.forEach(Element =>{
         Element.onclick= () =>{
             let condiajout = false;
+            let positionjoueur = Element.children[0].children[0].children[1];
             if (effectif.value == "Effectif") {
                 effectif.style.border = "2px solid red";
             } else if (effectif.value == "Titularisés") {
                 for (let i = 0; i < Ajoutterrain.length; i++) {
-                    if ((Element.children[0].children[0].children[1].textContent == Ajoutterrain[i].textContent) && (Ajoutterrain[i].parentNode.parentNode.children.length == 1)) {
+                    if ((positionjoueur.textContent == Ajoutterrain[i].children[1].textContent) && (Ajoutterrain[i].parentNode.children.length == 1)) {
                         BadgeAjout2.forEach(Ele =>{                            
                             if ((Element.children[2].textContent == Ele.children[2].textContent)) {
-                                Ajoutterrain[i].parentNode.parentNode.appendChild(Ele);
+                                Ajoutterrain[i].parentNode.appendChild(Ele);
+                                Ele.classList.remove("hidden");
                                 condiajout = true;
                             };
                         });
-                    }else if ((Element.children[0].children[0].children[1].textContent == Ajoutterrain[i].textContent) && ((Element.children[2].textContent == Ajoutterrain[i].parentNode.parentNode.children[1].children[2].textContent))) {
-                        ErreurAjoute.classList.remove("hidden");
-                        joueurexist.classList.remove("hidden");
-                        positionpleine.classList.add("hidden");
-                        break;
+                    }else if (positionjoueur.textContent == Ajoutterrain[i].children[1].textContent) {
+                        if (Element.children[2].textContent == Ajoutterrain[i].parentNode.children[1].children[2].textContent) {
+                            ErreurAjoute.classList.remove("hidden");
+                            joueurexist.classList.remove("hidden");
+                            positionpleine.classList.add("hidden");
+                            break;
+                        }
                     };
                     if (condiajout == false) {
                         ErreurAjoute.classList.toggle("hidden");
                         joueurexist.classList.add("hidden");
                         positionpleine.classList.remove("hidden");
                     } else {
-                        Ajoutterrain[i].parentNode.classList.add("hidden");
+                        Ajoutterrain[i].classList.add("hidden");
                         cancelform();
                         break;
                     };
                 };
             } else {
                 for (let i = 0; i < Ajoutrempla.length; i++) {
-                    if ((Element.children[0].children[0].children[1].textContent == Ajoutrempla[i].textContent) && (Ajoutrempla[i].parentNode.parentNode.children.length == 1)) {
+                    if ((positionjoueur.textContent == Ajoutrempla[i].children[1].textContent) && (Ajoutrempla[i].parentNode.children.length == 1)) {
                         BadgeAjout2.forEach(Ele =>{                            
                             if ((Element.children[2].textContent == Ele.children[2].textContent)) {
-                                Ajoutrempla[i].parentNode.parentNode.appendChild(Ele);
+                                console.log("TRUE1");
+                                
+                                Ajoutrempla[i].parentNode.appendChild(Ele);
+                                Ele.classList.remove("hidden");
                                 condiajout = true;
                             };
                         });
-                    }else if ((Element.children[0].children[0].children[1].textContent == Ajoutrempla[i].textContent) && ((Element.children[2].textContent == Ajoutrempla[i].parentNode.parentNode.children[1].children[2].textContent))) {
+                    }else if ((positionjoueur.textContent == Ajoutrempla[i].children[1].textContent) && ((Element.children[2].textContent == Ajoutrempla[i].parentNode.children[1].children[2].textContent))) {
+                        console.log("FALSE1");
                         ErreurAjoute.classList.remove("hidden");
                         joueurexist.classList.remove("hidden");
                         positionpleine.classList.add("hidden");
                         break;
                     };
                     if (condiajout == false) {
+                        console.log("TRUE2");
                         ErreurAjoute.classList.toggle("hidden");
                         joueurexist.classList.add("hidden");
                         positionpleine.classList.remove("hidden");
                     } else {
-                        Ajoutrempla[i].parentNode.classList.add("hidden");
+                        console.log("FALS2");
+                        Ajoutrempla[i].classList.add("hidden");
                         cancelform();
                         break;
                     };
@@ -187,14 +262,16 @@ conferjoue.onclick= () =>{
         }
     });
 
+
+
     //Anulation de la form d'ajout des joueurs
     function cancelform() {
         inputname.value = "";
         position.value = "Tous";
         effectif.value = "Effectif";
         effectif.style.border = "";
-        joueurs.players.forEach((Element , index) =>{
-            BadgeAjout1[index].classList.remove("hidden");
+        BadgeAjout1.forEach((Element) =>{
+            Element.classList.remove("hidden");
         });
         mudalajout.classList.toggle("hidden");
     };
