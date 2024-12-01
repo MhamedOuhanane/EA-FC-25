@@ -1,6 +1,8 @@
 //importer les données json des annonces à partir de son chemin
 import joueurs from "../data/players.json" with{type: "json"}
 
+
+
 joueurs.players.forEach((Element) => {
     AjoutparBadge.innerHTML +=`<div class="BadgeAjout2 ${"bg" + Element.position} relative w-[7rem] h-[10rem] hover:scale-95 flex flex-col  items-center py-4 text-white">
                         <div class="flex justify-start  w-full h-[75%] p-[12%]">
@@ -70,12 +72,13 @@ joueurs.players.forEach((Element) => {
 });
 
     //Ajouter au bloc de terrain
-
 document.querySelectorAll(".badgebouton").forEach((Element) =>{
+    let parentbag = Element.parentNode;
+    console.log(parentbag.children.length);
+    
     Element.addEventListener("click" , () => {
-        let parentbag = Element.parentNode;
         
-        MudalBadge.classList.toggle("hidden");
+                MudalBadge.classList.toggle("hidden");
         let BadgeAjout2 = document.querySelectorAll(".BadgeAjout2");
 
         //Mise à jour de containers des bage ajouter
