@@ -149,9 +149,14 @@ conferjoue.onclick= () =>{
                     }else if ((Element.children[0].children[0].children[1].textContent == Ajoutterrain[i].textContent) && ((Element.children[2].textContent == Ajoutterrain[i].parentNode.parentNode.children[1].children[2].textContent))) {
                         ErreurAjoute.classList.remove("hidden");
                         joueurexist.classList.remove("hidden");
+                        positionpleine.classList.add("hidden");
                         break;
                     };
-                    if (condiajout == true) {
+                    if (condiajout == false) {
+                        ErreurAjoute.classList.toggle("hidden");
+                        joueurexist.classList.add("hidden");
+                        positionpleine.classList.remove("hidden");
+                    } else {
                         Ajoutterrain[i].parentNode.classList.add("hidden");
                         cancelform();
                         break;
