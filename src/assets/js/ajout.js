@@ -121,26 +121,14 @@ document.querySelectorAll(".badgebouton").forEach((Element) =>{
                 };
 
             };
-            MudalBadge.onclick= ()=>{
-                if (!MudalBadge.contains(element)) {
-                    MudalBadge.classList.add("hidden");
-                };
-            };
+            // MudalBadge.onclick= ()=>{
+            //     if (!MudalBadge.contains(element)) {
+            //         MudalBadge.classList.add("hidden");
+            //     };
+            // };
         });
     });
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 //annulation de l'affichage des badge dans le cas d'ajout

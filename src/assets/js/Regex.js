@@ -162,6 +162,12 @@ Ajounouv.addEventListener("click" , ()=>{
             console.log(nouvjoue);
             
             Erreur.classList.add("hidden");
+            infor.forEach(Element =>{
+                Element.value = "";
+                Element.style.backgroundColor = "";
+            });
+            positionnouv.value = "GK";
+            mudalnouv.classList.add("hidden");
             joueurs.players.push(nouvjoue);
             
         } else {
@@ -176,5 +182,7 @@ Ajounouv.addEventListener("click" , ()=>{
             Element.value = "";
             Element.style.backgroundColor = "";
         });
+        positionnouv.value = "GK";
+        Erreur.classList.add("hidden");
     };
 });

@@ -107,7 +107,7 @@ select{
     grid-row: 3 / 4;
 }
 
-.CM1{
+.CDM{
     grid-column: 3 / 4;
     grid-row: 2 / 3;
     align-self: flex-end;
