@@ -159,9 +159,9 @@ select{
     background-position: center;
 }
 
-.badgebouton:hover,.badgeremp:hover{
-    scale: 1.1;
-    transition: all 500ms ;
+.badgebouton:hover{
+    scale: 1.06;
+    transition: all 400ms ;
 }
 
 .bgGK{

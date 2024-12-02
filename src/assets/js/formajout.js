@@ -208,9 +208,6 @@ Ajoutform.onclick= () =>{
                     const terrain = namesterrain[index];
                     const remplaç = namesrempla[index];
                     if ((terrain.children.length == 2) || (remplaç.children.length == 2)) {
-                        console.log(terrain.children[1].children[2].textContent);
-                        console.log(terrain.children[1].children[2].textContent);
-                        
                         if ((terrain.children[1].children[2].textContent == name1) || (terrain.children[1].children[2].textContent == name1)) {
                             ErreurAjoute.classList.remove("hidden");
                             joueurexist.classList.remove("hidden");

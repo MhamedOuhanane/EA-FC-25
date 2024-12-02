@@ -725,10 +725,6 @@ video {
   height: 70%;
 }
 
-.h-\[70vh\] {
-  height: 70vh;
-}
-
 .h-\[75\%\] {
   height: 75%;
 }
@@ -751,6 +747,10 @@ video {
 
 .h-full {
   height: 100%;
+}
+
+.h-\[19vw\] {
+  height: 19vw;
 }
 
 .max-h-\[18rem\] {
@@ -821,10 +821,6 @@ video {
   width: 100%;
 }
 
-.w-auto {
-  width: auto;
-}
-
 .max-w-7 {
   max-width: 1.75rem;
 }
@@ -855,20 +851,12 @@ video {
   flex-wrap: wrap;
 }
 
-.place-items-center {
-  place-items: center;
-}
-
 .items-center {
   align-items: center;
 }
 
 .justify-start {
   justify-content: flex-start;
-}
-
-.justify-end {
-  justify-content: flex-end;
 }
 
 .justify-center {
@@ -917,10 +905,6 @@ video {
 
 .gap-y-2 {
   row-gap: 0.5rem;
-}
-
-.place-self-center {
-  place-self: center;
 }
 
 .self-end {
@@ -1009,12 +993,12 @@ video {
   --tw-bg-opacity: 0.6;
 }
 
-.bg-opacity-35 {
-  --tw-bg-opacity: 0.35;
-}
-
 .bg-opacity-70 {
   --tw-bg-opacity: 0.7;
+}
+
+.bg-opacity-45 {
+  --tw-bg-opacity: 0.45;
 }
 
 .p-2 {
@@ -1110,20 +1094,20 @@ video {
   line-height: 2rem;
 }
 
-.text-\[0\.75vw\] {
-  font-size: 0.75vw;
-}
-
 .text-\[0\.8rem\] {
   font-size: 0.8rem;
 }
 
-.text-\[1\.3vw\] {
-  font-size: 1.3vw;
+.text-\[0\.8vw\] {
+  font-size: 0.8vw;
 }
 
-.text-\[1\.5vw\] {
-  font-size: 1.5vw;
+.text-\[1\.4vw\] {
+  font-size: 1.4vw;
+}
+
+.text-\[1\.6vw\] {
+  font-size: 1.6vw;
 }
 
 .text-\[110\%\] {
@@ -1140,12 +1124,8 @@ video {
   line-height: 1.25rem;
 }
 
-.text-\[1\.6vw\] {
-  font-size: 1.6vw;
-}
-
-.text-\[1\.2vw\] {
-  font-size: 1.2vw;
+.text-\[1\.5vw\] {
+  font-size: 1.5vw;
 }
 
 .text-red-700 {
@@ -1156,10 +1136,6 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-
-.text-\[1\.vw\] {
-  color: 1.vw;
 }
 
 .opacity-50 {
@@ -1221,6 +1197,14 @@ body {
     height: 89%;
   }
 
+  .md\:h-\[1vw\] {
+    height: 1vw;
+  }
+
+  .md\:h-\[13vw\] {
+    height: 13vw;
+  }
+
   .md\:w-\[10rem\] {
     width: 10rem;
   }
@@ -1251,6 +1235,14 @@ body {
 
   .md\:w-\[72\%\] {
     width: 72%;
+  }
+
+  .md\:w-\[vw\] {
+    width: vw;
+  }
+
+  .md\:w-\[9\.5vw\] {
+    width: 9.5vw;
   }
 
   .md\:grid-cols-3 {

@@ -5,6 +5,7 @@ let joueurs = JSON.parse(localStorage.getItem("Joueurs"));
 Ajounouv.addEventListener("click" , ()=>{
     mudalnouv.classList.remove("hidden");
     document.body.classList.toggle("overflow-hidden");
+    
     let inputNGK = document.querySelectorAll(".inputNGK");
     inputNGK.forEach(Element=>{
         Element.classList.add("hidden");

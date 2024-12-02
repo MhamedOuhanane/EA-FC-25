@@ -7,11 +7,11 @@ joueurs.players.forEach((Element) => {
     AjoutparBadge.innerHTML +=`<div class="BadgeAjout2 ${"bg" + Element.position} relative w-[14vw] h-[20vw] md:w-[10vw] md:h-[14vw] hover:scale-95 flex flex-col justify-evenly  items-center py-4 text-white">
                         <div class="flex justify-start  w-full h-[70%] p-[4%] md:h-[50%] px-[12%] md:py-[6%] lg:py-[10%]">
                             <div class="max-w-7 flex flex-col items-center z-10 my-1">
-                                <span  class="scorejou1 text-[1.3vw]">${Element.rating}</span><span class="joueurpos typescore1 text-[0.75vw]">${Element.position}</span>
+                                <span  class="scorejou1 text-[1.4vw]">${Element.rating}</span><span class="joueurpos typescore1 text-[0.8vw]">${Element.position}</span>
                             </div>
                         </div>
                         <img class="absolute  z-0 mb-1" src=${Element.photo}>
-                        <span class="z-10 mb-1 text-[1.5vw]">${Element.name}</span>
+                        <span class="bg-black bg-opacity-45 z-10 mb-1 text-[1.5vw]">${Element.name}</span>
                         <div class="flex justify-evenly gap-[0.2rem] md:gap-1 z-10 ${Element.position == "GK" ? "hidden" : ""}">
                             <div class="flex flex-col items-center">
                                 <span class="typescore1">PAC</span>
@@ -72,6 +72,8 @@ joueurs.players.forEach((Element) => {
 });
 
 MudalBadge.classList.add("hidden");
+
+
 // document.body.classList.
 
     //Ajouter au bloc de terrain
@@ -117,9 +119,6 @@ document.querySelectorAll(".badgebouton").forEach((Element) =>{
                     } else if (Element.parentNode.children.length == 1) {
                         MudalBadge.classList.toggle("hidden");
                     };
-                };
-                cancelaffich3.onclick= () =>{
-                    MudalBadge.classList.toggle("hidden");
                 };
             };
         };
