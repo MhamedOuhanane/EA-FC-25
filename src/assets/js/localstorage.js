@@ -3,9 +3,7 @@ let joueurs = JSON.parse(localStorage.getItem("Joueurs"));
 
 let Joueur = JSON.parse(localStorage.getItem("Joueur")) || [];
 
-//save les joueurs qui appartient au terrain et au remplaçant
-// let formation = [];
-
+//affiche les joueurs qui appartient au terrain et au remplaçant a partir de localstorage
 if (Joueur != []) {
     Joueur.forEach(Element => {
         document.querySelectorAll("#AjoutparBadge .BadgeAjout2").forEach( element => {
@@ -30,6 +28,7 @@ if (Joueur != []) {
     });
 };
 
+//save les joueurs qui appartient au terrain et au remplaçant
 let container = document.querySelectorAll(".badgebouton");
 souvgarder.onclick = () =>{
     Joueur = [];
@@ -57,4 +56,44 @@ souvgarder.onclick = () =>{
     console.log(Joueur);
     
     localStorage.setItem("Joueur" , JSON.stringify(Joueur));
+};
+
+//drag and drpo
+let BadgeAjout2 = document.querySelectorAll(".BadgeAjout2");
+let drag = null;
+
+BadgeAjout2.forEach(badge =>{
+    badge.addEventListener('dragstart' , () =>{
+        badge.classList.add("opacity-50");
+        drag = badge;
+        DRAGDROP();
+    });
+    
+    badge.addEventListener('dragend' , () =>{
+        badge.classList.remove("opacity-50");
+        drag = null;
+    });
+});
+function DRAGDROP() {
+    if (drag != null){
+        let posi = drag.children[0].children[0].children[1].textContent;
+        let dragbox = document.querySelectorAll(`.dragbox${posi}`);
+        dragbox.forEach(element =>{
+                element.addEventListener("dragover" , (ele) =>{
+                    ele.preventDefault();
+                    element.classList.add("scale-90");
+                });
+
+                element.addEventListener("dragleave" , () =>{
+                    element.classList.remove("scale-90");
+                });
+
+                element.addEventListener("drop" , ()=>{
+                    drag.parentNode.children[0].classList.remove("hidden");
+                    element.children[0].classList.add("hidden");
+                    element.appendChild(drag);
+                    console.log(drag);
+                });
+        });
+    };
 };
