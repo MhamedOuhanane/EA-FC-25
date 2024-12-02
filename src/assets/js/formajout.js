@@ -1,5 +1,5 @@
-//importer les données json des annonces à partir de son chemin
-import joueurs from "../data/players.json" with{type: "json"}
+//importer les données json des annonces à partir de localstorage
+let joueurs = JSON.parse(localStorage.getItem("Joueurs"));
 
 
 //ajouter un joueur au terrain
@@ -124,8 +124,8 @@ Ajoutform.onclick= () =>{
     };
 
     let BadgeAjout2 = document.querySelectorAll(".BadgeAjout2");
-    let namesterrain = document.querySelectorAll("#titularisés .badgebouton span");
-    let namesrempla = document.querySelectorAll("#remplaçants .badgebouton span");
+    let namesterrain = document.querySelectorAll("#titularisés > div");
+    let namesrempla = document.querySelectorAll("#remplaçants > div");
 
     
     // BadgeAjout1.forEach(Element =>{
@@ -151,15 +151,15 @@ Ajoutform.onclick= () =>{
     //                         break;
     //                     }
     //                 };
-    //                 if (condiajout == false) {
-    //                     ErreurAjoute.classList.toggle("hidden");
-    //                     joueurexist.classList.add("hidden");
-    //                     positionpleine.classList.remove("hidden");
-    //                 } else {
-    //                     Ajoutterrain[i].parentNode.classList.add("hidden");
-    //                     cancelform();
-    //                     break;
-    //                 };
+                    // if (condiajout == false) {
+                    //     ErreurAjoute.classList.toggle("hidden");
+                    //     joueurexist.classList.add("hidden");
+                    //     positionpleine.classList.remove("hidden");
+                    // } else {
+                    //     Ajoutterrain[i].parentNode.classList.add("hidden");
+                    //     cancelform();
+                    //     break;
+                    // };
     //             };
     //         } else {
     //             for (let i = 0; i < Ajoutrempla.length; i++) {
@@ -196,18 +196,56 @@ Ajoutform.onclick= () =>{
     BadgeAjout1.forEach(Element =>{
         Element.onclick= () =>{
             let condiajout = false;
-            let positionjoueur = Element.children[0].children[0].children[1];
+            let existe = false;
+            let name1 = Element.children[2].textContent;
+            let positionjoueur = Element.children[0].children[0].children[1].textContent;
             if (effectif.value == "Effectif") {
                 effectif.style.border = "2px solid red";
             } else {
-                let effectif = document.querySelectorAll(`#${effectif.value}`);
-                for (let index = 0; index < effectif.length; index++) {
-                    const element = effectif[index];
-                    if (element.children[0].children[1].textContent == ) {
-                        
-                    } else {
-                        
-                    }
+                let value = effectif.value;
+                let Effectif = document.querySelectorAll(`#${value} > div`);
+                for (let index = 0; index < Effectif.length; index++) {
+                    const terrain = namesterrain[index];
+                    const remplaç = namesrempla[index];
+                    if ((terrain.children.length == 2) || (remplaç.children.length == 2)) { 
+                        if ((terrain.children[1].children[2].textContent == name1) || (terrain.children[1].children[2].textContent == name1)) {
+                            ErreurAjoute.classList.remove("hidden");
+                            joueurexist.classList.remove("hidden");
+                            positionpleine.classList.add("hidden");
+                            existe = true;
+                            break;
+                        };
+                    };
+                };
+                
+                for (let index = 0; index < Effectif.length; index++) {
+                    const element = Effectif[index];
+                    
+                    if ((element.children[0].children[1].textContent == positionjoueur) && (element.children.length == 1) && (existe == false)) {
+                        console.log(element.children[0].children[1].textContent);
+                        console.log(element.children.length);
+                        console.log(positionjoueur);
+                        console.log(existe);
+                        BadgeAjout2.forEach(ele =>{
+                            let name2 = ele.children[2].textContent;
+                            if (name2 == name1) {
+                                element.appendChild(ele);
+                                element.children[0].classList.toggle("hidden");
+                                condiajout = true;
+                                
+                            };
+                        });
+                    };
+                    if (condiajout == true) {
+                        cancelform();
+                        console.log("faux");
+                        break;
+                    };
+                };
+                if ((condiajout == false) && (existe == false)) {
+                    ErreurAjoute.classList.remove("hidden");
+                    joueurexist.classList.add("hidden");
+                    positionpleine.classList.remove("hidden");
                 }
             };
         }

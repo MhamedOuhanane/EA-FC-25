@@ -1,5 +1,5 @@
-//importer les données json des annonces à partir de son chemin
-import joueurs from "../data/players.json" with{type: "json"}
+//importer les données json des annonces à partir de localstorage
+let joueurs = JSON.parse(localStorage.getItem("Joueurs"));
 
 //Ajouter un nouveau joueur
 Ajounouv.addEventListener("click" , ()=>{

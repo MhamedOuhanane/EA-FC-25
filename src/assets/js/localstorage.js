@@ -1,5 +1,6 @@
-//importer les données json des annonces à partir de son chemin
-import joueurs from "../data/players.json" with{type: "json"}
+//importer les données json des annonces à partir de localstorage
+let joueurs = JSON.parse(localStorage.getItem("Joueurs"));
+
 let Joueur = JSON.parse(localStorage.getItem("Joueur")) || [];
 
 //save les joueurs qui appartient au terrain et au remplaçant
