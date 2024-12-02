@@ -55,7 +55,7 @@ Ajounouv.addEventListener("click" , ()=>{
     
         //validation input de type url pour le photo
     inputurl.oninput = () => {
-        if ( /^https:\/\/cdn(?:3\.futbin\.com\/content\/fifa\d+\/img\/players\/p\d+\.png\?fm=png&ixlib=java-\d+\.\d+\.\d+(&(?:version|verzion)=\d+)?&w=\d+&s=[a-f0-9]+|\.sofifa\.net\/players\/\d+\/\d+\/\d+_\d+\.png)$/.test(inputurl.value) ) {
+        if ( /^https:\/\/[a-z0-9.-]+\/[a-z0-9\/\._-]+\.(png|jpg|JPG|webp)(\?[\w&=.-]+)?/.test(inputurl.value) ) {
             inputurl.style.backgroundColor = "rgb(187 247 208)";
             console.log(inputurl.style.backgroundColor);
             

@@ -78,6 +78,44 @@ document.querySelectorAll(".badgebouton").forEach((Element) =>{
         MudalBadge.classList.toggle("hidden");
     };
 
+    let BadgeAjout2 = document.querySelectorAll(".BadgeAjout2");
+
+    //Mise à jour de containers des bage ajouter
+    function MISEAJOURAFFBAD() {
+        BadgeAjout2 = document.querySelectorAll(".BadgeAjout2");
+        BadgeAjout2.forEach((element , index) =>{
+            if (element.parentNode == AjoutparBadge) {
+                if (parentbag.children[0].children[1].textContent == document.querySelectorAll(".joueurpos")[index].textContent) {
+                    element.classList.remove("hidden");
+                } else {
+                    element.classList.add("hidden");
+                };
+            };
+        });
+
+    };
+
+
+    BadgeAjout2.forEach(element => {
+        element.onclick=  () =>{
+            console.log(true);
+            if (element.parentNode == AjoutparBadge) {
+                AjoutparBadge.appendChild(parentbag.children[1]);
+                parentbag.appendChild(element);
+                MudalBadge.classList.toggle("hidden");
+            } else {
+                if (parentbag.children.length != 1) {
+                    MudalBadge.classList.toggle("hidden");
+                    parentbag.children[0].classList.remove("hidden");
+                    AjoutparBadge.appendChild(parentbag.children[1]);
+                } else if (Element.parentNode.children.length == 1) {
+                    console.log(parentbag);
+                    MudalBadge.classList.toggle("hidden");
+                };
+            };
+        };
+    });
+    
     Element.addEventListener("click" , () => {
         
         MudalBadge.classList.toggle("hidden");
@@ -85,22 +123,7 @@ document.querySelectorAll(".badgebouton").forEach((Element) =>{
         cancelaffich3.onclick= () =>{
             MudalBadge.classList.toggle("hidden");
         };
-        let BadgeAjout2 = document.querySelectorAll(".BadgeAjout2");
 
-        //Mise à jour de containers des bage ajouter
-        function MISEAJOURAFFBAD() {
-            BadgeAjout2 = document.querySelectorAll(".BadgeAjout2");
-            BadgeAjout2.forEach((element , index) =>{
-                if (element.parentNode == AjoutparBadge) {
-                    if (parentbag.children[0].children[1].textContent == document.querySelectorAll(".joueurpos")[index].textContent) {
-                        element.classList.remove("hidden");
-                    } else {
-                        element.classList.add("hidden");
-                    };
-                };
-            });
-
-        };
 
         MISEAJOURAFFBAD();
         
@@ -111,10 +134,8 @@ document.querySelectorAll(".badgebouton").forEach((Element) =>{
                 if (element.parentNode == AjoutparBadge) {
                         console.log("true1");
                     if ((parentbag.children.length == 1)) {
-                        console.log("true2");
-                        
                         parentbag.appendChild(element);
-                        Element.classList.toggle("hidden");
+                        Element.classList.add("hidden");
                         MudalBadge.classList.toggle("hidden");
                     } else {
                         console.log("true3");
@@ -132,7 +153,6 @@ document.querySelectorAll(".badgebouton").forEach((Element) =>{
                             MudalBadge.classList.toggle("hidden");
                             parentbag.children[0].classList.remove("hidden");
                             AjoutparBadge.appendChild(parentbag.children[1]);
-                            console.log(parentbag);
                         } else if (Element.parentNode.children.length == 1) {
                             console.log(parentbag);
                             MudalBadge.classList.toggle("hidden");
