@@ -77,8 +77,8 @@ BadgeAjout2.forEach(badge =>{
 function DRAGDROP() {
     if (drag != null){
         let posi = drag.children[0].children[0].children[1].textContent;
-        let dragbox = document.querySelectorAll(`.dragbox${posi}`);
-        dragbox.forEach(element =>{
+        
+        document.querySelectorAll(`.dragbox${posi}`).forEach(element =>{
                 element.addEventListener("dragover" , (ele) =>{
                     ele.preventDefault();
                     element.classList.add("scale-90");
@@ -89,10 +89,11 @@ function DRAGDROP() {
                 });
 
                 element.addEventListener("drop" , ()=>{
-                    drag.parentNode.children[0].classList.remove("hidden");
-                    element.children[0].classList.add("hidden");
-                    element.appendChild(drag);
-                    console.log(drag);
+                    if (element.children.length == 1) {
+                        drag.parentNode.children[0].classList.remove("hidden");
+                        element.children[0].classList.add("hidden");
+                        element.appendChild(drag);
+                    }
                 });
         });
     };
