@@ -10,8 +10,10 @@ import Joueurs from "../data/players.json" with{type: "json"};
 // affichage des joueur dans le menu apres le click sur le bouton joueurs
 munujoue.addEventListener('click' , ()=>{
     document.querySelector(".mudoljou").classList.remove("hidden");
+    document.body.classList.toggle("overflow-hidden");
     canselmenujou.onclick=  ()=>{
         document.querySelector(".mudoljou").classList.toggle("hidden");
+        document.body.classList.toggle("overflow-hidden");
     };
 
     Joueurs.players.forEach(Element =>{

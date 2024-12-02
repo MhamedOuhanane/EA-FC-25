@@ -23,10 +23,6 @@
     color: rgb(160, 249, 160);
 }
 
-.titrebadge{
-    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.632), rgba(255, 255, 255, 0.189), rgba(255, 255, 255, 0.628));
-}
-
 
 
 .scorejou{
@@ -150,12 +146,16 @@ select{
     background-position: center;
 }
 
+.badgebouton span{
+    font-size: 1.6vw;
+}
+
 /* #remplaçants .badgebouton */
 
 
 #Delete{
-    background-image: url("../images/deletebadge.png");
-    background-size: cover;
+    background: url("../images/deletebadge.png") no-repeat;
+    background-size: contain;
     background-position: center;
 }
 

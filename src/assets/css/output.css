@@ -916,6 +916,10 @@ video {
   gap: 0.25rem;
 }
 
+.gap-\[0\.1rem\] {
+  gap: 0.1rem;
+}
+
 .gap-y-1 {
   row-gap: 0.25rem;
 }
@@ -930,6 +934,10 @@ video {
 
 .self-center {
   align-self: center;
+}
+
+.overflow-hidden {
+  overflow: hidden;
 }
 
 .overflow-y-auto {

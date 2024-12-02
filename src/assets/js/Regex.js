@@ -4,6 +4,7 @@ import joueurs from "../data/players.json" with{type: "json"}
 //Ajouter un nouveau joueur
 Ajounouv.addEventListener("click" , ()=>{
     mudalnouv.classList.remove("hidden");
+    document.body.classList.toggle("overflow-hidden");
     let inputNGK = document.querySelectorAll(".inputNGK");
     inputNGK.forEach(Element=>{
         Element.classList.add("hidden");
@@ -84,12 +85,14 @@ Ajounouv.addEventListener("click" , ()=>{
     });
         // serch contry par value d'input nationality
     let urlcontry = "";
+    let namecontry = "";
     inputcontry.addEventListener("input" , ()=>{
         inputcontry.style.backgroundColor = "rgb(254 202 202)";
         Validation = false;
         joueurs.contrys.forEach(Element =>{
             if (new RegExp(`^${Element.name}$`, 'i').test(inputcontry.value)) {
                 urlcontry = Element.file_url;
+                namecontry = inputcontry.value;
                 inputcontry.style.backgroundColor = "rgb(187 247 208)";
                 Validation = true;
             } else if (inputcontry.value == "") {
@@ -125,10 +128,10 @@ Ajounouv.addEventListener("click" , ()=>{
             if (positionnouv.value != "GK") {
                 nouvjoue = {
                     name: infor[0].value,
-                    photo: "https://cdn3.futbin.com/content/fifa25/img/players/p50522519.png?fm=png&ixlib=java-2.1.0&verzion=1&w=485&s=f9ffb97b6af353daad5d7cb1ba1f6390",
+                    photo: inputurl,
                     position: positionnouv.value,
-                    nationality: urlcontry,
-                    flag: "https://cdn.sofifa.net/flags/br.png",
+                    nationality: namecontry,
+                    flag: urlcontry,
                     club: infor[2].value,
                     logo: "https://cdn.sofifa.net/meta/team/7011/120.png",
                     rating: infor[4].value,
@@ -143,10 +146,10 @@ Ajounouv.addEventListener("click" , ()=>{
             } else {
                     nouvjoue = {
                         name: infor[0].value,
-                        photo: "https://cdn3.futbin.com/content/fifa25/img/players/p50522519.png?fm=png&ixlib=java-2.1.0&verzion=1&w=485&s=f9ffb97b6af353daad5d7cb1ba1f6390",
+                        photo: inputurl,
                         position: "GK",
-                        nationality: infor[2].value,
-                        flag: "https://cdn.sofifa.net/flags/br.png",
+                        nationality: namecontry,
+                        flag: urlcontry,
                         club: contryJou(),
                         logo: "https://cdn.sofifa.net/meta/team/7011/120.png",
                         rating: infor[4].value,
@@ -168,6 +171,7 @@ Ajounouv.addEventListener("click" , ()=>{
             });
             positionnouv.value = "GK";
             mudalnouv.classList.add("hidden");
+            document.body.classList.toggle("overflow-hidden");
             joueurs.players.push(nouvjoue);
             
         } else {
@@ -178,6 +182,7 @@ Ajounouv.addEventListener("click" , ()=>{
     
     cancelnouv.onclick= ()=>{
         mudalnouv.classList.add("hidden");
+        document.body.classList.toggle("overflow-hidden");
         infor.forEach(Element =>{
             Element.value = "";
             Element.style.backgroundColor = "";
