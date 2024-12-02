@@ -821,6 +821,10 @@ video {
   width: 100%;
 }
 
+.w-auto {
+  width: auto;
+}
+
 .max-w-7 {
   max-width: 1.75rem;
 }
@@ -849,6 +853,10 @@ video {
 
 .flex-wrap {
   flex-wrap: wrap;
+}
+
+.place-items-center {
+  place-items: center;
 }
 
 .items-center {
@@ -911,12 +919,20 @@ video {
   row-gap: 0.5rem;
 }
 
+.place-self-center {
+  place-self: center;
+}
+
 .self-end {
   align-self: flex-end;
 }
 
 .self-center {
   align-self: center;
+}
+
+.justify-self-center {
+  justify-self: center;
 }
 
 .overflow-hidden {
@@ -991,6 +1007,14 @@ video {
 
 .bg-opacity-60 {
   --tw-bg-opacity: 0.6;
+}
+
+.bg-opacity-35 {
+  --tw-bg-opacity: 0.35;
+}
+
+.bg-opacity-70 {
+  --tw-bg-opacity: 0.7;
 }
 
 .p-2 {

@@ -71,6 +71,9 @@ joueurs.players.forEach((Element) => {
                     </div>`;
 });
 
+MudalBadge.classList.add("hidden");
+// document.body.classList.
+
     //Ajouter au bloc de terrain
 document.querySelectorAll(".badgebouton").forEach((Element) =>{
     let parentbag = Element.parentNode;
@@ -98,18 +101,24 @@ document.querySelectorAll(".badgebouton").forEach((Element) =>{
 
     BadgeAjout2.forEach(element => {
         element.onclick=  () =>{
-            console.log(true);
             if (element.parentNode == AjoutparBadge) {
                 AjoutparBadge.appendChild(parentbag.children[1]);
                 parentbag.appendChild(element);
                 MudalBadge.classList.toggle("hidden");
             } else {
-                if (parentbag.children.length != 1) {
-                    MudalBadge.classList.toggle("hidden");
-                    parentbag.children[0].classList.remove("hidden");
-                    AjoutparBadge.appendChild(parentbag.children[1]);
-                } else if (Element.parentNode.children.length == 1) {
-                    console.log(parentbag);
+                parentbag = element.parentNode;
+                MudalBadge.classList.toggle("hidden");
+                MISEAJOURAFFBAD();
+                Delete.onclick = () =>{
+                    if (parentbag.children.length != 1) {
+                        MudalBadge.classList.toggle("hidden");
+                        parentbag.children[0].classList.remove("hidden");
+                        AjoutparBadge.appendChild(parentbag.children[1]);
+                    } else if (Element.parentNode.children.length == 1) {
+                        MudalBadge.classList.toggle("hidden");
+                    };
+                };
+                cancelaffich3.onclick= () =>{
                     MudalBadge.classList.toggle("hidden");
                 };
             };
@@ -117,13 +126,18 @@ document.querySelectorAll(".badgebouton").forEach((Element) =>{
     });
     
     Element.addEventListener("click" , () => {
-        
+        parentbag = Element.parentNode;
         MudalBadge.classList.toggle("hidden");
         //annulation de l'affichage des badge dans le cas d'ajout
-        cancelaffich3.onclick= () =>{
-            MudalBadge.classList.toggle("hidden");
+        Delete.onclick = () =>{
+            if (parentbag.children.length != 1) {
+                MudalBadge.classList.toggle("hidden");
+                parentbag.children[0].classList.remove("hidden");
+                AjoutparBadge.appendChild(parentbag.children[1]);
+            } else if (Element.parentNode.children.length == 1) {
+                MudalBadge.classList.toggle("hidden");
+            };
         };
-
 
         MISEAJOURAFFBAD();
         
@@ -154,20 +168,21 @@ document.querySelectorAll(".badgebouton").forEach((Element) =>{
                             parentbag.children[0].classList.remove("hidden");
                             AjoutparBadge.appendChild(parentbag.children[1]);
                         } else if (Element.parentNode.children.length == 1) {
-                            console.log(parentbag);
                             MudalBadge.classList.toggle("hidden");
                         };
                     };
                 };
             };
-            // MudalBadge.onclick= ()=>{
-            //     if (!MudalBadge.contains(element)) {
-            //         MudalBadge.classList.add("hidden");
-            //     };
-            // };
         });
-
+        
     });
+    MudalBadge.onclick= (Element)=>{
+        BadgeAjout2.forEach(element =>{
+            if (!element.contains(Element.target)) {
+                MudalBadge.classList.add("hidden");
+            };
+        });
+    };
 });
 
 //suppression des badges des joueurs
