@@ -49,6 +49,8 @@ souvgarder.onclick = () =>{
                 effectif: Effectif
             };
             Joueur.push(info);
+            console.log(Joueur);
+            
         };
     });
     console.log(Joueur);

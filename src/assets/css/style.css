@@ -74,8 +74,8 @@ select{
 }
 
 #titularisés{
-    background-image: url("../images/background-terrain1.png");
-    background-size: cover;
+    background: url("../images/background-terrain1.png") no-repeat;
+    background-size: contain;
     background-position: center;
 }
 
@@ -139,14 +139,14 @@ select{
 }
 
 #titularisés .badgebouton{
-    background-image: url("../images/badge-plus.png");
-    background-size: cover;
+    background: url("../images/badge-plus.png") no-repeat;
+    background-size: contain;
     background-position: center;
 }
 
 #remplaçants .badgebouton{
-    background-image: url("../images/badge-remp.png");
-    background-size: cover;
+    background: url("../images/badge-remp.png") no-repeat;
+    background-size: contain;
     background-position: center;
 }
 

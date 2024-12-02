@@ -12,7 +12,7 @@ joueurs.players.forEach((Element) => {
                                 </div>
                             </div>
                             <img class="absolute  z-0 mb-1" src=${Element.photo}>
-                            <span class="z-10 mb-1 ">${Element.name}</span>
+                            <span class="z-10 mb-1">${Element.name}</span>
                             <div class="flex justify-evenly gap-[0.2rem] md:gap-1 z-10 ${Element.position == "GK" ? "hidden" : ""}">
                                 <div class="flex flex-col items-center">
                                     <span class="typescore1">PAC</span>
