@@ -55,11 +55,10 @@ Ajounouv.addEventListener("click" , ()=>{
     });
     
         //validation input de type url pour le photo
-    
     inputurl.oninput = () => {
         if ( /^https:\/\/[a-z0-9.-]+\/[a-z0-9\/\._-]+\.(png|jpg|JPG|webp)(\?[\w&=.-]+)?/.test(inputurl.value) ) {
             inputurl.style.backgroundColor = "rgb(187 247 208)";
-            console.log(urlclub);
+            
             Validation = true;
         } else {
             inputurl.style.backgroundColor = "rgb(254 202 202)";
@@ -110,9 +109,9 @@ Ajounouv.addEventListener("click" , ()=>{
         inputclub.style.backgroundColor = "rgb(254 202 202)";
         Validation = false;
         joueurs.clubs.forEach(Element =>{
-            if (new RegExp(`^${Element.name}$`,"i").test(inputclub.value)) {
+            if (new RegExp(`^${Element.name}$`,'i').test(inputclub.value)) {
                 nameclub = Element.name;
-                urlclub = Element.image_url;                
+                urlclub = Element.image_url;
                 inputclub.style.backgroundColor = "rgb(187 247 208)";
                 Validation = true;
             } else if (inputclub.value == ""){
@@ -125,20 +124,30 @@ Ajounouv.addEventListener("click" , ()=>{
     //L'ajout des information au fichier json
     let infor = document.querySelectorAll('#containerINPUT input');
     Erreurexist.classList.add("hidden"); //ajouter "hidden" au class container d'erreur pour l'existanse de joueur
-    Create.onclick= () =>{    
-        infor.forEach((Element , index) =>{
-            if (Element.value == "") {
-                Element.style.backgroundColor = "rgb(254 202 202)";
-                Validation == false
-                Erreur.classList.remove("hidden");
-            } else if (inputname.value == joueurs.players[index].name){
+    Create.onclick= () =>{
+        for (let index = 0; index < joueurs.players.length; index++) {
+            const element = joueurs.players[index];
+            if (new RegExp(`^${element.name}$`,'i').test(inputname.value)){
                 Erreurexist.classList.toggle("hidden");
-                OK1.onclick= () =>{
+                OK1.onclick = () =>{
                     Erreurexist.classList.toggle("hidden");
-                };
-                Validation == false;
+                }
+                Validation = false;
             };
-        });          
+        };
+    
+        if (Validation == true) {
+            infor.forEach(Element =>{
+                if (Element.value == "") {
+                    Element.style.backgroundColor = "rgb(254 202 202)";
+                    Validation = false
+                    Erreur.classList.remove("hidden");
+                    console.log("A");
+                    
+                };
+            }); 
+        }
+
         if ((Validation == true)){
             if (positionnouv.value != "GK") {
                 nouvjoue = {
