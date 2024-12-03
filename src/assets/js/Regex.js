@@ -144,8 +144,6 @@ Ajounouv.addEventListener("click" , ()=>{
                     Element.style.backgroundColor = "rgb(254 202 202)";
                     Validation = false
                     Erreur.classList.remove("hidden");
-                    console.log("A");
-                    
                 };
             }); 
         }

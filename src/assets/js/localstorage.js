@@ -1,15 +1,17 @@
 //importer les données json des annonces à partir de localstorage
 import Joueurs from "../data/players.json" with {type: "json"};
+// localStorage.setItem("Joueurs" , JSON.stringify([]));
+
 let joueurs = JSON.parse(localStorage.getItem("Joueurs")) || [];
-if (joueurs.length != 0) {
-    joueurs = Joueurs;
+if (joueurs.length == 0) {
+localStorage.setItem("Joueurs" , JSON.stringify(Joueurs));
+
 };
 
 let Joueur = JSON.parse(localStorage.getItem("Joueur")) || [];
 
 //affiche les joueurs qui appartient au terrain et au remplaçant a partir de localstorage
 let BadgeAjout2 = document.querySelectorAll("#AjoutparBadge .BadgeAjout2");
-console.log(BadgeAjout2);
 
 if (Joueur != []) {
     Joueur.forEach(Element => {

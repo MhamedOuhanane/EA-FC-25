@@ -222,15 +222,12 @@ Ajoutform.onclick= () =>{
                     const element = Effectif[index];
                     
                     if ((element.children[0].children[1].textContent == positionjoueur) && (element.children.length == 1) && (existe == false)) {
-                        console.log(element.children[0].children[1].textContent);
-                        console.log(element.children.length);
-                        console.log(positionjoueur);
-                        console.log(existe);
                         BadgeAjout2.forEach(ele =>{
                             let name2 = ele.children[2].textContent;
                             if (name2 == name1) {
                                 element.appendChild(ele);
                                 element.children[0].classList.toggle("hidden");
+                                ele.classList.remove("hidden");
                                 condiajout = true;
                                 
                             };
