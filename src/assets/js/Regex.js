@@ -55,11 +55,11 @@ Ajounouv.addEventListener("click" , ()=>{
     });
     
         //validation input de type url pour le photo
+    
     inputurl.oninput = () => {
         if ( /^https:\/\/[a-z0-9.-]+\/[a-z0-9\/\._-]+\.(png|jpg|JPG|webp)(\?[\w&=.-]+)?/.test(inputurl.value) ) {
             inputurl.style.backgroundColor = "rgb(187 247 208)";
-            console.log(inputurl.style.backgroundColor);
-            
+            console.log(urlclub);
             Validation = true;
         } else {
             inputurl.style.backgroundColor = "rgb(254 202 202)";
@@ -104,8 +104,22 @@ Ajounouv.addEventListener("click" , ()=>{
     });
 
         // serch de club dans mon fichier json par value d'input nationality
+    let nameclub = "";
+    let urlclub = "";
     inputclub.addEventListener("input" , ()=>{
-
+        inputclub.style.backgroundColor = "rgb(254 202 202)";
+        Validation = false;
+        joueurs.clubs.forEach(Element =>{
+            if (new RegExp(`^${Element.name}$`,"i").test(inputclub.value)) {
+                nameclub = Element.name;
+                urlclub = Element.image_url;                
+                inputclub.style.backgroundColor = "rgb(187 247 208)";
+                Validation = true;
+            } else if (inputclub.value == ""){
+                inputclub.style.backgroundColor = "rgb(254 202 202)";
+                Validation = false;
+            };
+        });
     });
 
     //L'ajout des information au fichier json
@@ -129,12 +143,12 @@ Ajounouv.addEventListener("click" , ()=>{
             if (positionnouv.value != "GK") {
                 nouvjoue = {
                     name: infor[0].value,
-                    photo: inputurl,
+                    photo: inputurl.value,
                     position: positionnouv.value,
                     nationality: namecontry,
                     flag: urlcontry,
-                    club: infor[2].value,
-                    logo: "https://cdn.sofifa.net/meta/team/7011/120.png",
+                    club: nameclub,
+                    logo: urlclub,
                     rating: infor[4].value,
                     pace: infor[5].value,
                     shooting: infor[6].value,
@@ -147,12 +161,12 @@ Ajounouv.addEventListener("click" , ()=>{
             } else {
                     nouvjoue = {
                         name: infor[0].value,
-                        photo: inputurl,
+                        photo: inputurl.value,
                         position: "GK",
                         nationality: namecontry,
                         flag: urlcontry,
-                        club: contryJou(),
-                        logo: "https://cdn.sofifa.net/meta/team/7011/120.png",
+                        club: nameclub,
+                        logo: urlclub,
                         rating: infor[4].value,
                         diving: infor[11].value,
                         handling: infor[12].value,
@@ -174,7 +188,7 @@ Ajounouv.addEventListener("click" , ()=>{
             mudalnouv.classList.add("hidden");
             document.body.classList.toggle("overflow-hidden");
             joueurs.players.push(nouvjoue);
-            
+            localStorage.setItem("Joueurs" , JSON.stringify(joueurs));
         } else {
             Erreur.classList.remove("hidden");
         }

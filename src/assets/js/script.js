@@ -4,9 +4,8 @@ document.querySelector(".mudoljou").classList.add("hidden");
 
 
 
-//importer les données json des annonces à partir de son chemin
-import Joueurs from "../data/players.json" with{type: "json"};
-localStorage.setItem("Joueurs" , JSON.stringify(Joueurs));
+//importer les données json des annonces à partir de localstorage
+let Joueurs = JSON.parse(localStorage.getItem("Joueurs"));
 
 // affichage des joueur dans le menu apres le click sur le bouton joueurs
 munujoue.addEventListener('click' , ()=>{

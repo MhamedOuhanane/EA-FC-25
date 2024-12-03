@@ -1,5 +1,6 @@
-//importer les données json des annonces à partir de localstorage
-let joueurs = JSON.parse(localStorage.getItem("Joueurs"));
+//importer les données json des annonces à partir de son chemin
+import Joueurs from "../data/players.json" with{type: "json"};
+localStorage.setItem("Joueurs" , JSON.stringify(Joueurs));
 
 let Joueur = JSON.parse(localStorage.getItem("Joueur")) || [];
 
@@ -91,9 +92,9 @@ function DRAGDROP() {
                 element.children[0].classList.add("hidden");
                 element.appendChild(drag);
             } else {
-                    drag.parentNode.appendChild(element.children[1]);
-                    element.appendChild(drag);
-                };
-            });
+                drag.parentNode.appendChild(element.children[1]);
+                element.appendChild(drag);
+            };
+        });
     });
 };
