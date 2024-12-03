@@ -1,18 +1,19 @@
-//importer les données json des annonces à partir de son chemin
-import joueurs from "../data/players.json" with{type: "json"};
-let existJoueurs = JSON.parse(localStorage.getItem("Joueurs")) || [];
-if (existJoueurs.length == 0) {
-    localStorage.setItem("Joueurs" , JSON.stringify(joueurs));
-    console.log(joueurs);
-    
+//importer les données json des annonces à partir de localstorage
+import Joueurs from "../data/players.json" with {type: "json"};
+let joueurs = JSON.parse(localStorage.getItem("Joueurs")) || [];
+if (joueurs.length != 0) {
+    joueurs = Joueurs;
 };
 
-
-
 let Joueur = JSON.parse(localStorage.getItem("Joueur")) || [];
+
 //affiche les joueurs qui appartient au terrain et au remplaçant a partir de localstorage
+let BadgeAjout2 = document.querySelectorAll("#AjoutparBadge .BadgeAjout2");
+console.log(BadgeAjout2);
+
 if (Joueur != []) {
     Joueur.forEach(Element => {
+        
         document.querySelectorAll("#AjoutparBadge .BadgeAjout2").forEach( element => {
             let namejoueur = element.children[2].textContent;
             if ((Element.name == namejoueur)) {
@@ -56,6 +57,7 @@ souvgarder.onclick = () =>{
                 effectif: Effectif
             };
             Joueur.push(info);
+            console.log(Joueur);
             
         };
     });
@@ -65,9 +67,7 @@ souvgarder.onclick = () =>{
 };
 
 //drag and drpo
-let BadgeAjout2 = document.querySelectorAll(".BadgeAjout2");
 let drag = null;
-let parentbadge = null;
 
 BadgeAjout2.forEach(badge =>{
     badge.addEventListener('dragstart' , () =>{
@@ -79,28 +79,33 @@ BadgeAjout2.forEach(badge =>{
     badge.addEventListener('dragend' , () =>{
         badge.classList.remove("opacity-50");
         drag = null;
-        parentbadge = null;
     });
 });
 function DRAGDROP() {
-    let posi = drag.children[0].children[0].children[1].textContent;
-    document.querySelectorAll(`.dragbox${posi}`).forEach(element =>{
-        element.addEventListener("dragover" , (ele) =>{
-                ele.preventDefault();
-                element.classList.add("scale-90");
+    if (drag != null){
+        let posi = drag.children[0].children[0].children[1].textContent;
+        let dragbox = document.querySelectorAll(`.dragbox${posi}`);
+        
+        dragbox.forEach(element =>{
+                element.addEventListener("dragover" , (ele) =>{
+                    ele.preventDefault();
+                    element.classList.add("scale-90");
+                });
+
+                element.addEventListener("dragleave" , () =>{
+                    element.classList.remove("scale-90");
+                });
+
+                element.addEventListener("drop" , ()=>{
+                    if (element.children.length == 1) {
+                        drag.parentNode.children[0].classList.remove("hidden");
+                        element.children[0].classList.add("hidden");
+                        element.appendChild(drag);
+                    } else {
+                        drag.parentNode.appendChild(element.children[1]);
+                        element.appendChild(drag);
+                    };
+                });
         });
-        element.addEventListener("dragleave" , () =>{
-            element.classList.remove("scale-90");
-        });
-        element.addEventListener("drop" , ()=>{
-            if (element.children.length == 1) {
-                drag.parentNode.children[0].classList.remove("hidden");
-                element.children[0].classList.add("hidden");
-                element.appendChild(drag);
-            } else {
-                drag.parentNode.appendChild(element.children[1]);
-                element.appendChild(drag);
-            };
-        });
-    });
+    };
 };

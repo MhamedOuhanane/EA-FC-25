@@ -184,7 +184,3 @@ document.querySelectorAll(".badgebouton").forEach((Element) =>{
     };
 });
 
-//suppression des badges des joueurs
-// document.querySelectorAll(".deletbadge").forEach(element =>{
-// });
-
