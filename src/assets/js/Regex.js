@@ -122,18 +122,20 @@ Ajounouv.addEventListener("click" , ()=>{
     });
 
     //L'ajout des information au fichier json
-    let infor = document.querySelectorAll('#containerINPUT input');
+    let infor = document.querySelectorAll(`.input${positionnouv.value}`);
+    let inforGK = document.querySelectorAll(".inputGK");
+    let inforNGK = document.querySelectorAll(".inputNGK");
     Erreurexist.classList.add("hidden"); //ajouter "hidden" au class container d'erreur pour l'existanse de joueur
     Create.onclick= () =>{
         for (let index = 0; index < joueurs.players.length; index++) {
             const element = joueurs.players[index];
-            if (new RegExp(`^${element.name}$`,'i').test(inputname.value)){
-                Erreurexist.classList.toggle("hidden");
-                OK1.onclick = () =>{
+                if (new RegExp(`^${element.name}$`,'i').test(inputname.value)){
                     Erreurexist.classList.toggle("hidden");
-                }
-                Validation = false;
-            };
+                    OK1.onclick = () =>{
+                        Erreurexist.classList.toggle("hidden");
+                    }
+                    Validation = false;
+                };
         };
     
         if (Validation == true) {
@@ -151,41 +153,40 @@ Ajounouv.addEventListener("click" , ()=>{
         if ((Validation == true)){
             if (positionnouv.value != "GK") {
                 nouvjoue = {
-                    name: infor[0].value,
+                    name: inputname.value,
                     photo: inputurl.value,
                     position: positionnouv.value,
                     nationality: namecontry,
                     flag: urlcontry,
                     club: nameclub,
                     logo: urlclub,
-                    rating: infor[4].value,
-                    pace: infor[5].value,
-                    shooting: infor[6].value,
-                    passing: infor[7].value,
-                    dribbling: infor[8].value,
-                    defending: infor[9].value,
-                    physical: infor[10].value
+                    rating: rating.value,
+                    pace: inforGK[0].value,
+                    shooting: inforGK[1].value,
+                    passing: inforGK[2].value,
+                    dribbling: inforGK[3].value,
+                    defending: inforGK[4].value,
+                    physical: inforGK[5].value
     
                 }
             } else {
-                    nouvjoue = {
-                        name: infor[0].value,
-                        photo: inputurl.value,
-                        position: "GK",
-                        nationality: namecontry,
-                        flag: urlcontry,
-                        club: nameclub,
-                        logo: urlclub,
-                        rating: infor[4].value,
-                        diving: infor[11].value,
-                        handling: infor[12].value,
-                        kicking: infor[13].value,
-                        reflexes: infor[14].value,
-                        speed: infor[15].value,
-                        positioning: infor[16].value
-        
-                    }
-            }
+                nouvjoue = {
+                    name: inputname.value,
+                    photo: inputurl.value,
+                    position: "GK",
+                    nationality: namecontry,
+                    flag: urlcontry,
+                    club: nameclub,
+                    logo: urlclub,
+                    rating: rating.value,
+                    diving: inforNGK[0].value,
+                    handling: inforNGK[1].value,
+                    kicking: inforNGK[2].value,
+                    reflexes: inforNGK[3].value,
+                    speed: inforNGK[4].value,
+                    positioning: inforNGK[5].value
+                };
+            };
             console.log(nouvjoue);
             
             Erreur.classList.add("hidden");
@@ -198,10 +199,10 @@ Ajounouv.addEventListener("click" , ()=>{
             document.body.classList.toggle("overflow-hidden");
             joueurs.players.push(nouvjoue);
             localStorage.setItem("Joueurs" , JSON.stringify(joueurs));
+            location.reload();
         } else {
             Erreur.classList.remove("hidden");
-        }
-        
+        };
     };
     
     cancelnouv.onclick= ()=>{

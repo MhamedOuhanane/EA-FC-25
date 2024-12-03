@@ -1,9 +1,15 @@
 //importer les données json des annonces à partir de son chemin
-import Joueurs from "../data/players.json" with{type: "json"};
-localStorage.setItem("Joueurs" , JSON.stringify(Joueurs));
+import joueurs from "../data/players.json" with{type: "json"};
+let existJoueurs = JSON.parse(localStorage.getItem("Joueurs")) || [];
+if (existJoueurs.length == 0) {
+    localStorage.setItem("Joueurs" , JSON.stringify(joueurs));
+    console.log(joueurs);
+    
+};
+
+
 
 let Joueur = JSON.parse(localStorage.getItem("Joueur")) || [];
-
 //affiche les joueurs qui appartient au terrain et au remplaçant a partir de localstorage
 if (Joueur != []) {
     Joueur.forEach(Element => {
@@ -50,7 +56,6 @@ souvgarder.onclick = () =>{
                 effectif: Effectif
             };
             Joueur.push(info);
-            console.log(Joueur);
             
         };
     });
@@ -62,18 +67,19 @@ souvgarder.onclick = () =>{
 //drag and drpo
 let BadgeAjout2 = document.querySelectorAll(".BadgeAjout2");
 let drag = null;
+let parentbadge = null;
 
 BadgeAjout2.forEach(badge =>{
     badge.addEventListener('dragstart' , () =>{
         badge.classList.add("opacity-50");
         drag = badge;
-        let parentbadge = ``;
         DRAGDROP();
     });
     
     badge.addEventListener('dragend' , () =>{
         badge.classList.remove("opacity-50");
         drag = null;
+        parentbadge = null;
     });
 });
 function DRAGDROP() {
