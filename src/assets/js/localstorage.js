@@ -5,6 +5,7 @@ import Joueurs from "../data/players.json" with {type: "json"};
 let joueurs = JSON.parse(localStorage.getItem("Joueurs")) || [];
 if (joueurs.length == 0) {
 localStorage.setItem("Joueurs" , JSON.stringify(Joueurs));
+joueurs = Joueurs;
 };
 
 let Joueur = JSON.parse(localStorage.getItem("Joueur")) || [];

@@ -1,5 +1,12 @@
+import Joueurs from "../data/players.json" with {type: "json"};
 //importer les données json des annonces à partir de localstorage
-let joueurs = JSON.parse(localStorage.getItem("Joueurs"));
+let joueurs = JSON.parse(localStorage.getItem("Joueurs")) || [];
+
+if (joueurs.length == 0) {
+joueurs = Joueurs;
+};
+
+
 MudalBadge.classList.add("hidden");
 
 
