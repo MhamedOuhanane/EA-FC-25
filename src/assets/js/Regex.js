@@ -6,24 +6,29 @@ Ajounouv.addEventListener("click" , ()=>{
     mudalnouv.classList.remove("hidden");
     document.body.classList.toggle("overflow-hidden");
     
-    let inputNGK = document.querySelectorAll(".inputNGK");
-    inputNGK.forEach(Element=>{
+    
+    let inforGK = document.querySelectorAll(".inputGK");
+    let inforNGK = document.querySelectorAll(".inputNGK");
+    inforNGK.forEach(Element=>{
         Element.classList.add("hidden");
+    });
+    inforGK.forEach(Element=>{
+        Element.classList.remove("hidden");
     });
 
     function POSITIONSELECT() {
         if (positionnouv.value == "GK") {
-            document.querySelectorAll(".inputGK").forEach(Element=>{
+            inforGK.forEach(Element=>{
                 Element.classList.toggle("hidden");
             });
-            inputNGK.forEach(Element=>{
+            inforNGK.forEach(Element=>{
                 Element.classList.toggle("hidden");
             });
         } else {
-            inputNGK.forEach(Element=>{  
+            inforNGK.forEach(Element=>{  
                 Element.classList.toggle("hidden");
             });
-            document.querySelectorAll(".inputGK").forEach(Element=>{  
+            inforGK.forEach(Element=>{  
                 Element.classList.toggle("hidden");
             });
             
@@ -39,7 +44,6 @@ Ajounouv.addEventListener("click" , ()=>{
     let Validation = false;    
     let inputurl = document.querySelector('#mudalnouv input[type="url"]');
     let inputnumber = document.querySelectorAll('#mudalnouv input[type="number"]');
-    console.log(inputnumber);
         //validation des input de type text (Regex)
     inputname.addEventListener("input" , () => {
         if ( /^[a-zéèêàâùûîïöäüÿç\-\s]{5,20}$/i.test(inputname.value) ) {   
@@ -123,8 +127,6 @@ Ajounouv.addEventListener("click" , ()=>{
 
     //L'ajout des information au fichier json
     let infor = document.querySelectorAll(`.input${positionnouv.value}`);
-    let inforGK = document.querySelectorAll(".inputGK");
-    let inforNGK = document.querySelectorAll(".inputNGK");
     Erreurexist.classList.add("hidden"); //ajouter "hidden" au class container d'erreur pour l'existanse de joueur
     Create.onclick= () =>{
         for (let index = 0; index < joueurs.players.length; index++) {
@@ -138,15 +140,33 @@ Ajounouv.addEventListener("click" , ()=>{
                 };
         };
     
-        if (Validation == true) {
-            infor.forEach(Element =>{
-                if (Element.value == "") {
-                    Element.style.backgroundColor = "rgb(254 202 202)";
-                    Validation = false
-                    Erreur.classList.remove("hidden");
+        // verification des value des information de nouveau joueur 
+        function PositionValue() {
+            if (Validation == true) {
+                if (positionnouv.value == "GK") {
+                    inforGK.forEach(Element =>{
+                        if (Element.value == "") {
+                            Element.style.backgroundColor = "rgb(254 202 202)";
+                            Validation = false
+                            Erreur.classList.remove("hidden");
+                        };
+                    }); 
+                } else {
+                    inforNGK.forEach(Element =>{
+                        if (Element.value == "") {
+                            Element.style.backgroundColor = "rgb(254 202 202)";
+                            Validation = false
+                            Erreur.classList.remove("hidden");
+                        };
+                    }); 
                 };
-            }); 
+            };
         }
+        PositionValue();
+
+        positionnouv.oninput = () =>{
+            PositionValue();
+        };
 
         if ((Validation == true)){
             if (positionnouv.value != "GK") {
@@ -159,12 +179,12 @@ Ajounouv.addEventListener("click" , ()=>{
                     club: nameclub,
                     logo: urlclub,
                     rating: rating.value,
-                    pace: inforGK[0].value,
-                    shooting: inforGK[1].value,
-                    passing: inforGK[2].value,
-                    dribbling: inforGK[3].value,
-                    defending: inforGK[4].value,
-                    physical: inforGK[5].value
+                    pace: inforNGK[0].value,
+                    shooting: inforNGK[1].value,
+                    passing: inforNGK[2].value,
+                    dribbling: inforNGK[3].value,
+                    defending: inforNGK[4].value,
+                    physical: inforNGK[5].value
     
                 }
             } else {
@@ -177,16 +197,14 @@ Ajounouv.addEventListener("click" , ()=>{
                     club: nameclub,
                     logo: urlclub,
                     rating: rating.value,
-                    diving: inforNGK[0].value,
-                    handling: inforNGK[1].value,
-                    kicking: inforNGK[2].value,
-                    reflexes: inforNGK[3].value,
-                    speed: inforNGK[4].value,
-                    positioning: inforNGK[5].value
+                    diving: inforGK[0].value,
+                    handling: inforGK[1].value,
+                    kicking: inforGK[2].value,
+                    reflexes: inforGK[3].value,
+                    speed: inforGK[4].value,
+                    positioning: inforGK[5].value
                 };
             };
-            console.log(nouvjoue);
-            
             Erreur.classList.add("hidden");
             infor.forEach(Element =>{
                 Element.value = "";
@@ -206,7 +224,7 @@ Ajounouv.addEventListener("click" , ()=>{
     cancelnouv.onclick= ()=>{
         mudalnouv.classList.add("hidden");
         document.body.classList.toggle("overflow-hidden");
-        infor.forEach(Element =>{
+        document.querySelectorAll("#containerINPUT > input").forEach(Element =>{
             Element.value = "";
             Element.style.backgroundColor = "";
         });

@@ -1,5 +1,6 @@
 //importer les données json des annonces à partir de localstorage
 let joueurs = JSON.parse(localStorage.getItem("Joueurs"));
+MudalBadge.classList.add("hidden");
 
 
 
@@ -71,7 +72,6 @@ joueurs.players.forEach((Element) => {
                     </div>`;
 });
 
-MudalBadge.classList.add("hidden");
 
 
 // document.body.classList.
@@ -141,23 +141,18 @@ document.querySelectorAll(".badgebouton").forEach((Element) =>{
         MISEAJOURAFFBAD();
         
         BadgeAjout2.forEach(element => {
-            element.onclick=  () =>{
-                console.log(true);
-                
+            element.onclick=  () =>{                
                 if (element.parentNode == AjoutparBadge) {
-                        console.log("true1");
                     if ((parentbag.children.length == 1)) {
                         parentbag.appendChild(element);
                         Element.classList.add("hidden");
                         MudalBadge.classList.toggle("hidden");
                     } else {
-                        console.log("true3");
                         AjoutparBadge.appendChild(parentbag.children[1]);
                         parentbag.appendChild(element);
                         MudalBadge.classList.toggle("hidden");
                     };
                 } else {
-                    console.log("true4");
                     parentbag = element.parentNode;
                     MudalBadge.classList.toggle("hidden");
                     MISEAJOURAFFBAD();

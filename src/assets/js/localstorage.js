@@ -5,7 +5,6 @@ import Joueurs from "../data/players.json" with {type: "json"};
 let joueurs = JSON.parse(localStorage.getItem("Joueurs")) || [];
 if (joueurs.length == 0) {
 localStorage.setItem("Joueurs" , JSON.stringify(Joueurs));
-
 };
 
 let Joueur = JSON.parse(localStorage.getItem("Joueur")) || [];
@@ -20,7 +19,6 @@ if (Joueur != []) {
             let namejoueur = element.children[2].textContent;
             if ((Element.name == namejoueur)) {
                 let container1 = document.querySelectorAll(`#${Element.effectif} .badgebouton span`);
-                console.log(container1);
                 
                 for (let index = 0; index < container1.length; index++) {
                     const ele = container1[index];
@@ -29,7 +27,6 @@ if (Joueur != []) {
                         ele.parentNode.classList.toggle("hidden");
                         element.classList.remove("hidden");
                         containerbadge.appendChild(element);
-                        console.log(containerbadge);
                         break;
                     };
                 }
@@ -59,11 +56,8 @@ souvgarder.onclick = () =>{
                 effectif: Effectif
             };
             Joueur.push(info);
-            console.log(Joueur);
-            
         };
     });
-    console.log(Joueur);
     
     localStorage.setItem("Joueur" , JSON.stringify(Joueur));
 };
